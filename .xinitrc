@@ -4,4 +4,5 @@ setxkbmap -option caps:escape
 xmodmap -e 'clear lock'
 xset r rate 200 30
 xmodmap /home/schmidma/.Xmodmap
+xrdb /home/schmidma/.Xdefaults
 exec i3
