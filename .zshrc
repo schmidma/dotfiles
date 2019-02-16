@@ -80,6 +80,8 @@ wd
 
 source $ZSH/oh-my-zsh.sh
 
+zstyle ':completion:*' rehash true
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
