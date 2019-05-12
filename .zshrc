@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/lib/ccache/bin:$HOME/.local/bin:$PATH"
+# Add cabal packages to path
+export PATH="$HOME/.cabal/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/schmidma/.oh-my-zsh
