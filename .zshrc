@@ -75,6 +75,7 @@ pip
 sudo
 fancy-ctrl-z
 wd
+extract
 )
 
 source $ZSH/oh-my-zsh.sh
