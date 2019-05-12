@@ -71,7 +71,6 @@ plugins=(
 git
 ssh-agent
 python
-virtualenv.python
 pip
 sudo
 fancy-ctrl-z
