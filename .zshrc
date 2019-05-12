@@ -82,6 +82,12 @@ source $ZSH/oh-my-zsh.sh
 
 zstyle ':completion:*' rehash true
 
+# Fish-like syntax highlighting
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#Fish-like autosuggestions for zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
