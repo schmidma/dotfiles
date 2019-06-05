@@ -146,6 +146,7 @@ alias t="task"
 alias ta="task add"
 alias tat="task add due:today"
 alias mutt="cd ~/Downloads && mutt && cd -"
+alias rechenknecht="TERM=xterm ssh -X schmidma@10.2.24.6"
 
 
 source /usr/share/fzf/key-bindings.zsh
