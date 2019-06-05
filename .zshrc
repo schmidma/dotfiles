@@ -87,10 +87,10 @@ zstyle ':completion:*' rehash true
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
-bindkey '^j' autosuggest-accept
 
 #Fish-like autosuggestions for zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+bindkey '^j' autosuggest-accept
 
 # User configuration
 
