@@ -77,6 +77,7 @@ sudo
 fancy-ctrl-z
 wd
 extract
+zsh-hulks
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -125,6 +126,8 @@ export LC_CTYPE=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+alias startx="exec startx"
 
 alias simrobot=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/PenalizedHULKs2017.ros2
 alias simrobotfull=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/TeamHULKs2017.ros2
