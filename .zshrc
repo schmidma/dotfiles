@@ -130,4 +130,6 @@ alias duhs="du -hs {.,}* | sort -h"
 alias pdf=evince
 
 
+alias setkeys="setxkbmap -layout us -variant altgr-intl -option nodeadkeys && setxkbmap -option 'caps:escape'"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
