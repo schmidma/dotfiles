@@ -123,23 +123,11 @@ export LC_CTYPE=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias simrobot=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/PenalizedHULKs2017.ros2
-alias simrobotfull=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/TeamHULKs2017.ros2
-alias sim=simrobot
-alias simfull=simrobotfull
-alias compile=/home/schmidma/worktree/hulks/nao/scripts/compile
-alias mate="/home/schmidma/.venv/nao/bin/python3 /home/schmidma/worktree/hulks/nao/tools/mate/run.py"
-# alias g=git
 alias vedit=nvim\ ~/.config/nvim/init.vim
 alias zedit=nvim\ ~/.zshrc
 alias vim=nvim
 alias duhs="du -hs {.,}* | sort -h"
-alias pdf=zathura
-alias tt="clear && task"
-alias t="task"
-alias ta="task add"
-alias tat="task add due:today"
-alias mutt="cd ~/Downloads && mutt && cd -"
+alias pdf=evince
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
