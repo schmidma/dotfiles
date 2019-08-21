@@ -77,6 +77,8 @@ sudo
 fancy-ctrl-z
 wd
 extract
+#Fish-like autosuggestions for zsh
+zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -88,9 +90,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 bindkey '^j' autosuggest-accept
-
-#Fish-like autosuggestions for zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
