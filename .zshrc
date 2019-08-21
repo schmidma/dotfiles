@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' rehash true
 
 # Fish-like syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 bindkey '^j' autosuggest-accept
