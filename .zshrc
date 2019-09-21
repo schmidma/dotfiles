@@ -80,6 +80,7 @@ fancy-ctrl-z
 wd
 extract
 zsh-hulks
+delete-merged
 )
 
 source $ZSH/oh-my-zsh.sh
