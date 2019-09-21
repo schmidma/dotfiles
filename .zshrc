@@ -6,6 +6,8 @@ export PATH="$HOME/.cabal/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH=/home/schmidma/.oh-my-zsh
 
+export JAVA_HOME=/usr/lib/jvm/default/
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
