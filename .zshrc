@@ -143,13 +143,22 @@ alias vedit=nvim\ ~/.config/nvim/init.vim
 alias zedit=nvim\ ~/.zshrc
 alias vim=nvim
 alias duhs="du -hs {.,}* | sort -h"
-alias pdf=zathura
+alias bc="bc -l -q"
+alias pdf=evince
 alias tt="clear && task"
 alias t="task"
 alias ta="task add"
 alias tat="task add due:today"
 alias mutt="cd ~/Downloads && mutt && cd -"
 alias rechenknecht="TERM=xterm ssh -X schmidma@10.2.24.6"
+alias rules="pdf ~/Documents/HULKs/Rules2019.pdf"
+
+# git merge squash
+function gms {
+    trackingBranch=$1
+    git merge --squash $trackingBranch || { echo 'merge-squashing failed' ; return 1; }
+    git commit -m "squashed $trackingBranch"
+}
 
 
 source /usr/share/fzf/key-bindings.zsh
