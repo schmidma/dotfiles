@@ -3,6 +3,8 @@ export PATH="/usr/lib/ccache/bin:$HOME/.local/bin:$PATH"
 # Add cabal packages to path
 export PATH="$HOME/.cabal/bin:$PATH"
 
+export MOZ_ENABLE_WAYLAND=1
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/schmidma/.oh-my-zsh
 
@@ -116,7 +118,7 @@ bindkey '^j' autosuggest-accept
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 export EDITOR="nvim"
-export FZF_DEFAULT_COMMAND="rg --files --no-messages --no-ignore --hidden --follow --ignore-file ~/.ignore"
+export FZF_DEFAULT_COMMAND="rg --files --no-messages --hidden --follow --ignore-file ~/.ignore"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export LC_CTYPE=en_US.UTF-8
@@ -162,3 +164,5 @@ function gms {
 
 
 source /usr/share/fzf/key-bindings.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
