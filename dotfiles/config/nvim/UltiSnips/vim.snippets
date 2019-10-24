@@ -1,0 +1,16 @@
+
+snippet category "Adds a new vimrc category" b
+" === ${1:name} ===  {{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+$0
+" }}}}}}}}}}}}}}}}}}}}}}}}}}}}} $1
+endsnippet
+
+snippet plugin "Adds Plug-Plugin structure" b
+" -> ${1:name}  {{{
+" ${2:explanation}
+Plug '${3:git}'
+
+$0
+
+" }}} $1
+endsnippet
