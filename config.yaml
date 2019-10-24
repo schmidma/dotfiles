@@ -32,6 +32,10 @@ dotfiles:
     link: link_children
     src: config/wofi
     dst: ~/.config/wofi
+  d_config_termite:
+    link: link_children
+    src: config/termite
+    dst: ~/.config/termite
 profiles:
   schmidma-arch:
     dotfiles:
@@ -42,3 +46,4 @@ profiles:
     - d_config_swaylock
     - d_config_waybar
     - d_config_wofi
+    - d_config_termite
