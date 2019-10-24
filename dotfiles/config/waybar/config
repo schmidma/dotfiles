@@ -1,0 +1,97 @@
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 30, // Waybar height (to be removed for auto height)
+  // Choose the order of the modules
+  "modules-left": ["sway/workspaces", "sway/mode"],
+  "modules-center": ["custom/spotify"],
+  "modules-right": ["network#wifi", "network#eth", "battery#int", "battery#ext", "pulseaudio", "clock", "tray"],
+  // Module config
+  "sway/mode": {
+    "tooltip": false,
+    "format": "<span weight=\"bold\">{}</span>"
+  },
+  "network#wifi": {
+    "interface": "wlp3s0", // (Optional) To force the use of this interface
+    "interval": 2,
+    "format-wifi": " {essid}",
+    "tooltip": false,
+    "format-alt": "{ifname}: {ipaddr}/{cidr} ({signalStrength}%)",
+    "format-linked": "睊"
+  },
+  "network#eth": {
+    "interface": "enp0s31f6",
+    "interval": 2,
+    "format-ethernet": "",
+    "format-linked": "",
+    "tooltip": false,
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "battery#int": {
+    "interval": 8,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "bat": "BAT0",
+    "format": "{icon} {capacity}% ({time})",
+    "format-charging": " {capacity}% ({time})",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "battery#ext": {
+    "interval": 8,
+    "states": {
+        "warning": 30,
+        "critical": 15
+    },
+    "bat": "BAT1",
+    "format": "{icon} {capacity}% ({time})",
+    "format-charging": " {capacity}% ({time})",
+    "format-icons": ["", "", "", "", ""]
+  },
+  "pulseaudio": {
+    "tooltip": false,
+    // "scroll-step": 1, // %, can be a float
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "MUTE",
+    "on-scroll-up": "",
+    "on-scroll-down": "",
+    "format-source": "{volume}%",
+    "format-source-muted": "MUTE",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", ""]
+    }
+  },
+  "clock": {
+    "tooltip": false,
+    "format": "{:%a, %b %d %Y %I:%M%P}"
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "8": "",
+      "9": "",
+      "10": ""
+    }
+  },
+  "tray": {
+    "tooltip": false,
+    // "icon-size": 21,
+    "spacing": 10
+  },
+  "custom/spotify": {
+    "interval": 4,
+    "format": " {}",
+    "tooltip": false,
+    "exec": "$HOME/.config/waybar/spotify"
+  }
+}

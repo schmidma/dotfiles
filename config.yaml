@@ -2,5 +2,43 @@ config:
   backup: true
   create: true
   dotpath: dotfiles
+  longkey: true
 dotfiles:
+  f_zshrc:
+    link: link
+    src: zshrc
+    dst: ~/.zshrc
+  f_nvidia-xinitrc:
+    link: link
+    src: nvidia-xinitrc
+    dst: ~/.nvidia-xinitrc
+  f_taskrc:
+    link: link
+    src: taskrc
+    dst: ~/.taskrc
+  d_config_sway:
+    link: link_children
+    src: config/sway
+    dst: ~/.config/sway
+  d_config_swaylock:
+    link: link_children
+    src: config/swaylock
+    dst: ~/.config/swaylock
+  d_config_waybar:
+    link: link_children
+    src: config/waybar
+    dst: ~/.config/waybar
+  d_config_wofi:
+    link: link_children
+    src: config/wofi
+    dst: ~/.config/wofi
 profiles:
+  schmidma-arch:
+    dotfiles:
+    - f_zshrc
+    - f_nvidia-xinitrc
+    - f_taskrc
+    - d_config_sway
+    - d_config_swaylock
+    - d_config_waybar
+    - d_config_wofi
