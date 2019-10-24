@@ -40,6 +40,12 @@ dotfiles:
     link: link_children
     src: config/nvim
     dst: ~/.config/nvim
+    cmpignore:
+    - plugged
+  d_config_redshift:
+    link: link_children
+    src: config/redshift
+    dst: ~/.config/redshift
 profiles:
   schmidma-arch:
     dotfiles:
@@ -52,3 +58,4 @@ profiles:
     - d_config_wofi
     - d_config_termite
     - d_config_nvim
+    - d_config_redshift
