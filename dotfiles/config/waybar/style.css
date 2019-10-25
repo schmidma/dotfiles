@@ -68,6 +68,7 @@ window#waybar.solo {
 #pulseaudio,
 #tray,
 #mode,
+#custom-vpn,
 #idle_inhibitor {
   padding: 0 5px;
   margin: 0 4px;

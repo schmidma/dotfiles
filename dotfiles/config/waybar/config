@@ -5,7 +5,7 @@
   // Choose the order of the modules
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["custom/spotify"],
-  "modules-right": ["network#wifi", "network#eth", "idle_inhibitor", "battery#int", "battery#ext", "pulseaudio", "clock", "tray"],
+  "modules-right": ["network#wifi", "network#eth", "custom/vpn", "idle_inhibitor", "battery#int", "battery#ext", "pulseaudio", "clock", "tray"],
   // Module config
   "sway/mode": {
     "tooltip": false,
@@ -33,6 +33,12 @@
     "format-linked": "",
     "tooltip": false,
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "custom/vpn": {
+    "interval": 4,
+    "format": "{}",
+    "tooltip": false,
+    "exec": "$HOME/.config/waybar/vpn"
   },
   "battery#int": {
     "interval": 8,
