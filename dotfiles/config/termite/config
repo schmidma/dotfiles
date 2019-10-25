@@ -17,3 +17,5 @@ cursor_blink = off
 # Hide links that are no longer valid in url select overlay mode
 filter_unmatched_urls = true
 
+[colors]
+background = rgba(63, 63, 63, 0.95)
