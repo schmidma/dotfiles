@@ -134,8 +134,8 @@ export LC_CTYPE=en_US.UTF-8
 #
 alias startx="exec startx"
 
-alias simrobot=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/PenalizedHULKs2017.ros2
-alias simrobotfull=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/TeamHULKs2017.ros2
+alias simrobot=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/Penalized.ros2
+alias simrobotfull=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/TeamHULKs.ros2
 alias sim=simrobot
 alias simfull=simrobotfull
 alias compile=/home/schmidma/worktree/hulks/nao/scripts/compile
