@@ -14,5 +14,6 @@
     }
   },
   "python.trace.server": "verbose",
-  "python.jediEnabled": true
+  "python.jediEnabled": true,
+  "git.enableGutters": true
 }

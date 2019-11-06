@@ -279,12 +279,6 @@ let g:airline_theme='base16_default'
 
 " }}} vim-airline-themes
 
-" -> vim-gitgutter  {{{
-" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
-Plug 'airblade/vim-gitgutter'
-
-" }}} vim-gitgutter
-
 " -> grep  {{{
 " Grep search tools integration.
 Plug 'vim-scripts/grep.vim'
@@ -412,6 +406,13 @@ endfunction
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" coc-git
+" navigate chunks of current buffer
+nmap [g <Plug>(coc-git-prevchunk)
+nmap ]g <Plug>(coc-git-nextchunk)
+" show commit contains current position
+nmap gc <Plug>(coc-git-commit)
 
 " }}} coc.nvim
 
