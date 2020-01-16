@@ -567,6 +567,13 @@ Plug 'godlygeek/tabular'
 " }}} tabular
 
 
+" -> vim-doge  {{{
+" (Do)cumentation (Ge)nerator 15+ languages books Generate proper code documentation skeletons with a single keypress. zapfire
+
+Plug 'kkoomen/vim-doge'
+
+" }}} tabular
+
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
