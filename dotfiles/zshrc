@@ -83,6 +83,8 @@ wd
 extract
 zsh-hulks
 delete-merged
+alias-finder
+pass
 )
 
 source $ZSH/oh-my-zsh.sh
