@@ -155,7 +155,7 @@ alias tat="task add due:today"
 alias mutt="cd ~/Downloads && mutt && cd -"
 alias neomutt="cd ~/Downloads && neomutt && cd -"
 alias rechenknecht="TERM=xterm ssh -X schmidma@10.2.24.6"
-alias rules="pdf ~/Documents/HULKs/Rules2019.pdf"
+alias rules="pdf ~/Documents/HULKs/SPL-Rules_2020.pdf"
 
 # git merge squash
 function gms {
