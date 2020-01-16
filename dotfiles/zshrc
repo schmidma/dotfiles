@@ -145,7 +145,6 @@ alias mate="/home/schmidma/.venv/nao/bin/python3 /home/schmidma/worktree/hulks/n
 # alias g=git
 alias vedit=nvim\ ~/.config/nvim/init.vim
 alias zedit=nvim\ ~/.zshrc
-alias vim=nvim
 alias duhs="du -hs {.,}* | sort -h"
 alias bc="bc -l -q"
 alias pdf=evince
