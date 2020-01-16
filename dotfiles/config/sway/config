@@ -18,7 +18,7 @@ set $term termite
 # locking application
 set $lock swaylock
 
-set $screenclip grim -g "$(slurp)" ~/Pictures/snapshot/snapshot-$(date +'%Y-%m-%dT%H-%M-%S').png
+set $screenclip ~/.config/sway/screenshot
 
 set $menu wofi
 
