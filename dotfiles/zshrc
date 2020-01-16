@@ -167,4 +167,7 @@ function gms {
 
 source /usr/share/fzf/key-bindings.zsh
 
+# You should use - suggesting abbreviations instead of typed command
+source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
