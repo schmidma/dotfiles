@@ -73,18 +73,19 @@ DEFAULT_USER="schmidma"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-git
-ssh-agent
-python
-pip
-sudo
-fancy-ctrl-z
-wd
-extract
-zsh-hulks
-delete-merged
-alias-finder
-pass
+    git
+    gitfast
+    ssh-agent
+    python
+    pip
+    sudo
+    fancy-ctrl-z
+    wd
+    extract
+    zsh-hulks
+    delete-merged
+    alias-finder
+    pass
 )
 
 source $ZSH/oh-my-zsh.sh
