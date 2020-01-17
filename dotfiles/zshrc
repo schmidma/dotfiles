@@ -3,7 +3,7 @@ export PATH="/usr/lib/ccache/bin:$HOME/.local/bin:$PATH"
 # Add cabal packages to path
 export PATH="$HOME/.cabal/bin:$PATH"
 
-export MOZ_ENABLE_WAYLAND=1
+#export MOZ_ENABLE_WAYLAND=1
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/schmidma/.oh-my-zsh
