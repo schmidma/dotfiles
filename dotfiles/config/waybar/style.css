@@ -69,6 +69,7 @@ window#waybar.solo {
 #tray,
 #mode,
 #custom-vpn,
+#custom-mail,
 #idle_inhibitor {
   padding: 0 5px;
   margin: 0 4px;
