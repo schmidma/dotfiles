@@ -96,7 +96,8 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # move focus to parent container
-bindsym $mod+a focus parent
+bindsym $mod+o focus parent
+bindsym $mod+i focus child
 
 # Move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
