@@ -13,6 +13,9 @@ export JAVA_HOME=/usr/lib/jvm/default/
 # GPG SSH support
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
+# enable pass extensions
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
