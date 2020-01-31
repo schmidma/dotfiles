@@ -413,6 +413,7 @@ nmap [g <Plug>(coc-git-prevchunk)
 nmap ]g <Plug>(coc-git-nextchunk)
 " show commit contains current position
 nmap gc <Plug>(coc-git-commit)
+nmap <silent> <leader>u :<C-u>CocCommand git.chunkUndo<CR>
 
 " }}} coc.nvim
 
