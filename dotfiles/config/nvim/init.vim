@@ -389,6 +389,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>rr <Plug>(coc-refactor)
 nmap <leader>qf <Plug>(coc-fix-current)
 
 nmap <silent> <leader>f :call CocActionAsync('format')<CR>
