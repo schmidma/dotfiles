@@ -347,21 +347,6 @@ Plug 'machakann/vim-swap'
 
 " }}} vim-swap
 
-" -> ALE  {{{
-" Check syntax (linting) and fix files asynchronously, with Language Server Protocol (LSP) integration in Vim
-Plug 'w0rp/ale'
-
-
-let g:ale_c_parse_compile_commands = 1
-let g:ale_lint_on_text_changed = "normal"
-let g:ale_sign_column_always = 1
-let g:ale_linters = {
-    \ 'cpp': ['clangtidy'],
-    \ }
-let g:ale_cpp_clangtidy_checks = ['llvm-*', 'modernize-*', 'readability-*', '-llvm-header-guard', '-readability-uppercase-literal-suffix', '-modernize-use-nodiscard', '-modernize-use-trailing-return-type']
-
-" }}} ALE
-
 " -> coc.nvim  {{{
 " Intellisense engine for vim8 & neovim, full language server protocol support as VSCode
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
