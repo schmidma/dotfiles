@@ -16,6 +16,18 @@ dotfiles:
     link: link
     src: taskrc
     dst: ~/.taskrc
+  f_Xdefaults:
+    link: link
+    src: Xdefaults
+    dst: ~/.Xdefaults
+  f_Xmodmap:
+    link: link
+    src: Xmodmap
+    dst: ~/.Xmodmap
+  f_xinitrc:
+    link: link
+    src: xinitrc
+    dst: ~/.xinitrc
   d_config_sway:
     link: link_children
     src: config/sway
@@ -56,6 +68,16 @@ profiles:
     - d_config_swaylock
     - d_config_waybar
     - d_config_wofi
+    - d_config_termite
+    - d_config_nvim
+    - d_config_redshift
+  ubuntu:
+    dotfiles:
+    - f_zshrc
+    - f_taskrc
+    - f_xinitrc
+    - f_Xmodmap
+    - f_Xdefaults
     - d_config_termite
     - d_config_nvim
     - d_config_redshift

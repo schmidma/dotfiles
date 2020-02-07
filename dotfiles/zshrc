@@ -6,7 +6,7 @@ export PATH="$HOME/.cabal/bin:$PATH"
 #export MOZ_ENABLE_WAYLAND=1
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/schmidma/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 export JAVA_HOME=/usr/lib/jvm/default/
 
@@ -27,7 +27,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="ys"
 
-DEFAULT_USER="schmidma"
+DEFAULT_USER="{{@@ env['USERNAME'] @@}}"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -87,10 +87,15 @@ plugins=(
     fancy-ctrl-z
     wd
     extract
-    zsh-hulks
-    delete-merged
     alias-finder
     pass
+    {%@@ if profile == "schmidma-arch" @@%}
+        zsh-hulks
+        delete-merged
+    {%@@ elif profile == "ubuntu" @@%}
+        zsh-autosuggestions
+        you-should-use
+    {%@@ endif @@%}
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -98,12 +103,19 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' rehash true
 
 # Fish-like syntax highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{%@@ if profile == "schmidma-arch" @@%}
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{%@@ elif profile == "ubuntu" @@%}
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{%@@ endif @@%}
+
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 #Fish-like autosuggestions for zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+{%@@ if profile == "schmidma-arch" @@%}
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+{%@@ endif @@%}
 bindkey '^j' autosuggest-accept
 
 # User configuration
@@ -140,15 +152,7 @@ export LC_CTYPE=en_US.UTF-8
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias startx="exec startx"
 
-alias simrobot=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/Penalized.ros2
-alias simrobotfull=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/TeamHULKs.ros2
-alias sim=simrobot
-alias simfull=simrobotfull
-alias compile=/home/schmidma/worktree/hulks/nao/scripts/compile
-alias mate="/home/schmidma/.venv/nao/bin/python3 /home/schmidma/worktree/hulks/nao/tools/mate/run.py"
-# alias g=git
 alias vedit=nvim\ ~/.config/nvim/init.vim
 alias zedit=nvim\ ~/.zshrc
 alias duhs="du -hs {.,}* | sort -h"
@@ -158,10 +162,21 @@ alias tt="clear && task"
 alias t="task"
 alias ta="task add"
 alias tat="task add due:today"
-alias mutt="cd ~/Downloads && mutt && cd -"
-alias neomutt="cd ~/Downloads && neomutt && cd -"
-alias rechenknecht="TERM=xterm ssh -X schmidma@10.2.24.6"
-alias rules="pdf ~/Documents/HULKs/SPL-Rules_2020.pdf"
+
+{%@@ if profile == "schmidma-arch" @@%}
+    alias simrobot=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/Penalized.ros2
+    alias simrobotfull=/home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot\ /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/TeamHULKs.ros2
+    alias sim=simrobot
+    alias simfull=simrobotfull
+    alias compile=/home/schmidma/worktree/hulks/nao/scripts/compile
+    alias mate="/home/schmidma/.venv/nao/bin/python3 /home/schmidma/worktree/hulks/nao/tools/mate/run.py"
+    alias rechenknecht="TERM=xterm ssh -X schmidma@10.2.24.6"
+    alias rules="pdf ~/Documents/HULKs/SPL-Rules_2020.pdf"
+    alias mutt="cd ~/Downloads && mutt && cd -"
+    alias neomutt="cd ~/Downloads && neomutt && cd -"
+{%@@ elif profile == "drager" @@%}
+    alias setkeys="setxkbmap -layout us -variant altgr-intl -option nodeadkeys && setxkbmap -option 'caps:escape'"
+{%@@ endif @@%}
 
 # git merge squash
 function gms {
@@ -171,9 +186,11 @@ function gms {
 }
 
 
-source /usr/share/fzf/key-bindings.zsh
+#source /usr/share/fzf/key-bindings.zsh
 
-# You should use - suggesting abbreviations instead of typed command
-source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+{%@@ if profile == "schmidma-arch" @@%}
+    # You should use - suggesting abbreviations instead of typed command
+    source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
+{%@@ endif @@%}
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

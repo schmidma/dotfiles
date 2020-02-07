@@ -1,0 +1,7 @@
+setxkbmap -layout us -variant altgr-intl -option nodeadkeys
+setxkbmap -option caps:escape
+xset r rate 200 30
+xmodmap ~/.Xmodmap
+xrdb ~/.Xdefaults
+. ~/local/proxy_script/enable_proxy
+exec i3
