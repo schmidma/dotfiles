@@ -177,8 +177,6 @@ exec swayidle -w \
         resume 'swaymsg "output * dpms on"' \
         before-sleep '$lock -f'
 
-exec --no-startup-id nm-applet --sm-disable
-
 # Backlight control
 bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 5
 bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 5
