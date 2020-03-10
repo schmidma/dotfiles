@@ -58,10 +58,19 @@ dotfiles:
     link: link_children
     src: config/redshift
     dst: ~/.config/redshift
+  d_config_i3:
+    link: link_children
+    src: config/i3
+    dst: ~/.config/i3
+  d_config_rofi:
+    link: link_children
+    src: config/rofi
+    dst: ~/.config/rofi
 profiles:
   schmidma-arch:
     dotfiles:
     - f_zshrc
+    - f_xinitrc
     - f_nvidia-xinitrc
     - f_taskrc
     - d_config_sway
@@ -71,6 +80,8 @@ profiles:
     - d_config_termite
     - d_config_nvim
     - d_config_redshift
+    - d_config_i3
+    - d_config_rofi
   ubuntu:
     dotfiles:
     - f_zshrc
