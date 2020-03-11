@@ -154,7 +154,7 @@ export LC_CTYPE=en_US.UTF-8
 #
 
 alias vedit=nvim\ ~/.config/nvim/init.vim
-alias zedit=nvim\ ~/.zshrc
+alias zedit=nvim\ ~/.dotfiles/dotfiles/zshrc
 alias duhs="du -hs {.,}* | sort -h"
 alias bc="bc -l -q"
 alias pdf=evince
