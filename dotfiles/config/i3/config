@@ -85,6 +85,9 @@ bindsym $mod+Shift+space floating toggle
 # rofi menu
 bindsym $mod+space exec rofi -show
 
+# show password menu
+bindsym $mod+Shift+P exec passmenu
+
 # focus the parent container
 bindsym $mod+a focus parent
 
