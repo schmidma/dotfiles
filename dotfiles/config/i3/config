@@ -3,7 +3,7 @@
 # Modifier key
 set $mod Mod4
 # default terminal
-set $term termite
+set $term alacritty
 
 # font settings
 font pango:MesloLGSDZ Nerd Font 11
