@@ -6,8 +6,8 @@ set $mod Mod4
 set $term alacritty
 
 # font settings
-font pango:MesloLGSDZ Nerd Font 11
-#font pango:Meslo LG S DZ for Powerline 11
+font pango:MesloLGSDZ Nerd Font Mono 11
+#font pango: Source Code Pro Mono 11
 
 smart_gaps on
 gaps inner 2
