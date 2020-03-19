@@ -95,12 +95,7 @@ bindsym $mod+a focus parent
 bindsym $mod+d focus child
 
 # bind workspace 3 to external monitor
-workspace 1 output eDP1
-workspace 2 output eDP1
 workspace 3 output HDMI2
-workspace 4 output eDP1
-workspace 8 output eDP1
-workspace 10 output eDP1
 
 # switch to workspace
 bindsym $mod+1 workspace 1
