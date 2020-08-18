@@ -405,7 +405,26 @@ nmap ]g <Plug>(coc-git-nextchunk)
 nmap gc <Plug>(coc-git-commit)
 nmap <silent> <leader>u :<C-u>CocCommand git.chunkUndo<CR>
 
+" coc-clangd
+" toggle source header
+nmap <silent> <leader><C-I> :<C-u>CocCommand clangd.switchSourceHeader<CR>
+
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
 " }}} coc.nvim
+
+" -> vim-lsp-cxx-highlight  {{{
+" vim-lsp-cxx-highlight is a vim plugin that provides C/C++/ObjC semantic highlighting using the language server protocol.
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+
+
+
+" }}} vim-lsp-cxx-highlight
 
 " -> nvim-gdb  {{{
 " Neovim thin wrapper for GDB, LLDB and PDB.
