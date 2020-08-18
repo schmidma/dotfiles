@@ -1,22 +1,6 @@
 {
-    "languageserver": {
-        "clangd": {
-            "command": "clangd",
-            "rootPatterns": [
-                "compile_flags.txt",
-                "compile_commands.json",
-                ".git/",
-                ".hg/"
-            ],
-            "filetypes": [
-                "c",
-                "cpp",
-                "objc",
-                "objcpp"
-            ]
-        }
-    },
-    "python.jediEnabled": false,
+    "clangd.arguments": ["--cross-file-rename"],
+    "clangd.semanticHighlighting": false,
     "suggest.completionItemKindLabels": {
         "keyword": "\uf1de",
         "variable": "\ue79b",
