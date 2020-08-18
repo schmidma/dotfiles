@@ -29,6 +29,7 @@ set hidden
 " Searching
 set hlsearch
 set incsearch
+set inccommand=nosplit
 set ignorecase
 set smartcase
 
