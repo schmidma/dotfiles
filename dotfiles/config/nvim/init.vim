@@ -59,6 +59,9 @@ set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
+" Disable python2
+let g:loaded_python_provider = 0
+
 " }}}}}}}}}}}}}}}}}}}}}}}}}}}}} Basic Setup
 
 
