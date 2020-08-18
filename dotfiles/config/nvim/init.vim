@@ -457,12 +457,6 @@ Plug 'tpope/vim-rhubarb'
 
 " }}} vim-rhubarb
 
-" -> vim-multiple-cursors  {{{
-" True Sublime Text style multiple selections for Vim.
-Plug 'terryma/vim-multiple-cursors'
-
-" }}} vim-multiple-cursors
-
 " -> vimtex  {{{
 " A modern vim plugin for editing LaTeX files.
 Plug 'lervag/vimtex'
@@ -557,16 +551,6 @@ autocmd! User GoyoEnter call <SID>goyo_enter()
 autocmd! User GoyoLeave call <SID>goyo_leave()
 
 " }}} goyo
-
-" -> CurtineIncSw.vim {{{
-"  Easily toggle between *.c* and *.h* buffers
-Plug 'ericcurtin/CurtineIncSw.vim'
-
-" toggle source header key
-nmap <leader><C-I> :call CurtineIncSw()<CR>
-
-
-" }}} CurtineIncSw.vim
 
 " -> tabular  {{{
 " Vim script for text filtering and alignment
