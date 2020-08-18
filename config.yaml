@@ -90,11 +90,11 @@ profiles:
   ubuntu:
     dotfiles:
     - f_zshrc
-    - f_taskrc
     - f_xinitrc
     - f_Xmodmap
     - f_Xdefaults
-    - d_config_termite
     - d_config_nvim
+    - d_config_i3
+    - d_config_rofi
     - d_config_redshift
     - d_config_alacritty
