@@ -13,7 +13,7 @@ set $up k
 set $right l
 
 # terminal emulator
-set $term termite
+set $term alacritty
 
 # locking application
 set $lock swaylock
