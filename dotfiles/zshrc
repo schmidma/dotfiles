@@ -93,6 +93,7 @@ plugins=(
         delete-merged
     {%@@ elif profile == "ubuntu" @@%}
         zsh-autosuggestions
+        zsh-syntax-highlighting
         you-should-use
     {%@@ endif @@%}
 )
