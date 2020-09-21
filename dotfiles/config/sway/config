@@ -166,7 +166,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bindsym XF86Display exec --no-startup-id ~/worktree/wdisplays/build/src/wdisplays
+bindsym XF86Display exec --no-startup-id wdisplays
 
 # Lock
 bindsym Control+Mod1+l exec --no-startup-id $lock
