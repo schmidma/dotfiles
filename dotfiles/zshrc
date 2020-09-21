@@ -199,4 +199,6 @@ function gms {
     source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 {%@@ endif @@%}
 
+eval $(gh completion -s zsh)
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
