@@ -85,6 +85,7 @@ DEFAULT_USER="{{@@ env['USERNAME'] @@}}"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    gh
     python
     pip
     sudo
