@@ -3,7 +3,12 @@ export PATH="/usr/lib/ccache/bin:$HOME/.local/bin:$PATH"
 # Add cabal packages to path
 export PATH="$HOME/.cabal/bin:$PATH"
 
-#export MOZ_ENABLE_WAYLAND=1
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=sway
+export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORM=wayland
+export CLUTTER_BACKEND=wayland
+export SDL_VIDEODRIVER=wayland
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
