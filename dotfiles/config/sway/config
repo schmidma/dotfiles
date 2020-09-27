@@ -6,6 +6,8 @@ smart_gaps on
 
 set $mod Mod4
 
+seat * hide_cursor 5000
+
 # Home row direction keys, like vim
 set $left h
 set $down j
