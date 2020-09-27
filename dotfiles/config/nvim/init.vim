@@ -215,8 +215,8 @@ cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 
 " Buffer navigation
-noremap <leader>j :bp<CR>
-noremap <leader>k :bn<CR>
+noremap <silent> <leader>j :bp<CR>
+noremap <silent> <leader>k :bn<CR>
 
 " Close buffer
 noremap <leader>c :bd<CR>
