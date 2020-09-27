@@ -149,6 +149,12 @@ augroup filetype_cpp
     autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 expandtab commentstring=//\ %s
 augroup END
 
+" markdown
+augroup filetype_markdown
+    autocmd!
+    autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 expandtab
+augroup END
+
 " html files, 2 spaces
 augroup filetype_html
     autocmd!
