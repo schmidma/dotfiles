@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# This pre-commit hook will prevent you from continuing your work without resolving WIP commits
+# It expects WIP commits to have the message `--wip-- [skip ci]`
+#
+# You can use the following commands to easily create and restore WIP commits:
+# gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify -m "--wip-- [skip ci]"'
+# gunwip='git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1'
+
+
+allowwipcommits=$(git config --bool hooks.allowwipcommits)
+
+MSG=`git log -1 --oneline | cut -d' ' -f2- | awk '{$1=$1};1'`
+WIP="--wip-- [skip ci]"
+
+exec 1>&2
+
+if [ "$allowwipcommits" != "true" ] &&
+  test "$MSG" == "$WIP"
+then
+  cat <<\EOF
+Error: The last commit in the history is a WIP.
+This must be resolved before you can continue.
+You can "un-wip" by running `$ git log -n 1 | grep -q -c "\-\-wip\-\-" && git reset HEAD~1`
+If you know what you are doing you can disable this check using:
+  git config hooks.allowwipcommits true
+EOF
+  exit 1
+fi

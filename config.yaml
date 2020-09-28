@@ -70,6 +70,14 @@ dotfiles:
     link: link_children
     src: config/alacritty
     dst: ~/.config/alacritty
+  f_gitconfig:
+    link: link
+    src: gitconfig
+    dst: ~/.gitconfig
+  d_git-templates:
+    link: link_children
+    src: git-templates
+    dst: ~/.git-templates
 profiles:
   schmidma-arch:
     dotfiles:
@@ -87,6 +95,8 @@ profiles:
     - d_config_i3
     - d_config_rofi
     - d_config_alacritty
+    - f_gitconfig
+    - d_git-templates
   ubuntu:
     dotfiles:
     - f_zshrc
