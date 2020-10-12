@@ -1,8 +1,8 @@
 # Sway config
 
-default_border none
-gaps inner 2
-smart_gaps on
+default_border pixel 2
+gaps inner 0
+smart_borders on
 
 set $mod Mod4
 
