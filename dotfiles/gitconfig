@@ -8,7 +8,7 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [commit]
-	gpgSign = false
+	gpgSign = true
 [init]
     templatedir = ~/.git-templates/
 [pull]
