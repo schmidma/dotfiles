@@ -580,7 +580,7 @@ Plug 'dart-lang/dart-vim-plugin'
 
 Plug 'kkoomen/vim-doge'
 
-" }}} tabular
+" }}} vim-doge
 
 
 " All of your Plugins must be added before the following line
