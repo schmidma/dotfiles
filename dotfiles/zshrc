@@ -14,7 +14,7 @@ export ZSH=~/.oh-my-zsh
 
 # GPG SSH support
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-echo "UPDATESTARTUPTTY" | gpg-connect-agent &> /dev/null
+gpg-connect-agent UPDATESTARTUPTTY /bye &> /dev/null
 
 # enable pass extensions
 export PASSWORD_STORE_ENABLE_EXTENSIONS=true
