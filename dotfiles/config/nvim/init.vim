@@ -568,6 +568,12 @@ Plug 'godlygeek/tabular'
 
 " }}} tabular
 
+" -> dart-vim-plugin  {{{
+" dart-vim-plugin provides filetype detection, syntax highlighting, and indentation for Dart code in Vim.
+
+Plug 'dart-lang/dart-vim-plugin'
+
+" }}} dart-vim-plugin
 
 " -> vim-doge  {{{
 " (Do)cumentation (Ge)nerator 15+ languages books Generate proper code documentation skeletons with a single keypress. zapfire
