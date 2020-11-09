@@ -107,7 +107,7 @@ alias tat="task add due:today"
     alias simfull=simrobotfull
     alias compile=/home/schmidma/worktree/hulks/nao/scripts/compile
     alias mate="/home/schmidma/.venv/nao/bin/python3 /home/schmidma/worktree/hulks/nao/tools/mate/run.py"
-    alias rechenknecht="TERM=xterm ssh -X schmidma@10.2.24.6"
+    alias rechenknecht="TERM=xterm ssh -X schmidma@rechenknecht.hulks.dev"
     alias rules="pdf ~/Documents/HULKs/SPL-Rules_2020.pdf"
     alias neomutt="cd ~/Downloads && neomutt && cd -"
 {%@@ endif @@%}
