@@ -45,7 +45,7 @@ set $base0E #ba8baf
 set $base0F #a16946
 
 
-set $touchpad "2:7:SynPS/2_Synaptics_TouchPad"
+set $touchpad "1739:0:Synaptics_TM3276-022"
 input $touchpad {
     events disabled
 }
