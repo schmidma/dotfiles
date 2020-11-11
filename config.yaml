@@ -78,6 +78,18 @@ dotfiles:
     link: link_children
     src: git-templates
     dst: ~/.git-templates
+  d_config_systemd_user_vdirsyncer.service.d:
+    link: link_children
+    src: config/systemd/user/vdirsyncer.service.d
+    dst: ~/.config/systemd/user/vdirsyncer.service.d
+  f_config_environment.d_pass.conf:
+    link: link
+    src: config/environment.d/pass.conf
+    dst: ~/.config/environment.d/pass.conf
+  f_config_environment.d_sway.conf:
+    link: link
+    src: config/environment.d/sway.conf
+    dst: ~/.config/environment.d/sway.conf
 profiles:
   schmidma-arch:
     dotfiles:
@@ -97,6 +109,9 @@ profiles:
     - d_config_alacritty
     - f_gitconfig
     - d_git-templates
+    - d_config_systemd_user_vdirsyncer.service.d
+    - f_config_environment.d_pass.conf
+    - f_config_environment.d_sway.conf
   ubuntu:
     dotfiles:
     - f_zshrc
