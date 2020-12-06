@@ -51,14 +51,6 @@ plugins=(
     extract
     alias-finder
     pass
-    {%@@ if profile == "schmidma-arch" @@%}
-        zsh-hulks
-        delete-merged
-    {%@@ elif profile == "ubuntu" @@%}
-        zsh-autosuggestions
-        zsh-syntax-highlighting
-        you-should-use
-    {%@@ endif @@%}
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -67,20 +59,14 @@ source $ZSH/oh-my-zsh.sh
 zstyle ':completion:*' rehash true
 
 # Fish-like syntax highlighting
-{%@@ if profile == "schmidma-arch" @@%}
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-{%@@ elif profile == "ubuntu" @@%}
-    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-{%@@ endif @@%}
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Disable underlining of paths
 ZSH_HIGHLIGHT_STYLES[path]=none
 ZSH_HIGHLIGHT_STYLES[path_prefix]=none
 
 # Fish-like autosuggestions for zsh
-{%@@ if profile == "schmidma-arch" @@%}
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-{%@@ endif @@%}
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^j' autosuggest-accept
 
 export EDITOR="nvim"
@@ -100,17 +86,15 @@ alias t="task"
 alias ta="task add"
 alias tat="task add due:today"
 
-{%@@ if profile == "schmidma-arch" @@%}
-    alias simrobot="QT_QPA_PLATFORM= XDG_SESSION_TYPE=tty /home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/Penalized.ros2"
-    alias simrobotfull="QT_QPA_PLATFORM= XDG_SESSION_TYPE=tty /home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/TeamHULKs.ros2"
-    alias sim=simrobot
-    alias simfull=simrobotfull
-    alias compile=/home/schmidma/worktree/hulks/nao/scripts/compile
-    alias mate="/home/schmidma/.venv/nao/bin/python3 /home/schmidma/worktree/hulks/nao/tools/mate/run.py"
-    alias rechenknecht="TERM=xterm ssh -X schmidma@rechenknecht.hulks.dev"
-    alias rules="pdf ~/Documents/HULKs/SPL-Rules_2020.pdf"
-    alias neomutt="cd ~/Downloads && neomutt && cd -"
-{%@@ endif @@%}
+alias simrobot="QT_QPA_PLATFORM= XDG_SESSION_TYPE=tty /home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/Penalized.ros2"
+alias simrobotfull="QT_QPA_PLATFORM= XDG_SESSION_TYPE=tty /home/schmidma/worktree/hulks/nao/tools/SimRobot/build/SimRobot /home/schmidma/worktree/hulks/nao/tools/SimRobot/Scenes/TeamHULKs.ros2"
+alias sim=simrobot
+alias simfull=simrobotfull
+alias compile=/home/schmidma/worktree/hulks/nao/scripts/compile
+alias mate="/home/schmidma/.venv/nao/bin/python3 /home/schmidma/worktree/hulks/nao/tools/mate/run.py"
+alias rechenknecht="TERM=xterm ssh -X schmidma@rechenknecht.hulks.dev"
+alias rules="pdf ~/Documents/HULKs/SPL-Rules_2020.pdf"
+alias neomutt="cd ~/Downloads && neomutt && cd -"
 
 # git merge squash
 function gms {
@@ -119,9 +103,9 @@ function gms {
     git commit -m "squashed $trackingBranch"
 }
 
-{%@@ if profile == "schmidma-arch" @@%}
-    # You should use - suggesting abbreviations instead of typed command
-    source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
-{%@@ endif @@%}
+# You should use - suggesting abbreviations instead of typed command
+source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# source fzf completions
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
