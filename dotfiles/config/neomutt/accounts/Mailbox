@@ -1,0 +1,12 @@
+set sendmail        = "/usr/bin/msmtp -a Mailbox"
+
+set realname        = "Maximilian Schmidt"
+set from            = "maximilian@schmidt.so"
+set mbox_type       = Maildir
+set folder          = "~/.mails"
+set spoolfile       = "+Mailbox/INBOX"
+set record          = "+Mailbox/Sent"
+set postponed       = "+Mailbox/Drafts"
+set trash           = "+Mailbox/Trash"
+
+set signature       = "~/.config/neomutt/accounts/Mailbox.signature"

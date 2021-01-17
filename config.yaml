@@ -106,6 +106,10 @@ dotfiles:
     link: link_children
     src: config/offlineimap
     dst: ~/.config/offlineimap
+  d_config_neomutt:
+    link: link_children
+    src: config/neomutt
+    dst: ~/.config/neomutt
   f_config_vdirsyncer_config:
     link: link
     src: config/vdirsyncer/config
@@ -160,6 +164,7 @@ profiles:
     - f_gitconfig
     - d_git-templates
     - d_config_offlineimap
+    - d_config_neomutt
     - f_config_msmtp_config
     - f_notmuch-config
     - f_config_vdirsyncer_config

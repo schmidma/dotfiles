@@ -1,0 +1,18 @@
+# Plain
+text/plain; nvim -c 'set spell spelllang=de,en_us' +Goyo %s
+
+# Documents
+application/pdf; evince %s
+application/x-pdf; evince %s
+application/octet-stream; evince %s
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; freeoffice-textmaker %s >>/dev/null 2>&1 &; needsterminal
+application/vnd.ms-excel; freeoffice-planmaker %s >>/dev/null 2>&1 &; needsterminal
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; freeoffice-planmaker %s >>/dev/null 2>&1 &; needsterminal
+
+# HTML
+text/html; firefox %s;copiousoutput
+
+# Pictures
+image/png; sxiv %s
+image/jpg; sxiv %s
+image/jpeg; sxiv %s
