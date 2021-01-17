@@ -122,6 +122,10 @@ dotfiles:
     link: link
     src: config/msmtp/config
     dst: ~/.config/msmtp/config
+  f_notmuch-config:
+    link: link
+    src: notmuch-config
+    dst: ~/.notmuch-config
 profiles:
   schmidma-arch:
     dotfiles:
@@ -157,6 +161,7 @@ profiles:
     - d_git-templates
     - d_config_offlineimap
     - f_config_msmtp_config
+    - f_notmuch-config
     - f_config_vdirsyncer_config
     - f_config_khard_khard.conf
     - f_config_khal_config
