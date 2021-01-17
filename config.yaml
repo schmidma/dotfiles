@@ -134,24 +134,29 @@ profiles:
   schmidma-arch:
     dotfiles:
     - f_zshrc
-    - f_xinitrc
-    - f_nvidia-xinitrc
-    - f_taskrc
     - d_config_sway
     - d_config_swaylock
     - d_config_waybar
     - d_config_wofi
-    - d_config_termite
     - d_config_nvim
     - d_config_redshift
-    - d_config_i3
     - d_config_rofi
     - d_config_alacritty
     - f_gitconfig
     - d_git-templates
-    - d_config_systemd_user_vdirsyncer.service.d
+    - d_config_offlineimap
+    - d_config_neomutt
+    - f_config_msmtp_config
+    - f_notmuch-config
+    - f_config_vdirsyncer_config
+    - f_config_khard_khard.conf
+    - f_config_khal_config
     - f_config_environment.d_pass.conf
+    - f_config_environment.d_display.conf
     - f_config_environment.d_sway.conf
+    - d_config_systemd_user_vdirsyncer.service.d
+    - d_config_systemd_user_offlineimap-oneshot.service.d
+    - d_config_systemd_user_offlineimap-oneshot.timer.d
   schmidma-tower-arch:
     dotfiles:
     - f_zshrc
