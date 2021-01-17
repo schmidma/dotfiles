@@ -85,17 +85,11 @@ bindsym $mod+Shift+space floating toggle
 # rofi menu
 bindsym $mod+space exec rofi -show
 
-# show password menu
-bindsym $mod+Shift+P exec passmenu
-
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+o focus parent
 
 # focus the child container
-bindsym $mod+d focus child
-
-# bind workspace 3 to external monitor
-workspace 3 output HDMI2
+bindsym $mod+i focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
