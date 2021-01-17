@@ -365,6 +365,9 @@ Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
 "debug coc.nvim
 "let g:coc_node_args = ['--nolazy', '--inspect-brk=6045']
 
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
