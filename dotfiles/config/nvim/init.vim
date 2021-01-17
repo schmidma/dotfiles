@@ -594,6 +594,13 @@ Plug 'kkoomen/vim-doge'
 
 " }}} vim-doge
 
+" -> julia-vim  {{{
+" Vim Support for Julia
+
+Plug 'JuliaEditorSupport/julia-vim'
+
+" }}} julia-vim
+
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
