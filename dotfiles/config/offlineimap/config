@@ -50,7 +50,7 @@ keepalive = 60
 # Automatic mailbox generation for mutt
 [mbnames]
 enabled  = yes
-filename = ~/.config/neomutt/mailboxes
+filename = ~/.cache/offlineimap/mailboxes
 header   = "mailboxes "
 peritem  = "+%(accountname)s/%(foldername)s"
 sep      = " "

@@ -1,6 +1,6 @@
 set folder          = "/home/schmidma/.mails"
 
-source mailboxes
+source ~/.cache/offlineimap/mailboxes
 source accounts/Mailbox
 
 # Speed up folder switch
