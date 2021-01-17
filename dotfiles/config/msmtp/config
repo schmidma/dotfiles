@@ -1,0 +1,23 @@
+defaults
+auth    on
+tls on
+tls_trust_file  /etc/ssl/certs/ca-certificates.crt
+
+# Mailbox
+account Mailbox
+host    smtp.mailbox.org
+port    587
+from    schmidma@mailbox.org
+user    schmidma@mailbox.org
+passwordeval "pass first-line E-Mail/mailbox.org"
+
+
+# TUHH
+account TUHH
+host    mail.tu-harburg.de
+port    587
+from    maximilian.schmidt@tuhh.de
+user    cfa9884
+passwordeval "pass first-line TUHH/TUHH"
+
+account default : Mailbox
