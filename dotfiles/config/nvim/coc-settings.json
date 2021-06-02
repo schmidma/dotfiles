@@ -3,6 +3,8 @@
   "python.jediEnabled": false,
   "clangd.arguments": ["--cross-file-rename"],
   "clangd.semanticHighlighting": false,
+  "codeLens.enable": true,
+  "rust-analyzer.lens.enable": true,
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",
