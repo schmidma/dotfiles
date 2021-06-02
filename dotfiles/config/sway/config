@@ -196,6 +196,11 @@ bindsym --locked Control+Mod1+Down exec playerctl -p spotify play-pause
 bindsym --locked Control+Mod1+Right exec playerctl -p spotify next
 bindsym --locked Control+Mod1+Left exec playerctl -p spotify previous
 
+# fix gtk apps waiting for xdg-desktop-portal
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
 bar {
     swaybar_command waybar
 }
