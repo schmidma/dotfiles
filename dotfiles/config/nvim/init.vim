@@ -31,9 +31,9 @@ source $HOME/.config/nvim/config/plugins/goyo.vim
 source $HOME/.config/nvim/config/plugins/tabular.vim
 source $HOME/.config/nvim/config/plugins/vim-lsp-cxx-highlight.vim
 source $HOME/.config/nvim/config/plugins/nvim-treesitter.vim
+source $HOME/.config/nvim/config/plugins/iswap.vim
 
 Plug 'nvim-treesitter/playground'
-Plug 'mizlan/iswap.nvim'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
