@@ -134,6 +134,9 @@ dotfiles:
     link: link_children
     src: config/nvim/config
     dst: ~/.config/nvim/config
+  f_config_starship.toml:
+    src: config/starship.toml
+    dst: ~/.config/starship.toml
 profiles:
   schmidma-arch:
     dotfiles:
@@ -186,3 +189,4 @@ profiles:
     - d_config_systemd_user_offlineimap-oneshot.service.d
     - d_config_systemd_user_offlineimap-oneshot.timer.d
     - d_config_nvim_config
+    - f_config_starship.toml
