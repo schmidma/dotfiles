@@ -14,3 +14,7 @@
 	defaultBranch = main
 [pull]
 	rebase = true
+[sendemail]
+    smtpserver = /usr/bin/msmtp
+    smtpserveroption = -a
+    smtpserveroption = Mailbox
