@@ -135,14 +135,21 @@ dotfiles:
     src: config/nvim/config
     dst: ~/.config/nvim/config
   f_config_starship.toml:
+    link: link
     src: config/starship.toml
     dst: ~/.config/starship.toml
   f_config_fish_conf.d_starship.fish:
+    link: link
     src: config/fish/conf.d/starship.fish
     dst: ~/.config/fish/conf.d/starship.fish
   f_config_fish_fish_plugins:
+    link: link
     src: config/fish/fish_plugins
     dst: ~/.config/fish/fish_plugins
+  d_config_kitty:
+    link: link_children
+    src: config/kitty
+    dst: ~/.config/kitty
 profiles:
   schmidma-arch:
     dotfiles:
@@ -174,6 +181,7 @@ profiles:
     - f_config_starship.toml
     - f_config_fish_conf.d_starship.fish
     - f_config_fish_fish_plugins
+    - d_config_kitty
   schmidma-tower-arch:
     dotfiles:
     - f_zshrc
@@ -201,3 +209,4 @@ profiles:
     - f_config_starship.toml
     - f_config_fish_conf.d_starship.fish
     - f_config_fish_fish_plugins
+    - d_config_kitty
