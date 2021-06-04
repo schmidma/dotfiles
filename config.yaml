@@ -185,3 +185,4 @@ profiles:
     - d_config_systemd_user_vdirsyncer.service.d
     - d_config_systemd_user_offlineimap-oneshot.service.d
     - d_config_systemd_user_offlineimap-oneshot.timer.d
+    - d_config_nvim_config
