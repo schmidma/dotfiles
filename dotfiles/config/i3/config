@@ -138,45 +138,15 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# lock the screen
-bindsym Control+Mod1+l exec --no-startup-id i3lock -t -i /usr/share/backgrounds/capSanNicolas_blurred.png
-
-# brightness control
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
-
 bindsym XF86AudioMute exec --no-startup-id pulsemixer --toggle-mute
 bindsym XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +5
 bindsym XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5
-bindsym XF86AudioMicMute exec --no-startup-id pulsemixer --id source-1 --toggle-mute
+bindsym $mod+m exec --no-startup-id pactl set-source-mute alsa_input.usb-0c76_USB_PnP_Audio_Device-00.mono-fallback toggle
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl prev
-bindsym Control+Mod1+Down exec playerctl play-pause
-bindsym Control+Mod1+Right exec playerctl next
-bindsym Control+Mod1+Left exec playerctl previous
-
-# mode to select position of external monitor
-mode "external_monitor" {
-        # set names of internal and external devices
-        set $external_monitor HDMI2
-        set $internal_monitor eDP1
-
-        bindsym Left exec xrandr --output $internal_monitor --primary --auto --output $external_monitor --left-of $internal_monitor --auto, mode "default"
-        bindsym Right exec xrandr --output $internal_monitor --primary --auto --output $external_monitor --right-of $internal_monitor --auto, mode "default"
-        bindsym Up exec xrandr --output $internal_monitor --primary --auto --output $external_monitor --above $internal_monitor --auto, mode "default"
-        bindsym Down exec xrandr --output $internal_monitor --primary --auto --output $external_monitor --below $internal_monitor --auto, mode "default"
-        bindsym H exec /home/schmidma/.screenlayout/HULKs.sh, mode "default"
-        bindsym I exec xrandr --output $internal_monitor --primary --auto --output $external_monitor --off, mode "default"
-        bindsym E exec xrandr --output $internal_monitor --primary --off --output $external_monitor --auto, mode "default"
-        bindsym M exec xrandr --output $internal_monitor --primary --auto --output $external_monitor --auto, mode "default"
-        # back to normal: Escape
-        bindsym Escape mode "default"
-}
-bindsym XF86Display mode "external_monitor"
+bindsym Control+Mod1+Down exec playerctl -p spotify play-pause
+bindsym Control+Mod1+Right exec playerctl -p spotify next
+bindsym Control+Mod1+Left exec playerctl -p spotify previous
 
 bindsym $mod+p exec --no-startup-id FILE="/home/schmidma/Pictures/snapshot/snapshot-$(date +%Y-%m-%dT%H-%M-%S).png" && maim -s --hidecursor $FILE && xclip -selection clipboard $FILE -t image/png
 
