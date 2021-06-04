@@ -86,6 +86,9 @@ bindsym $mod+Shift+space floating toggle
 # rofi menu
 bindsym $mod+space exec rofi -show
 
+# neovide
+bindsym $mod+n exec neovide
+
 # focus the parent container
 bindsym $mod+o focus parent
 
