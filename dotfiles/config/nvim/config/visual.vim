@@ -6,6 +6,9 @@ set number relativenumber
 
 set background=dark
 
+" font
+set guifont=Source\ Code\ Pro,Symbols\ Nerd\ Font,Dejavu\ Sans:h24
+
 " Split below and right
 set splitbelow
 set splitright
