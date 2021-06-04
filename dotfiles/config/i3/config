@@ -169,6 +169,4 @@ bar {
     }
 }
 
-exec --no-startup-id feh --bg-fill /usr/share/backgrounds/capSanNicolas.jpg
-
-for_window [class="^.*"] border pixel 0
+exec --no-startup-id feh --bg-fill /usr/share/backgrounds/rice_japan.jpg
