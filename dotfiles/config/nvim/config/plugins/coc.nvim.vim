@@ -40,6 +40,9 @@ nmap <leader>ac  <Plug>(coc-codeaction)
 " quick fix
 nmap <leader>qf <Plug>(coc-fix-current)
 
+" restart coc.nvim
+nmap <silent> <leader>rr :CocRestart<CR>
+
 nmap <silent> <leader>f :call CocActionAsync('format')<CR>
 
 " Use K to show documentation in preview window
