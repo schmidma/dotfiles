@@ -97,6 +97,8 @@ alias mate="/home/schmidma/.venv/nao/bin/python3 /home/schmidma/worktree/hulks/n
 alias rechenknecht="TERM=alacritty ssh schmidma@rechenknecht.hulks.dev"
 alias rules="pdf ~/Documents/HULKs/SPL-Rules_2020.pdf"
 alias neomutt="cd ~/Downloads && neomutt && cd -"
+alias syncmail="systemctl --user start offlineimap-oneshot"
+alias syncdav="systemctl --user start vdirsyncer"
 
 # git merge squash
 function gms {
