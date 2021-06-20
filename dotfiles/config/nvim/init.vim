@@ -12,8 +12,6 @@ call plug#begin()
 source $HOME/.config/nvim/config/plugins/nerdtree.vim
 source $HOME/.config/nvim/config/plugins/vim-airline.vim
 source $HOME/.config/nvim/config/plugins/vim-airline-themes.vim
-source $HOME/.config/nvim/config/plugins/grep.vim
-source $HOME/.config/nvim/config/plugins/vim-trailing-whitespace.vim
 source $HOME/.config/nvim/config/plugins/tagbar.vim
 source $HOME/.config/nvim/config/plugins/clever-f.vim
 source $HOME/.config/nvim/config/plugins/vim-closer.vim
@@ -23,8 +21,6 @@ source $HOME/.config/nvim/config/plugins/nvim-gdb.vim
 source $HOME/.config/nvim/config/plugins/vim-fugitive.vim
 source $HOME/.config/nvim/config/plugins/vim-rhubarb.vim
 source $HOME/.config/nvim/config/plugins/vimtex.vim
-source $HOME/.config/nvim/config/plugins/fzf.vim
-source $HOME/.config/nvim/config/plugins/fzf.vim.vim
 source $HOME/.config/nvim/config/plugins/vim-snippets.vim
 source $HOME/.config/nvim/config/plugins/base16-vim.vim
 source $HOME/.config/nvim/config/plugins/goyo.vim
