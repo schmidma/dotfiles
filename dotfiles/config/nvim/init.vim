@@ -32,6 +32,7 @@ source $HOME/.config/nvim/config/plugins/tabular.vim
 source $HOME/.config/nvim/config/plugins/vim-lsp-cxx-highlight.vim
 source $HOME/.config/nvim/config/plugins/nvim-treesitter.vim
 source $HOME/.config/nvim/config/plugins/iswap.vim
+source $HOME/.config/nvim/config/plugins/telescope.nvim.vim
 
 Plug 'nvim-treesitter/playground'
 
