@@ -41,3 +41,4 @@ call plug#end()            " required
 
 source $HOME/.config/nvim/config/visual.vim
 source $HOME/.config/nvim/config/treesitter.vim
+source $HOME/.config/nvim/config/telescope.nvim.vim
