@@ -3,7 +3,7 @@
 # Modifier key
 set $mod Mod4
 # default terminal
-set $term alacritty
+set $term kitty
 
 # font settings
 font pango: Source Code Pro 11
