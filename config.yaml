@@ -130,10 +130,6 @@ dotfiles:
     link: link
     src: notmuch-config
     dst: ~/.notmuch-config
-  d_config_nvim_config:
-    link: link_children
-    src: config/nvim/config
-    dst: ~/.config/nvim/config
   f_config_starship.toml:
     link: link
     src: config/starship.toml
@@ -177,7 +173,6 @@ profiles:
     - d_config_systemd_user_vdirsyncer.service.d
     - d_config_systemd_user_offlineimap-oneshot.service.d
     - d_config_systemd_user_offlineimap-oneshot.timer.d
-    - d_config_nvim_config
     - f_config_starship.toml
     - f_config_fish_conf.d_starship.fish
     - f_config_fish_fish_plugins
@@ -205,7 +200,6 @@ profiles:
     - d_config_systemd_user_vdirsyncer.service.d
     - d_config_systemd_user_offlineimap-oneshot.service.d
     - d_config_systemd_user_offlineimap-oneshot.timer.d
-    - d_config_nvim_config
     - f_config_starship.toml
     - f_config_fish_conf.d_starship.fish
     - f_config_fish_fish_plugins
