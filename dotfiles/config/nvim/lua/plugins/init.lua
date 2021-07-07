@@ -1,0 +1,107 @@
+local packer = require('packer')
+packer.init {
+  display = {
+    open_fn = require('packer.util').float,
+  },
+  profile = {
+    enable = true
+  }
+}
+packer.startup(function(use)
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
+  -- LSP
+  use 'neovim/nvim-lspconfig'
+  use 'nvim-lua/lsp-status.nvim'
+  use 'onsails/lspkind-nvim'
+  use 'glepnir/lspsaga.nvim'
+  use 'kabouzeid/nvim-lspinstall'
+
+  -- treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function() require('plugins/nvim-treesitter') end
+  }
+
+  -- Autocomplete
+  use {
+    'hrsh7th/nvim-compe',
+    config = function() require('plugins/nvim-compe') end,
+    event = 'InsertEnter *'
+  }
+  use {
+    'hrsh7th/vim-vsnip',
+    config = function() require('plugins/vsnip') end,
+    event = 'InsertEnter *'
+  }
+  use 'hrsh7th/vim-vsnip-integ'
+  use 'rafamadriz/friendly-snippets'
+
+  -- telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
+    config = function() require('telescope').setup{} end
+  }
+
+  -- colorscheme
+  use 'RRethy/nvim-base16'
+  use 'folke/tokyonight.nvim'
+
+  -- surround
+  use 'tpope/vim-surround'
+
+  -- Icons
+  use 'kyazdani42/nvim-web-devicons'
+
+  -- galaxyline
+  use {
+    'glepnir/galaxyline.nvim',
+    config = function() require('plugins/galaxyline') end
+  }
+
+  -- nvim-tree
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
+
+  -- A snazzy bufferline for Neovim
+  use {
+    'akinsho/nvim-bufferline.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require('plugins/nvim-bufferline') end
+  }
+
+  -- A Neovim plugin to improve buffer deletion
+  use 'ojroques/nvim-bufdel'
+
+  -- autopairs for neovim
+  use {
+    'windwp/nvim-autopairs',
+    config = function() require('plugins/nvim-autopairs') end,
+    requires = 'hrsh7th/nvim-compe',
+    after = 'nvim-compe'
+  }
+
+  -- interactively swap elements. Powered by treesitter
+  use {
+    'mizlan/iswap.nvim',
+    cmd = {"ISwap", "ISwapWith"}
+  }
+
+  -- git
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function() require('gitsigns').setup() end
+  }
+  use {
+    'TimUntersberger/neogit',
+    requires = 'nvim-lua/plenary.nvim'
+  }
+
+end
+)
