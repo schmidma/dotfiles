@@ -7,3 +7,26 @@ vim.cmd[[syntax enable]]
 vim.cmd[[colorscheme base16-default-dark]]
 
 vim.api.nvim_command('hi StatusLine guibg=#282828')
+
+vim.lsp.handlers["textDocument/hover"] =
+  vim.lsp.with(
+  vim.lsp.handlers.hover,
+  {
+    border = "single"
+  }
+)
+
+vim.lsp.handlers["textDocument/signatureHelp"] =
+  vim.lsp.with(
+  vim.lsp.handlers.signature_help,
+  {
+    border = "single"
+  }
+)
+
+vim.g.lsp_utils_location_opts = {
+	mode = 'editor',
+}
+vim.g.lsp_utils_symbols_opts = {
+	mode = 'editor',
+}

@@ -49,7 +49,7 @@ dotfiles:
     src: config/termite
     dst: ~/.config/termite
   d_config_nvim:
-    link: link_children
+    link: link
     src: config/nvim
     dst: ~/.config/nvim
     cmpignore:

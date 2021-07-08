@@ -15,14 +15,23 @@ packer.startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'nvim-lua/lsp-status.nvim'
   use 'onsails/lspkind-nvim'
-  use 'glepnir/lspsaga.nvim'
   use 'kabouzeid/nvim-lspinstall'
+  use {
+    'RishabhRD/nvim-lsputils',
+    requires = 'RishabhRD/popfix',
+    config = function() require('plugins/nvim-lsputils') end
+  }
+  use {
+    'simrat39/rust-tools.nvim',
+    config = function() require('rust-tools').setup() end
+  }
 
   -- treesitter
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = function() require('plugins/nvim-treesitter') end
+    config = function() require('plugins/nvim-treesitter') end,
+    requires = 'nvim-treesitter/nvim-treesitter-textobjects'
   }
 
   -- Autocomplete
@@ -43,7 +52,12 @@ packer.startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
-    config = function() require('telescope').setup{} end
+    config = function() require('plugins/nvim-telescope') end
+  }
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make',
+    config = function() require('telescope').load_extension('fzf') end
   }
 
   -- colorscheme
@@ -96,7 +110,7 @@ packer.startup(function(use)
   use {
     'lewis6991/gitsigns.nvim',
     requires = 'nvim-lua/plenary.nvim',
-    config = function() require('gitsigns').setup() end
+    config = function() require('plugins/gitsigns-nvim') end
   }
   use {
     'TimUntersberger/neogit',

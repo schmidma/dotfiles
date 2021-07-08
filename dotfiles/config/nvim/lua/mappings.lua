@@ -15,7 +15,6 @@ map('', 'k', 'gk', { silent = true })
 -- Copy to clipboard in normal, visual, select and operator modes
 map('', '<leader>y', '"+y')
 map('', '<leader>Y', '"+yg_')
-map('', '<leader>yy', '"+yy')
 map('', '<leader>p', '"+p')
 map('', '<leader>P', '"+P')
 
@@ -34,20 +33,23 @@ map('n', '<leader><space>', '<cmd>noh<CR>', { silent = true })
 map('v', '<', '<gv', { silent = true })
 map('v', '>', '>gv', { silent = true })
 
+-- LSP management
+map('n', '<leader>lr', ':LspRestart<CR>', { noremap = true, silent = true})
+map('n', '<leader>li', ':LspInfo<CR>', { noremap = true, silent = true})
+map('n', '<leader>ls', ':LspStart<CR>', { noremap = true, silent = true})
+map('n', '<leader>lt', ':LspStop<CR>', { noremap = true, silent = true})
+
 -- lsp
-map('n', '<leader>rr', '<cmd>LspRestart<CR>')
-map('n', '<leader>ca', '<cmd>lua require("lspsaga.codeaction").code_action()<CR>')
-map('v', '<leader>ca', '<cmd>lua require("lspsaga.codeaction").range_code_action()<CR>')
-map('n', 'gr', '<cmd>lua require("lspsaga.provider").lsp_finder()<CR>')
-map('n', 'K', '<cmd>lua require("lspsaga.hover").render_hover_doc()<CR>')
-map('n', '<C-f>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1)<CR>')
-map('n', '<C-b>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(-1)<CR>')
-map('n', 'ss', '<cmd>lua require("lspsaga.signaturehelp").signature_help()<CR>')
-map('n', '<leader>rn', '<cmd>lua require("lspsaga.rename").rename()<CR>')
-map('n', 'gd', '<cmd>lua require"lspsaga.provider".preview_definition()<CR>')
-map('n', '<leader>[', '<cmd>lua require"lspsaga.diagnostic".lsp_jump_diagnostic_prev()<CR>')
-map('n', '<leader>]', '<cmd>lua require"lspsaga.diagnostic".lsp_jump_diagnostic_next()<CR>')
-map('n', '<leader>d', '<cmd>lua require"lspsaga.diagnostic".show_cursor_diagnostics()<CR>')
+map('n', '<leader>qf', '<cmd>lua vim.lsp.buf.code_action()<CR>')
+map('v', '<leader>qf', '<cmd>lua vim.lsp.buf.range_code_action()<CR>')
+map('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>')
+map('n', 'ss', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
+map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+map('n', '<leader>[', '<cmd>lua vim.lsp.diagnostic.goto_prev({ popup_opts = { border = "single" }})<CR>')
+map('n', '<leader>]', '<cmd>lua vim.lsp.diagnostic.goto_next({ popup_opts = { border = "single" }})<CR>')
+map('n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics({ border = "single" })<CR>')
 map('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>')
 map('n', '<leader><C-i>', '<cmd>ClangdSwitchSourceHeader<CR>', { silent = true })
 
@@ -77,8 +79,11 @@ map('n', '<leader>c', '<cmd>BufDel<CR>', { silent = true })
 map('n', '<C-s>', '<cmd>BufferLinePick<CR>', { silent = true })
 
 -- telescope
-map('n', '<leader>e', '<CMD>Telescope find_files<CR>')
-map('n', '<leader>rg', '<CMD>Telescope live_grep<CR>')
+map('n', '<leader>e', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<cr>]], { noremap = true, silent = true})
+map('n', '<leader>/', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>]], { noremap = true, silent = true})
+map('n', '<leader>rg', [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], { noremap = true, silent = true})
+map('n', '<leader>gb', [[<cmd>lua require('telescope.builtin').git_branches()<cr>]], { noremap = true, silent = true})
+map('n', '<leader>gs', [[<cmd>lua require('telescope.builtin').git_status()<cr>]], { noremap = true, silent = true})
 
 -- iswap
 map('n', 'gs', '<cmd>ISwap<CR>', { silent = true })
