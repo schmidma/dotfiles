@@ -30,3 +30,10 @@ vim.g.lsp_utils_location_opts = {
 vim.g.lsp_utils_symbols_opts = {
 	mode = 'editor',
 }
+
+local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
+
+for type, icon in pairs(signs) do
+  local hl = "LspDiagnosticsSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
