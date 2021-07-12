@@ -81,7 +81,6 @@ local function setup_servers()
       config.cmd = {
         "clangd",
         "--background-index",
-        "--cross-file-rename",
         "--query-driver=/opt/HULKs-OS/*/sysroots/x86_64-pokysdk-linux/usr/bin/x86_64-poky-linux/*"
       }
       config.handlers = lsp_status.extensions.clangd.setup()
