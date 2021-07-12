@@ -65,7 +65,11 @@ packer.startup(function(use)
   use 'folke/tokyonight.nvim'
 
   -- surround
-  use 'tpope/vim-surround'
+  use {
+    "blackCauldron7/surround.nvim",
+    config = function() require "surround".setup {} end
+  }
+
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
