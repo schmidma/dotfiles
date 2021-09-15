@@ -31,6 +31,7 @@ packer.startup(function(use)
   }
 
   -- Autocomplete
+  vim.g.coq_settings = { keymap = {jump_to_mark = '<c-j>'} }
   use {
     'ms-jpq/coq_nvim',
     branch = 'coq',
