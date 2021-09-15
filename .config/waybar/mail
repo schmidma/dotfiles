@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo " Mailbox: $(ls ~/.mails/Mailbox/INBOX/new | wc -l)  TUHH: $(ls ~/.mails/TUHH/INBOX/new | wc -l)"
+

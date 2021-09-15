@@ -1,0 +1,162 @@
+set folder          = "/home/schmidma/.mails"
+
+source ~/.cache/offlineimap/mailboxes
+source accounts/Mailbox
+
+# Speed up folder switch
+set sleep_time = 0
+
+# Load corresponding settings
+folder-hook Mailbox/*   source ~/.config/neomutt/accounts/Mailbox
+folder-hook TUHH/*      source ~/.config/neomutt/accounts/TUHH
+
+# Switch between mailboxes
+macro index,pager <f2> "<change-folder>+Mailbox/INBOX<enter>"
+macro index,pager <f4> "<change-folder>+TUHH/INBOX<enter>"
+
+# Mutt can cache headers of messages so they need to be downloaded just once.
+# This greatly improves speed when opening folders again later.
+set header_cache     = "~/.cache/neomutt/"
+set message_cachedir = "~/.cache/neomutt/"
+
+# Khard commands
+# complete email addresses by pressing the Tab-key in mutt's new mail dialog
+# set query_command= "khard email --search '%s'"
+set query_command= "khard email --parsable '%s'"
+bind editor <Tab> complete-query
+# add email addresses to khard's address book
+macro index,pager A "<pipe-message>khard add-email<return>" "add the sender email address to khard"
+
+# Mutt bindings
+bind index p recall-message
+
+# Print message
+bind index ^P print-message
+
+# Key bindings
+bind index,pager F flag-message
+bind index,pager R group-reply
+
+# Sidebar navigation
+bind index,pager <down>   sidebar-next
+bind index,pager <up>     sidebar-prev
+bind index,pager <right>  sidebar-open
+
+# Moving around
+bind attach,browser,index g noop
+bind attach,browser,index gg first-entry
+bind attach,browser,index G last-entry
+bind pager g  noop
+bind pager gg  top
+bind pager G   bottom
+
+set nm_exclude_tags = "deleted junk"
+set nm_record = yes
+set nm_record_tags = "-inbox sent"
+
+macro index \\\\ "<vfolder-from-query>" "Search mailbox"
+# open a different virtual folder
+bind index,pager X change-vfolder
+# read entire thread of the current message
+bind index,pager + entire-thread
+bind index,pager \` modify-labels
+
+# delete messages
+bind index,pager d noop
+macro index,pager dd "<delete-message>" "Delete a message"
+
+# 'a' shows all messages again (supersedes default <alias> binding)
+macro index a "<limit>~A<Enter>" "view all messages (undo limit)"
+macro index i "<limit>(~N|~F)<Enter>" "view new/flag"
+
+# Mutt Behaviour
+set sig_on_top        = no
+set mime_forward      = ask-yes
+set mime_forward_rest = yes
+set move              = no
+set sort              = 'threads'
+set sort_aux          = 'reverse-last-date-received'
+set sort_re           = yes
+set pager_index_lines = 20
+set quit              = ask-yes
+set fast_reply        = yes
+set include           = yes
+set reverse_name      = yes
+set pager_context     = 3     # number of context lines to show
+set pager_stop        = yes   # don't go to next message automatically
+set menu_scroll       = yes   # scroll in menus
+set tilde             = yes   # show tildes like in vim
+set markers           = no    # no ugly plus signs
+set edit_headers      = yes
+set index_format      = "%Z %{%a %Y-%m-%d %H:%M} » %-20.20F › %s %> [%g]"
+
+# Sidebar
+set sidebar_visible=yes
+set sidebar_divider_char='|'
+set mail_check_stats=yes
+#set sidebar_format='%D%?F? [%F]?%* %?N?%N/?%S '
+set sidebar_format = ' %B%?F? [%F]?%* %?N?%N/?%S '
+# set sidebar_short_path=yes
+set sidebar_delim_chars='/'
+set sidebar_folder_indent=no
+set sidebar_indent_string="  "
+set sidebar_width=30
+set sidebar_sort_method=path
+
+# Ignore all headers
+ignore *
+# Then un-ignore the ones I want to see
+unignore From:
+unignore To:
+unignore Reply-To:
+unignore Mail-Followup-To:
+unignore Subject:
+unignore Date:
+unignore Organization:
+unignore Newsgroups:
+unignore CC:
+unignore BCC:
+unignore X-Mailer:
+unignore User-Agent:
+unignore X-Junked-Because:
+unignore X-SpamProbe:
+unignore X-Virus-hagbard:
+# Now order the visable header lines
+hdr_order From: Subject: To: CC: BCC: Reply-To: Mail-Followup-To: Date: Organization: User-Agent: X-Mailer:
+
+# Set editor and enable spell checking
+set editor="nvim -c 'set spell spelllang=de,en_us' +Goyo"
+
+# View attachments properly.
+set mailcap_path  = ~/.config/neomutt/mailcap
+bind attach <return> view-mailcap
+
+color indicator underline default default
+color index yellow default ~F # flagged messages
+color index brightblue default (~N|~O) # new and unread messages
+
+color tilde cyan default
+color status brightcyan brightblack
+color sidebar_divider brightcyan brightblack
+color sidebar_indicator brightcyan default
+
+color quoted        magenta             default # Quoting Ebene 1
+
+# Color if the attachment is autoviewed
+color   attach_headers     brightgreen     default    "Autoview"
+# Color only the brackets around the headers
+color   attach_headers     yellow    default    "^\\[--"
+color   attach_headers     yellow    default    "--]$"
+# Color GPGME signature checks
+color   body     brightgreen     default    "Good signature from.*"
+color   body     brightred       default    "Bad signature from.*"
+color   body     brightred       default    "BAD signature from.*"
+color   body     brightred       default    "Note: This key has expired!"
+color   body     brightmagenta   default    "Problem signature from.*"
+color   body     brightmagenta   default    "WARNING: This key is not certified with a trusted signature!"
+color   body     brightmagenta   default    "         There is no indication that the signature belongs to the owner."
+color   body     brightmagenta   default    "can't handle these multiple signatures"
+color   body     brightmagenta   default    "signature verification suppressed"
+color   body     brightmagenta   default    "invalid node with packet of type"
+
+source gpgrc

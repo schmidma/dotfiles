@@ -1,0 +1,3 @@
+FILE=~/Pictures/snapshot/snapshot-$(date +'%Y-%m-%dT%H-%M-%S').png
+grim -g "$(slurp)" $FILE
+wl-copy < $FILE

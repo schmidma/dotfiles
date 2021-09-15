@@ -1,0 +1,44 @@
+[calendars]
+[[HULKsCalendar]]
+path = ~/.calendars/HULKs/hulks_shared_by_ploth/
+color = light green
+
+[[MailboxCalendar]]
+path = ~/.calendars/Mailbox/Y2FsOi8vMC8zMQ/
+color = light blue
+
+[[MailboxTUHH]]
+path = ~/.calendars/Mailbox/Y2FsOi8vMC81Ng/
+color = light cyan
+
+[[MailboxKlausuren]]
+path = ~/.calendars/Mailbox/Y2FsOi8vMC81NQ/
+color = light red
+
+[[TUHHRemote]]
+path = ~/.calendars/TUHH/
+color = dark cyan
+
+[sqlite]
+path = ~/.cache/khal/khal.db
+
+[locale]
+local_timezone = Europe/Berlin
+default_timezone = Europe/Berlin
+
+# I really like ISO 8601
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat =  %Y-%m-%d
+longdatetimeformat = %Y-%m-%dT%H:%M
+
+firstweekday = 0
+
+[default]
+default_calendar = MailboxCalendar
+# in agenda/calendar display, shows all days even if there is no event
+show_all_days = True
+
+[view]
+theme = dark

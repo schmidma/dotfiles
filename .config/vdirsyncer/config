@@ -1,0 +1,119 @@
+[general]
+# A folder where vdirsyncer can store some metadata about each pair.
+status_path = "~/.cache/vdirsyncer/"
+
+### Mailbox carddav
+[pair Mailbox]
+a = "MailboxLocal"
+b = "MailboxRemote"
+collections = ["from b"]
+metadata = ["Mailbox"]
+conflict_resolution = "b wins"
+
+[storage MailboxLocal]
+type = "filesystem"
+path = "~/.contacts/Mailbox/"
+fileext = ".vcf"
+
+[storage MailboxRemote]
+type = "carddav"
+url = "https://dav.mailbox.org/carddav/32"
+username = "schmidma@mailbox.org"
+password.fetch = ["command", "pass", "first-line", "E-Mail/mailbox.org"]
+
+
+### Mailbox default
+[pair MailboxCalendar]
+a = "MailboxCalendarLocal"
+b = "MailboxCalendarRemote"
+collections = ["from b"]
+metadata = ["MailboxCalendar", "blue"]
+conflict_resolution = "b wins"
+
+[storage MailboxCalendarLocal]
+type = "filesystem"
+path = "~/.calendars/Mailbox/"
+fileext = ".ics"
+
+[storage MailboxCalendarRemote]
+type = "caldav"
+url = "https://dav.mailbox.org/caldav/Y2FsOi8vMC8zMQ"
+username = "schmidma@mailbox.org"
+password.fetch = ["command", "pass", "first-line", "E-Mail/mailbox.org"]
+
+
+### Mailbox TUHH
+[pair MailboxTUHHCalendar]
+a = "MailboxTUHHCalendarLocal"
+b = "MailboxTUHHCalendarRemote"
+collections = ["from b"]
+metadata = ["MailboxTUHHCalendar", "blue"]
+conflict_resolution = "b wins"
+
+[storage MailboxTUHHCalendarLocal]
+type = "filesystem"
+path = "~/.calendars/Mailbox/"
+fileext = ".ics"
+
+[storage MailboxTUHHCalendarRemote]
+type = "caldav"
+url = "https://dav.mailbox.org/caldav/Y2FsOi8vMC81Ng"
+username = "schmidma@mailbox.org"
+password.fetch = ["command", "pass", "first-line", "E-Mail/mailbox.org"]
+
+
+### Mailbox Klausuren
+[pair MailboxKlausurenCalendar]
+a = "MailboxKlausurenCalendarLocal"
+b = "MailboxKlausurenCalendarRemote"
+collections = ["from b"]
+metadata = ["MailboxKlausurenCalendar", "blue"]
+conflict_resolution = "b wins"
+
+[storage MailboxKlausurenCalendarLocal]
+type = "filesystem"
+path = "~/.calendars/Mailbox/"
+fileext = ".ics"
+
+[storage MailboxKlausurenCalendarRemote]
+type = "caldav"
+url = "https://dav.mailbox.org/caldav/Y2FsOi8vMC81NQ"
+username = "schmidma@mailbox.org"
+password.fetch = ["command", "pass", "first-line", "E-Mail/mailbox.org"]
+
+
+### TUHH intranet
+[pair TUHHCalendar]
+a = "TUHHCalendarLocal"
+b = "TUHHCalendarRemote"
+collections = null
+metadata = ["TUHHCalendar", "blue"]
+
+[storage TUHHCalendarLocal]
+type = "filesystem"
+path = "~/.calendars/TUHH/"
+fileext = ".ics"
+
+[storage TUHHCalendarRemote]
+type = "http"
+url = "https://intranet.tuhh.de/ical/cal_abo.ics?xsem=W19&id=bcaf22feb2ea09682d4dc406295cc12f"
+
+
+### HULKs
+[pair HULKsCalendar]
+a = "HULKsCalendarLocal"
+b = "HULKsCalendarRemote"
+collections = ["from b"]
+metadata = ["HULKsCalendar", "green"]
+conflict_resolution = "b wins"
+
+[storage HULKsCalendarLocal]
+type = "filesystem"
+path = "~/.calendars/HULKs/"
+fileext = ".ics"
+
+[storage HULKsCalendarRemote]
+type = "caldav"
+url = "https://nextcloud.hulks.dev/remote.php/dav/calendars/schmidma/hulks_shared_by_ploth/"
+username = "schmidma"
+password.fetch = ["command", "pass", "first-line", "HULKs/Nextcloud HULKs"]

@@ -1,0 +1,128 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: MesloLGSDZ Nerd Font;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: rgba(18, 18, 18, 0.8);
+  color: #d8d8d8;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#window {
+  padding: 0 15px;
+}
+
+window#waybar.empty {
+    background-color: transparent;
+}
+/*
+window#waybar.solo {
+    background-color: #FFFFFF;
+}
+*/
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button:hover {
+  background: inherit;
+  text-shadow: inherit;
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  border-bottom: 2px solid rgba(58, 58, 58, 0.5);
+  color: #b8b8b8;
+}
+
+#workspaces button.focused {
+  color: #d8d8d8;
+  background-color: #282828;
+  border-bottom: 2px solid #7cafc2;
+}
+
+#workspaces button.urgent {
+  background-color: #ab4642;
+}
+
+#workspaces button.visible {
+  color: #d8d8d8;
+  background-color: #282828;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#custom-vpn,
+#custom-mail,
+#idle_inhibitor {
+  padding: 0 5px;
+  margin: 0 4px;
+  background-color: transparent;
+  border-bottom: 2px solid #f7ca88;
+  color: #d8d8d8;
+}
+
+#mode {
+  background-color: #fcafc2;
+  color: #181818;
+}
+
+#pulseaudio,
+#clock,
+#tray,
+#cpu {
+  border-bottom: transparent;
+}
+
+#battery {
+  border-bottom: 2px solid #7cafc2;
+}
+
+#battery.charging {
+  border-bottom: 2px solid #a1b56c;
+}
+
+#battery.critical:not(.charging) {
+  border-bottom: 2px solid #ab4642;
+}
+
+label:focus {
+  background-color: #d8d8d8;
+}
+
+#network.disconnected {
+  border-bottom: 2px solid #ab4642;
+}
+
+#pulseaudio {
+  min-width: 55px;
+}
+
+#pulseaudio.bluetooth {
+  border-bottom: 2px solid #1a8cff;
+}
+
+#pulseaudio.muted {
+  border-bottom: 2px solid #ab4642;
+}
+
+#custom-spotify {
+    margin: 0 10px;
+    border-bottom: 2px solid #A1B56C;
+}
