@@ -32,17 +32,14 @@ packer.startup(function(use)
 
   -- Autocomplete
   use {
-    'hrsh7th/nvim-compe',
-    config = function() require('plugins/nvim-compe') end,
-    event = 'InsertEnter *'
+    'ms-jpq/coq_nvim',
+    branch = 'coq',
+    config = function() require('coq').Now('--shut-up') end,
   }
-  use {
-    'hrsh7th/vim-vsnip',
-    config = function() require('plugins/vsnip') end,
-    event = 'InsertEnter *'
-  }
-  use 'hrsh7th/vim-vsnip-integ'
-  use 'rafamadriz/friendly-snippets'
+  -- 9000+ Snippets
+  use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+  -- Third party sources -- See https://github.com/ms-jpq/coq.thirdparty
+  use {'ms-jpq/coq.thirdparty', branch = '3p'}
 
   -- telescope
   use {
