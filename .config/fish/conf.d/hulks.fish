@@ -1,0 +1,5 @@
+alias mate  "~/.venv/nao/bin/python ~/worktree/hulks/nao/tools/mate/run.py"
+alias simrobot  "~/worktree/hulks/nao/tools/SimRobot/build/SimRobot"
+alias sim  "~/worktree/hulks/nao/tools/SimRobot/build/SimRobot ./tools/SimRobot/Scenes/Penalized.ros2"
+alias simfull  "~/worktree/hulks/nao/tools/SimRobot/build/SimRobot ./tools/SimRobot/Scenes/TeamHULKs.ros2"
+alias compile "~/worktree/hulks/nao/scripts/compile"
