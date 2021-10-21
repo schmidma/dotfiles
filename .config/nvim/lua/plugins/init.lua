@@ -31,16 +31,11 @@ packer.startup(function(use)
   }
 
   -- Autocomplete
-  vim.g.coq_settings = { keymap = {jump_to_mark = '<c-j>'} }
   use {
-    'ms-jpq/coq_nvim',
-    branch = 'coq',
-    config = function() require('coq').Now('--shut-up') end,
+    'hrsh7th/nvim-cmp',
+    config = function() require('plugins/nvim-cmp') end,
+    requires = {'hrsh7th/cmp-nvim-lsp', 'saadparwaiz1/cmp_luasnip', 'L3MON4D3/LuaSnip'}
   }
-  -- 9000+ Snippets
-  use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
-  -- Third party sources -- See https://github.com/ms-jpq/coq.thirdparty
-  use {'ms-jpq/coq.thirdparty', branch = '3p'}
 
   -- telescope
   use {
@@ -99,8 +94,8 @@ packer.startup(function(use)
   use {
     'windwp/nvim-autopairs',
     config = function() require('plugins/nvim-autopairs') end,
-    requires = 'hrsh7th/nvim-compe',
-    after = 'nvim-compe'
+    requires = 'hrsh7th/nvim-cmp',
+    after = 'nvim-cmp'
   }
 
   -- interactively swap elements. Powered by treesitter
