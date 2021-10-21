@@ -11,7 +11,7 @@ packer.startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'nvim-lua/lsp-status.nvim'
   use 'onsails/lspkind-nvim'
-  use 'kabouzeid/nvim-lspinstall'
+  use 'williamboman/nvim-lsp-installer'
   use {
     'RishabhRD/nvim-lsputils',
     requires = 'RishabhRD/popfix',
