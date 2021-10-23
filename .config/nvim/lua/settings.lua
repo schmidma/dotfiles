@@ -21,5 +21,3 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.spelllang = "en,de"
 opt.updatetime = 300
--- Don't pass messages to |ins-completion-menu|
-vim.cmd('set shortmess+=c')
