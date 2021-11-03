@@ -25,7 +25,7 @@ set $screenclip ~/.config/sway/screenshot
 set $menu wofi
 
 # Output configuration
-output * bg /usr/share/backgrounds/capSanNicolas.jpg fill
+output * bg /usr/share/backgrounds/hulks_wall.png fill
 
 set $base00 #181818
 set $base01 #282828
