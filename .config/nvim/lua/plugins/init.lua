@@ -112,7 +112,7 @@ packer.startup(function(use)
     'windwp/nvim-autopairs',
     config = function() require('plugins/nvim-autopairs') end,
     requires = 'hrsh7th/nvim-cmp',
-    after = 'nvim-cmp'
+    before = 'nvim-cmp'
   }
 
   -- interactively swap elements. Powered by treesitter
