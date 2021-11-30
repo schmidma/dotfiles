@@ -59,7 +59,6 @@ packer.startup(function(use)
 
   -- colorscheme
   use 'RRethy/nvim-base16'
-  use 'folke/tokyonight.nvim'
 
   -- surround
   use {
