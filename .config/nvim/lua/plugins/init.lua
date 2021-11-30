@@ -13,11 +13,6 @@ packer.startup(function(use)
   use 'onsails/lspkind-nvim'
   use 'williamboman/nvim-lsp-installer'
   use {
-    'RishabhRD/nvim-lsputils',
-    requires = 'RishabhRD/popfix',
-    config = function() require('plugins/nvim-lsputils') end
-  }
-  use {
     'simrat39/rust-tools.nvim',
     config = function() require('plugins/rust-tools') end
   }
