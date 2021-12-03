@@ -79,6 +79,7 @@ map_telescope('<leader>/', 'current_buffer_fuzzy_find')
 map_telescope('<leader>rg', 'live_grep')
 map_telescope('<leader>gb', 'git_branches')
 map_telescope('<leader>gs', 'git_status')
+map('n', '<leader>ga', [[<cmd>lua require('telescope').extensions.githubcoauthors.coauthors()<CR>]])
 
 -- iswap
 map('n', 'gs', '<cmd>ISwap<CR>')

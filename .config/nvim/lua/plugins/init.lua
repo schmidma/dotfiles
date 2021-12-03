@@ -56,6 +56,11 @@ packer.startup(function(use)
     run = 'make',
     config = function() require('telescope').load_extension('fzf') end
   }
+  use {
+    'cwebster2/github-coauthors.nvim',
+    requires = {'nvim-telescope/telescope.nvim'},
+    config = function() require('telescope').load_extension('githubcoauthors') end,
+  }
 
   -- colorscheme
   use 'RRethy/nvim-base16'
