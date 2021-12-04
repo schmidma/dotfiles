@@ -24,6 +24,7 @@ packer.startup(function(use)
     config = function() require('plugins/nvim-treesitter') end,
     requires = 'nvim-treesitter/nvim-treesitter-textobjects'
   }
+  use 'nvim-treesitter/playground'
 
   -- Autocomplete
   use {
