@@ -96,7 +96,7 @@ fileext = ".ics"
 
 [storage TUHHCalendarRemote]
 type = "http"
-url = "https://intranet.tuhh.de/ical/cal_abo.ics?xsem=W19&id=bcaf22feb2ea09682d4dc406295cc12f"
+url = "https://e-learning.tuhh.de/studip/dispatch.php/ical/index/TkhhrZkj"
 
 
 ### HULKs
