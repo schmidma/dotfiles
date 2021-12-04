@@ -125,7 +125,7 @@ unignore X-Virus-hagbard:
 hdr_order From: Subject: To: CC: BCC: Reply-To: Mail-Followup-To: Date: Organization: User-Agent: X-Mailer:
 
 # Set editor and enable spell checking
-set editor="nvim -c 'set spell spelllang=de,en_us' +Goyo"
+set editor="nvim -c 'set spell spelllang=de,en_us'"
 
 # View attachments properly.
 set mailcap_path  = ~/.config/neomutt/mailcap

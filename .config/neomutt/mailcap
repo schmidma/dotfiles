@@ -1,5 +1,5 @@
 # Plain
-text/plain; nvim -c 'set spell spelllang=de,en_us' +Goyo %s
+text/plain; nvim -c 'set spell spelllang=de,en_us' %s
 
 # Documents
 application/pdf; evince %s
