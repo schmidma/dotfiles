@@ -21,4 +21,3 @@ opt.ignorecase = true
 opt.smartcase = true
 opt.spelllang = "en,de"
 opt.updatetime = 300
-opt.wrap = false
