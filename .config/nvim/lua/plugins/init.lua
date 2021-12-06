@@ -143,5 +143,9 @@ packer.startup(function(use)
     config = function() require('plugins/gitsigns-nvim') end
   }
   use {'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim'}
+  use {
+    'f-person/git-blame.nvim',
+    config = function() vim.g.gitblame_enabled = 0 end
+  }
 
 end)
