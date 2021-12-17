@@ -102,10 +102,11 @@ packer.startup(function(use)
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
 
-  -- galaxyline
+  -- lualine.nvim
   use {
-    'glepnir/galaxyline.nvim',
-    config = function() require('plugins/galaxyline') end
+    'nvim-lualine/lualine.nvim',
+    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    config = function() require('plugins/lualine') end,
   }
 
   -- nvim-tree
