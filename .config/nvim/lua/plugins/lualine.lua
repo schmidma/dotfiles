@@ -74,6 +74,7 @@ require('lualine').setup {
       {
         'filename',
         path = 1,
+        symbols = { modified = ' ', readonly = ' ' },
       }
     },
     lualine_x = {"require'lsp-status'.status()"},
@@ -87,6 +88,7 @@ require('lualine').setup {
       {
         'filename',
         path = 1,
+        symbols = { modified = ' ', readonly = ' ' },
       }
     },
     lualine_x = {},
