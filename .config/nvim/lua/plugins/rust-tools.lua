@@ -93,7 +93,19 @@ local opts = {
   -- all the opts to send to nvim-lspconfig
   -- these override the defaults set by rust-tools.nvim
   -- see https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#rust_analyzer
-  server = {} -- rust-analyer options
+  server = {
+    standalone = true,
+    settings = {
+      ["rust-analyzer"] = {
+        cargo = {
+          allFeatures = true
+        },
+        assist = {
+          importEnforceGranularity = true
+        }
+      }
+    }
+  } -- rust-analyer options
 }
 
 require('rust-tools').setup(opts)
