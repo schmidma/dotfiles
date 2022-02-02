@@ -1,4 +1,4 @@
-set folder          = "/home/schmidma/.mails"
+set folder          = "/home/maximilian/.mails"
 
 source ~/.cache/offlineimap/mailboxes
 source accounts/Mailbox
