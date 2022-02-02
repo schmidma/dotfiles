@@ -1,5 +1,5 @@
 [general]
-accounts = Mailbox, TUHH
+accounts = Mailbox, TUHH, TUDelft
 maxsyncaccounts = 1
 sockettimeout = 10
 pythonfile = ~/.config/offlineimap/get_credentials.py
@@ -43,6 +43,27 @@ sslcacertfile = OS-DEFAULT
 remotehost = mail.tu-harburg.de
 remoteuser = cfa9884
 remotepasseval = get_credentials("TUHH")
+remoteport = 993
+holdconnectionopen = yes
+keepalive = 60
+
+[Account TUDelft]
+localrepository = LocalTUDelft
+remoterepository = RemoteTUDelft
+quick = 10
+postsynchook = ~/.config/offlineimap/notmuch-postsynchook.sh
+
+[Repository LocalTUDelft]
+type = Maildir
+localfolders = ~/.mails/TUDelft/
+
+[Repository RemoteTUDelft]
+type = IMAP
+ssl = yes
+sslcacertfile = OS-DEFAULT
+remotehost = imap.tudelft.nl
+remoteuser = msschmidt@tudelft.net
+remotepasseval = get_credentials("TUDelft")
 remoteport = 993
 holdconnectionopen = yes
 keepalive = 60

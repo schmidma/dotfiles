@@ -31,7 +31,7 @@ path=/home/maximilian/.mails
 [user]
 name=Maximilian Schmidt
 primary_email=maximilian@schmidt.so
-other_email=maximilian.schmidt@tuhh.de;schmidma@mailbox.org;
+other_email=maximilian.schmidt@tuhh.de;schmidma@mailbox.org;msschmidt@tudelft.nl;
 
 # Configuration for "notmuch new"
 #

@@ -9,9 +9,11 @@ set sleep_time = 0
 # Load corresponding settings
 folder-hook Mailbox/*   source ~/.config/neomutt/accounts/Mailbox
 folder-hook TUHH/*      source ~/.config/neomutt/accounts/TUHH
+folder-hook TUDelft/*      source ~/.config/neomutt/accounts/TUDelft
 
 # Switch between mailboxes
 macro index,pager <f2> "<change-folder>+Mailbox/INBOX<enter>"
+macro index,pager <f3> "<change-folder>+TUDelft/INBOX<enter>"
 macro index,pager <f4> "<change-folder>+TUHH/INBOX<enter>"
 
 # Mutt can cache headers of messages so they need to be downloaded just once.

@@ -1,7 +1,9 @@
 import subprocess
 
 def get_credentials(account):
-    if account == "TUHH":
+    if account == "TUDelft":
+        path = "TUDelft/TUDelft"
+    elif account == "TUHH":
         path = "TUHH/TUHH"
     elif account == "Mailbox":
         path = "E-Mail/mailbox.org"
