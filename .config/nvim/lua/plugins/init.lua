@@ -89,13 +89,11 @@ packer.startup(function(use)
     "blackCauldron7/surround.nvim",
     config = function() require"surround".setup {} end
   }
-  -- kommentary
+  -- Comment.nvim
   use {
-    'b3nj5m1n/kommentary',
+    'numToStr/Comment.nvim',
     config = function()
-      require('kommentary.config').configure_language("default", {
-        prefer_single_line_comments = true
-      })
+        require('Comment').setup()
     end
   }
 
