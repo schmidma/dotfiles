@@ -6,48 +6,27 @@ lsp_status.config {
   current_function = false
 }
 
+-- set rounded borders by default
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or 'rounded'
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 local lsp_installer = require("nvim-lsp-installer")
-
 lsp_installer.on_server_ready(function(server)
-  local default_opts = {}
-
-	local server_opts = {
-		["clangd"] = function()
-			default_opts.cmd = {
-				vim.fn.stdpath("data") .. "/lsp_servers/clangd/clangd",
-				"--background-index",
-				"--query-driver=/opt/HULKs-OS/*/sysroots/x86_64-pokysdk-linux/usr/bin/x86_64-poky-linux/*"
-			}
-			return default_opts
-		end,
-	}
-
-	-- We check to see if any custom server_opts exist for the LSP server, if so, load them, if not, use our default_opts
-	server:setup(server_opts[server.name] and server_opts[server.name]() or default_opts)
+	server:setup({})
 	vim.cmd([[ do User LspAttachBuffers ]])
 end)
 
-local servers = require "nvim-lsp-installer.servers"
-local server = require "nvim-lsp-installer.server"
-local shell = require "nvim-lsp-installer.installers.shell"
-
-local server_name = "julials"
-local root_dir = server.get_server_root_path(server_name)
-
-local juliaserver = server.Server:new{
-    name = server_name,
-    root_dir = root_dir,
-    homepage = "https://github.com/julia-vscode/LanguageServer.jl",
-    installer = shell.bash [[ julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")' ]],
-    default_options = {}
-}
-
--- overload the uninstall method
-function juliaserver:uninstall()
-  shell.bash[[ julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.remove("LanguageServer")' ]]
+local lspconfig_win = require('lspconfig.ui.windows')
+local _default_opts = lspconfig_win.default_opts
+lspconfig_win.default_opts = function(options)
+  local opts = _default_opts(options)
+  opts.border = 'single'
+  return opts
 end
-
-servers.register(juliaserver)
 
 -- fancy symbols
 require('lspkind').init {}
