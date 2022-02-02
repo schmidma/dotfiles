@@ -3,7 +3,7 @@
 # Modifier key
 set $mod Mod4
 # default terminal
-set $term kitty
+set $term alacritty
 
 # font settings
 font pango: FiraCode Nerd Font 11
