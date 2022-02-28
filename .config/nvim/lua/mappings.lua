@@ -81,6 +81,11 @@ map_telescope('<leader>gb', 'git_branches')
 map_telescope('<leader>gs', 'git_status')
 map('n', '<leader>ga', [[<cmd>lua require('telescope').extensions.githubcoauthors.coauthors()<CR>]])
 
+-- gitsigns
+map('n', '<leader>hr', '<cmd>Gitsigns reset_hunk<CR>')
+map('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>')
+map('n', '<leader>bl', '<cmd>Gitsigns blame_line<CR>')
+
 -- iswap
 map('n', 'gs', '<cmd>ISwap<CR>')
 
