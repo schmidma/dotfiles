@@ -85,10 +85,7 @@ packer.startup(function(use)
   use 'RRethy/nvim-base16'
 
   -- surround
-  use {
-    "blackCauldron7/surround.nvim",
-    config = function() require"surround".setup {} end
-  }
+  use 'machakann/vim-sandwich'
   -- Comment.nvim
   use {
     'numToStr/Comment.nvim',
