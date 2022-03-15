@@ -76,9 +76,9 @@
         "critical": 15
     },
     "bat": "BAT0",
-    "format": "{icon} {capacity}% ({time})",
-    "format-charging": " {capacity}% ({time})",
-    "format-icons": ["", "", "", "", ""]
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "]
   },
   "battery#ext": {
     "interval": 8,
@@ -87,9 +87,9 @@
         "critical": 15
     },
     "bat": "BAT1",
-    "format": "{icon} {capacity}% ({time})",
-    "format-charging": " {capacity}% ({time})",
-    "format-icons": ["", "", "", "", ""]
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-icons": [" ", " ", " ", " ", " "]
   },
   "pulseaudio": {
     "tooltip": false,
