@@ -15,7 +15,7 @@ set $up k
 set $right l
 
 # terminal emulator
-set $term kitty
+set $term alacritty
 
 # locking application
 set $lock swaylock
