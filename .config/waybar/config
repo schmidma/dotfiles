@@ -13,7 +13,7 @@
   },
   "clock": {
     "tooltip": false,
-    "format": "{:%a, %b %d %Y %I:%M%P}"
+    "format": "{:%a, %b %d %Y %H:%M}"
   },
   "sway/workspaces": {
     "disable-scroll": true,
@@ -113,7 +113,7 @@
   },
   "clock": {
     "tooltip": false,
-    "format": "{:%a, %b %d %Y %I:%M%P}"
+    "format": "{:%a, %b %d %Y %H:%M}"
   },
   "sway/workspaces": {
     "disable-scroll": true,
