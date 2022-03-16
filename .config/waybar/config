@@ -34,18 +34,11 @@
   // Choose the order of the modules
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["custom/spotify"],
-  "modules-right": ["network#wifi", "network#eth", "custom/vpn", "idle_inhibitor", "battery#int", "battery#ext", "pulseaudio", "custom/mail", "clock", "tray"],
+  "modules-right": ["network#wifi", "network#eth", "custom/vpn", "battery#int", "battery#ext", "pulseaudio", "custom/mail", "clock", "tray"],
   // Module config
   "sway/mode": {
     "tooltip": false,
     "format": "<span weight=\"bold\">{}</span>"
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    }
   },
   "network#wifi": {
     "interface": "wlp3s0", // (Optional) To force the use of this interface
