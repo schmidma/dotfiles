@@ -19,7 +19,7 @@ fileext = ".vcf"
 type = "carddav"
 url = "https://dav.mailbox.org/carddav/32"
 username = "schmidma@mailbox.org"
-password.fetch = ["command", "pass", "first-line", "E-Mail/mailbox.org"]
+password.fetch = ["command", "bash", "-c", "pass E-Mail/mailbox.org | head -n 1"]
 
 
 ### Mailbox default
@@ -39,7 +39,7 @@ fileext = ".ics"
 type = "caldav"
 url = "https://dav.mailbox.org/caldav/Y2FsOi8vMC8zMQ"
 username = "schmidma@mailbox.org"
-password.fetch = ["command", "pass", "first-line", "E-Mail/mailbox.org"]
+password.fetch = ["command", "bash", "-c", "pass E-Mail/mailbox.org | head -n 1"]
 
 
 ### Mailbox TUHH
@@ -59,7 +59,7 @@ fileext = ".ics"
 type = "caldav"
 url = "https://dav.mailbox.org/caldav/Y2FsOi8vMC81Ng"
 username = "schmidma@mailbox.org"
-password.fetch = ["command", "pass", "first-line", "E-Mail/mailbox.org"]
+password.fetch = ["command", "bash", "-c", "pass E-Mail/mailbox.org | head -n 1"]
 
 
 ### Mailbox Klausuren
@@ -79,7 +79,7 @@ fileext = ".ics"
 type = "caldav"
 url = "https://dav.mailbox.org/caldav/Y2FsOi8vMC81NQ"
 username = "schmidma@mailbox.org"
-password.fetch = ["command", "pass", "first-line", "E-Mail/mailbox.org"]
+password.fetch = ["command", "bash", "-c", "pass E-Mail/mailbox.org | head -n 1"]
 
 
 ### TUHH intranet
@@ -116,4 +116,4 @@ fileext = ".ics"
 type = "caldav"
 url = "https://nextcloud.hulks.dev/remote.php/dav/calendars/schmidma/hulks_shared_by_ploth/"
 username = "schmidma"
-password.fetch = ["command", "pass", "first-line", "HULKs/Nextcloud HULKs"]
+password.fetch = ["command", "bash", "-c", "pass HULKs/Nextcloud\\ HULKs | head -n 1"]

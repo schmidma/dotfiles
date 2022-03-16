@@ -7,5 +7,5 @@ def get_credentials(account):
         path = "TUHH/TUHH"
     elif account == "Mailbox":
         path = "E-Mail/mailbox.org"
-    return subprocess.check_output(["/usr/bin/pass", "first-line", path]).strip()
+    return subprocess.check_output(["bash", "-c", f"/usr/bin/pass {path} | head -n 1"]).strip()
 
