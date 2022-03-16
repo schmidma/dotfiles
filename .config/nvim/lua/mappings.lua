@@ -73,6 +73,7 @@ map('n', '<C-s>', '<cmd>BufferLinePick<CR>')
 -- telescope
 map_telescope('<leader>qf', 'lsp_code_actions')
 map_telescope('gd', 'lsp_definitions')
+map_telescope('gt', 'lsp_type_definitions')
 map_telescope('gr', 'lsp_references')
 map_telescope('<leader>e', 'find_files')
 map_telescope('<leader>/', 'current_buffer_fuzzy_find')
