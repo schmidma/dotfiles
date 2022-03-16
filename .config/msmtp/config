@@ -9,7 +9,7 @@ host    smtp.mailbox.org
 port    587
 from    schmidma@mailbox.org
 user    schmidma@mailbox.org
-passwordeval "pass first-line E-Mail/mailbox.org"
+passwordeval "/usr/bin/pass first-line E-Mail/mailbox.org"
 
 
 # TUHH
@@ -18,6 +18,15 @@ host    mail.tu-harburg.de
 port    587
 from    maximilian.schmidt@tuhh.de
 user    cfa9884
-passwordeval "pass first-line TUHH/TUHH"
+passwordeval "/usr/bin/pass first-line TUHH/TUHH"
+
+# TUD
+account TUDelft
+tls_starttls    off
+host    smtp-a.tudelft.nl
+port    465
+from    m.s.schmidt@tudelft.nl
+user    msschmidt@tudelft.net
+passwordeval "/usr/bin/pass first-line TUDelft/TUDelft"
 
 account default : Mailbox
