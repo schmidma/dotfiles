@@ -89,6 +89,8 @@ bindsym $mod+space exec rofi -show
 # neovide
 bindsym $mod+n exec neovide
 
+bindsym Control+Mod1+L exec i3lock -i /usr/share/backgrounds/lofoten_blurred.png
+
 # focus the parent container
 bindsym $mod+o focus parent
 
