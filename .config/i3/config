@@ -164,9 +164,8 @@ for_window [class="Makie"] floating enable
 # finds out, if available)
 bar {
     position top
-	status_command i3blocks -c ~/.config/i3/i3blocks_top.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks_top.conf
     tray_output primary
-    height 32
     colors {
         background $base00
 
