@@ -155,6 +155,9 @@ bindsym XF86AudioPrev exec playerctl -p spotify previous
 
 bindsym $mod+p exec --no-startup-id FILE="/home/maximilian/Pictures/snapshot/snapshot-$(date +%Y-%m-%dT%H-%M-%S).png" && maim -s --hidecursor $FILE && xclip -selection clipboard $FILE -t image/png
 
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
 for_window [class="Makie"] floating enable
 
 # Start i3bar to display a workspace bar (plus the system information i3status
