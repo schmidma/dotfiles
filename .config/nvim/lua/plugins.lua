@@ -105,7 +105,7 @@ packer.startup(function(use)
 
 	-- A snazzy bufferline for Neovim
 	use({
-		"akinsho/nvim-bufferline.lua",
+		"akinsho/bufferline.nvim",
 		requires = "kyazdani42/nvim-web-devicons",
 	})
 
