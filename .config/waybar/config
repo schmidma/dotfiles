@@ -131,7 +131,7 @@
   },
   "custom/mail": {
     "interval": 4,
-    "format": "{}",
+    "format": " {}",
     "tooltip": false,
     "exec": "$HOME/.config/waybar/mail"
   }
