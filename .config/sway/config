@@ -175,9 +175,7 @@ bindsym XF86Display exec --no-startup-id wdisplays
 # Lock
 bindsym Control+Mod1+l exec --no-startup-id $lock
 
-exec swayidle -w \
-        resume 'swaymsg "output * dpms on"' \
-        before-sleep '$lock -f'
+exec swayidle -w before-sleep 'swaylock -f'
 
 # Backlight control
 bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
