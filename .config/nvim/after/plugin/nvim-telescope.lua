@@ -1,10 +1,6 @@
 local telescope = require("telescope")
 telescope.setup({
 	pickers = {
-		lsp_code_actions = {
-			theme = "cursor",
-			initial_mode = "normal",
-		},
 		lsp_definitions = {
 			theme = "dropdown",
 			initial_mode = "normal",
@@ -29,13 +25,13 @@ telescope.setup({
 
 -- extensions
 telescope.load_extension("githubcoauthors")
+telescope.load_extension("ui-select")
 
 -- mappings
 local nmap = require("keymap").nmap
 
 local builtin = require("telescope.builtin")
 
-nmap("<leader>qf", builtin.lsp_code_actions)
 nmap("gd", builtin.lsp_definitions)
 nmap("gt", builtin.lsp_type_definitions)
 nmap("gr", builtin.lsp_references)

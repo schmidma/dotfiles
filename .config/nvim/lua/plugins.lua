@@ -58,7 +58,7 @@ packer.startup(function(use)
 	-- telescope
 	use({
 		"nvim-telescope/telescope.nvim",
-		requires = { "nvim-lua/popup.nvim", "nvim-lua/plenary.nvim" },
+		requires = { "nvim-lua/plenary.nvim" },
 	})
 	use({
 		"nvim-telescope/telescope-fzf-native.nvim",
@@ -69,6 +69,10 @@ packer.startup(function(use)
 	})
 	use({
 		"cwebster2/github-coauthors.nvim",
+		requires = { "nvim-telescope/telescope.nvim" },
+	})
+	use({
+		"nvim-telescope/telescope-ui-select.nvim",
 		requires = { "nvim-telescope/telescope.nvim" },
 	})
 

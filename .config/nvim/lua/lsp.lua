@@ -50,6 +50,7 @@ nmap("<leader>li", ":LspInfo<CR>")
 nmap("<leader>ls", ":LspStart<CR>")
 nmap("<leader>lt", ":LspStop<CR>")
 -- commands
+nmap("<leader>qf", vim.lsp.buf.code_action)
 nmap("K", vim.lsp.buf.hover)
 nmap("si", vim.lsp.buf.signature_help)
 nmap("<leader>rn", vim.lsp.buf.rename)
