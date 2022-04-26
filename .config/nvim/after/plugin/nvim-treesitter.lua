@@ -11,7 +11,7 @@ require("nvim-treesitter.configs").setup({
 			"--smart-case",
 		},
 	},
-	ensure_installed = "maintained",
+	ensure_installed = "all",
 	highlight = { enable = true },
 	indent = { enable = true },
 	textobjects = {
