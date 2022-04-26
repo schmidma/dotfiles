@@ -18,7 +18,7 @@ host    mail.tu-harburg.de
 port    587
 from    maximilian.schmidt@tuhh.de
 user    cfa9884
-passwordeval "/usr/bin/pass first-line TUHH/TUHH"
+passwordeval "/usr/bin/pass TUHH/TUHH | head -n 1"
 
 # TUD
 account TUDelft
