@@ -79,6 +79,14 @@ packer.startup(function(use)
 	-- colorscheme
 	use("RRethy/nvim-base16")
 
+  -- notifications
+	use({
+		"rcarriga/nvim-notify",
+		config = function()
+      vim.notify = require("notify")
+		end,
+	})
+
 	-- surround
 	use("machakann/vim-sandwich")
 	-- Comment.nvim
