@@ -7,7 +7,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 -- must be loaded before any other lua plugins
-require("impatient").enable_profile()
+require("impatient")
 
 require("plugins")
 require("keymap")
