@@ -98,7 +98,10 @@ packer.startup(function(use)
 	})
 
   -- indent-blankline
-  use("lukas-reineke/indent-blankline.nvim")
+  use({
+    "lukas-reineke/indent-blankline.nvim",
+    config = function () require("indent_blankline").setup({char = "┊"}) end
+  })
 
 	-- Icons
 	use("kyazdani42/nvim-web-devicons")
