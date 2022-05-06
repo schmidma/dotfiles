@@ -39,6 +39,12 @@ packer.startup(function(use)
   })
   use("nvim-treesitter/playground")
 
+  -- automatically parse indentation style
+  use({
+    "nmac427/guess-indent.nvim",
+    config = function() require("guess-indent").setup() end,
+  })
+
   -- Autocomplete
   use({
     "hrsh7th/nvim-cmp",
