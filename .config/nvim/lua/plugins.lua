@@ -88,6 +88,7 @@ packer.startup(function(use)
 
 	-- surround
 	use("machakann/vim-sandwich")
+
 	-- Comment.nvim
 	use({
 		"numToStr/Comment.nvim",
@@ -95,6 +96,9 @@ packer.startup(function(use)
 			require("Comment").setup()
 		end,
 	})
+
+  -- indent-blankline
+  use("lukas-reineke/indent-blankline.nvim")
 
 	-- Icons
 	use("kyazdani42/nvim-web-devicons")
