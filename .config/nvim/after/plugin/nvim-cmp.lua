@@ -1,6 +1,3 @@
--- Set completeopt to have a better completion experience
-vim.o.completeopt = "menu,menuone,noselect"
-
 -- Don't pass messages to |ins-completion-menu|
 vim.cmd("set shortmess+=c")
 

@@ -13,3 +13,4 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.spelllang = "en,de"
 vim.opt.updatetime = 250
+vim.opt.completeopt = "menu,menuone,noselect"
