@@ -12,6 +12,10 @@ telescope.setup({
 		find_files = {
 			previewer = false,
 		},
+    grep_string = {
+      only_sort_text = true,
+      search = '',
+    }
 	},
 	extensions = {
 		fzf = {
@@ -37,7 +41,7 @@ nmap("gt", builtin.lsp_type_definitions)
 nmap("gr", builtin.lsp_references)
 nmap("<leader>e", builtin.find_files)
 nmap("<leader>/", builtin.current_buffer_fuzzy_find)
-nmap("<leader>rg", builtin.live_grep)
+nmap("<leader>rg", builtin.grep_string)
 nmap("<leader>gb", builtin.git_branches)
 nmap("<leader>gs", builtin.git_status)
 nmap("<leader>ga", telescope.extensions.githubcoauthors.coauthors)

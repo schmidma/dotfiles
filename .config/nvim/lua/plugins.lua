@@ -46,7 +46,6 @@ packer.startup(function(use)
 			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-nvim-lsp",
 			"saadparwaiz1/cmp_luasnip",
-			"tamago324/cmp-zsh",
 		},
 	})
 
