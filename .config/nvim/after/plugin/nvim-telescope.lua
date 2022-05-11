@@ -12,10 +12,10 @@ telescope.setup({
 		find_files = {
 			previewer = false,
 		},
-    grep_string = {
-      only_sort_text = true,
-      search = '',
-    },
+		grep_string = {
+			only_sort_text = true,
+			search = '',
+		},
 	},
 	extensions = {
 		fzf = {
@@ -25,7 +25,7 @@ telescope.setup({
 			case_mode = "smart_case",
 		},
 		["ui-select"] = {
-			require("telescope.themes").get_cursor({})
+			require("telescope.themes").get_cursor({ initial_mode = "normal" }),
 		},
 	},
 })
