@@ -15,7 +15,7 @@ telescope.setup({
     grep_string = {
       only_sort_text = true,
       search = '',
-    }
+    },
 	},
 	extensions = {
 		fzf = {
@@ -23,6 +23,9 @@ telescope.setup({
 			override_generic_sorter = true,
 			override_file_sorter = true,
 			case_mode = "smart_case",
+		},
+		["ui-select"] = {
+			require("telescope.themes").get_cursor({})
 		},
 	},
 })
