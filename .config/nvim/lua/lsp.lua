@@ -14,22 +14,6 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-	local opts = {}
-
-	if server.name == "sumneko_lua" then
-		opts.settings = {
-			Lua = {
-				diagnostics = { globals = { "vim" } },
-			},
-		}
-	end
-
-	server:setup(opts)
-	vim.cmd([[ do User LspAttachBuffers ]])
-end)
-
 local lspconfig_win = require("lspconfig.ui.windows")
 local _default_opts = lspconfig_win.default_opts
 lspconfig_win.default_opts = function(options)
