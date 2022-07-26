@@ -28,11 +28,6 @@ require("lspkind").init({})
 -- mappings
 local nmap = require("keymap").nmap
 
--- management
-nmap("<leader>lr", ":LspRestart<CR>")
-nmap("<leader>li", ":LspInfo<CR>")
-nmap("<leader>ls", ":LspStart<CR>")
-nmap("<leader>lt", ":LspStop<CR>")
 -- commands
 nmap("<leader>qf", vim.lsp.buf.code_action)
 nmap("K", vim.lsp.buf.hover)
