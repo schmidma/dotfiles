@@ -75,7 +75,12 @@ packer.startup(function(use)
   use({
     "rcarriga/nvim-notify",
     config = function()
-      vim.notify = require("notify")
+      local notify = require("notify")
+      notify.setup({
+        timeout = 1000,
+        stages = "static"
+      })
+      vim.notify = notify
     end,
   })
 
