@@ -7,8 +7,6 @@ packer.startup(function(use)
   -- Packer can manage itself
   use("wbthomason/packer.nvim")
 
-  use("lewis6991/impatient.nvim")
-
   -- LSP
   use("neovim/nvim-lspconfig")
   use("nvim-lua/lsp-status.nvim")
