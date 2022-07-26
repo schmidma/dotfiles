@@ -9,7 +9,7 @@ host    smtp.mailbox.org
 port    587
 from    schmidma@mailbox.org
 user    schmidma@mailbox.org
-passwordeval "/usr/bin/pass first-line E-Mail/mailbox.org"
+passwordeval "/usr/bin/pass E-Mail/mailbox.org | head -n 1"
 
 
 # TUHH
