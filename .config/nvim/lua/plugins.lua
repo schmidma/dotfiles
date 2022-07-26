@@ -16,21 +16,6 @@ packer.startup(function(use)
   use("williamboman/nvim-lsp-installer")
   use("simrat39/rust-tools.nvim")
 
-  -- dap
-  use("mfussenegger/nvim-dap")
-  use({
-    "rcarriga/nvim-dap-ui",
-    requires = "mfussenegger/nvim-dap",
-  })
-  use({
-    "theHamsta/nvim-dap-virtual-text",
-    requires = "mfussenegger/nvim-dap",
-  })
-  use({
-    "nvim-telescope/telescope-dap.nvim",
-    requires = { "nvim-telescope/telescope.nvim" },
-  })
-
   -- treesitter
   use({
     "nvim-treesitter/nvim-treesitter",
