@@ -16,6 +16,9 @@ telescope.setup({
 			only_sort_text = true,
 			search = '',
 		},
+		diagnostics = {
+			initial_mode = "normal"
+		}
 	},
 	extensions = {
 		fzf = {
