@@ -8,11 +8,21 @@ packer.startup(function(use)
   use("wbthomason/packer.nvim")
 
   -- LSP
-  use("neovim/nvim-lspconfig")
   use("nvim-lua/lsp-status.nvim")
   use("onsails/lspkind-nvim")
-  use("williamboman/nvim-lsp-installer")
-  use("simrat39/rust-tools.nvim")
+  use({
+    "simrat39/rust-tools.nvim",
+    requires = "neovim/nvim-lspconfig"
+  })
+  use({
+    "williamboman/mason.nvim",
+    config = function() require("mason").setup() end
+  })
+  use({
+    "williamboman/mason-lspconfig.nvim",
+    requires = "neovim/nvim-lspconfig",
+    config = function() require("mason-lspconfig").setup() end
+  })
 
   -- treesitter
   use({
