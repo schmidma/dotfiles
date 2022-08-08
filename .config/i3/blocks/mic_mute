@@ -2,8 +2,8 @@
 
 RED="\033[0;31m"
 CYAN="\033[0;36m"
-MUTED="$(pulsemixer --get-mute --id source-0)"
-if [ "$MUTED" -eq "0" ]; then
+MUTED="$(pactl get-source-mute $(pactl get-default-source))"
+if [ "$MUTED" = "Mute: no" ]; then
     echo "";
     echo "";
     echo "#00FFFF"
