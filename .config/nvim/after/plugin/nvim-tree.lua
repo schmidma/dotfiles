@@ -1,3 +1,4 @@
 local nmap = require("keymap").nmap
+local keys = require("keymap").keys
 
-nmap("<leader>nt", require("nvim-tree").toggle)
+nmap(keys.toggle_file_tree, require("nvim-tree").toggle)

@@ -53,14 +53,14 @@ require("lspkind").init({})
 
 -- mappings
 local nmap = require("keymap").nmap
+local keys = require("keymap").keys
 
 -- commands
-nmap("<leader>qf", vim.lsp.buf.code_action)
-nmap("K", vim.lsp.buf.hover)
-nmap("si", vim.lsp.buf.signature_help)
-nmap("<leader>rn", vim.lsp.buf.rename)
-nmap("<leader>[", vim.diagnostic.goto_prev)
-nmap("<leader>]", vim.diagnostic.goto_next)
-nmap("<leader>d", vim.diagnostic.open_float)
-nmap("<leader>f", vim.lsp.buf.formatting)
-nmap("<leader><C-i>", "<cmd>ClangdSwitchSourceHeader<CR>")
+nmap(keys.lsp.code_action, vim.lsp.buf.code_action)
+nmap(keys.lsp.hover, vim.lsp.buf.hover)
+nmap(keys.lsp.signature_help, vim.lsp.buf.signature_help)
+nmap(keys.lsp.rename, vim.lsp.buf.rename)
+nmap(keys.lsp.format, vim.lsp.buf.formatting)
+nmap(keys.diagnostic.goto_prev, vim.diagnostic.goto_prev)
+nmap(keys.diagnostic.goto_next, vim.diagnostic.goto_next)
+nmap(keys.diagnostic.open_float, vim.diagnostic.open_float)

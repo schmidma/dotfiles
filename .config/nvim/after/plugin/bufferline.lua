@@ -11,17 +11,12 @@ bufferline.setup({
 
 -- mappings
 local nmap = require("keymap").nmap
+local keys = require("keymap").keys
 
-nmap("<leader>j", function()
+nmap(keys.buffer.prev, function()
 	bufferline.cycle(-1)
 end)
-nmap("<leader>k", function()
+nmap(keys.buffer.next, function()
 	bufferline.cycle(1)
 end)
-nmap("<leader>J", function()
-	bufferline.move(-1)
-end)
-nmap("<leader>K", function()
-	bufferline.move(1)
-end)
-nmap("<C-s>", "<cmd>BufferLinePick<CR>")
+nmap(keys.buffer.pick, "<cmd>BufferLinePick<CR>")

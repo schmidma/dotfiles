@@ -6,6 +6,7 @@ lspkind.init()
 
 -- Setup nvim-cmp.
 local cmp = require("cmp")
+local keys = require("keymap").keys.completion
 
 cmp.setup({
 	snippet = {
@@ -25,13 +26,13 @@ cmp.setup({
 		}),
 	},
 	mapping = {
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c' }),
-    ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c' }),
-    ["<C-e>"] = cmp.mapping.close(),
-    ["<C-y>"] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true }),
+    [keys.scroll_docs_down] = cmp.mapping.scroll_docs(-4),
+    [keys.scroll_docs_up] = cmp.mapping.scroll_docs(4),
+    [keys.trigger] = cmp.mapping.complete(),
+    [keys.next] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c' }),
+    [keys.prev] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }), { 'i', 'c' }),
+    [keys.close] = cmp.mapping.close(),
+    [keys.confirm] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = true }),
 	},
 	sources = {
 		{ name = "nvim_lsp" },

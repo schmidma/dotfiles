@@ -1,2 +1,4 @@
 local nmap = require("keymap").nmap
-nmap("<leader>c", "<cmd>BufDel<CR>")
+local keys = require("keymap").keys
+
+nmap(keys.buffer.close, "<cmd>BufDel<CR>")

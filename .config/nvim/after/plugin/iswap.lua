@@ -1,4 +1,5 @@
 local iswap = require("iswap")
 -- mappings
 local nmap = require("keymap").nmap
-nmap("gs", iswap.iswap)
+local keys = require("keymap").keys
+nmap(keys.iswap, iswap.iswap)

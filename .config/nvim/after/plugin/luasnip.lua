@@ -21,23 +21,24 @@ ls.snippets = snippets
 -- mappings
 local map = require("keymap").map
 local imap = require("keymap").imap
+local keys = require("keymap").keys
 
-map({ "i", "s" }, "<c-k>", function()
+map({ "i", "s" }, keys.snippets.expand_or_jump, function()
 	if ls.expand_or_jumpable() then
 		ls.expand_or_jump()
 	end
 end)
 
-map({ "i", "s" }, "<c-j>", function()
+map({ "i", "s" }, keys.snippets.jump_prev, function()
 	if ls.jumpable(-1) then
 		ls.jump(-1)
 	end
 end)
 
-imap("<c-l>", function()
+imap(keys.snippets.change_choice, function()
 	if ls.choice_active() then
 		ls.change_choice(1)
 	end
 end)
 
-imap("<c-u>", require("luasnip.extras.select_choice"))
+imap(keys.snippets.select_choice, require("luasnip.extras.select_choice"))

@@ -39,16 +39,16 @@ telescope.load_extension("ui-select")
 
 -- mappings
 local nmap = require("keymap").nmap
+local keys = require("keymap").keys
 
 local builtin = require("telescope.builtin")
 
-nmap("gd", builtin.lsp_definitions)
-nmap("gt", builtin.lsp_type_definitions)
-nmap("gr", builtin.lsp_references)
-nmap("<leader>l", builtin.diagnostics)
-nmap("<leader>e", builtin.find_files)
-nmap("<leader>/", builtin.current_buffer_fuzzy_find)
-nmap("<leader>rg", builtin.grep_string)
-nmap("<leader>gb", builtin.git_branches)
-nmap("<leader>gs", builtin.git_status)
-nmap("<leader>ga", telescope.extensions.githubcoauthors.coauthors)
+nmap(keys.lsp.goto_definition, builtin.lsp_definitions)
+nmap(keys.lsp.goto_type, builtin.lsp_type_definitions)
+nmap(keys.lsp.goto_references, builtin.lsp_references)
+nmap(keys.diagnostic.show_list, builtin.diagnostics)
+nmap(keys.open_file_selection, builtin.find_files)
+nmap(keys.grep_string, builtin.grep_string)
+nmap(keys.git.branches, builtin.git_branches)
+nmap(keys.git.status, builtin.git_status)
+nmap(keys.git.coauthors, telescope.extensions.githubcoauthors.coauthors)

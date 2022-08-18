@@ -26,6 +26,8 @@ gitsigns.setup({
 
 -- mappings
 local nmap = require("keymap").nmap
-nmap("<leader>hr", gitsigns.reset_hunk)
-nmap("<leader>hp", gitsigns.preview_hunk)
-nmap("<leader>bl", gitsigns.blame_line)
+local keys = require("keymap").keys
+
+nmap(keys.git.reset_hunk, gitsigns.reset_hunk)
+nmap(keys.git.preview_hunk, gitsigns.preview_hunk)
+nmap(keys.git.blame_line, gitsigns.blame_line)
