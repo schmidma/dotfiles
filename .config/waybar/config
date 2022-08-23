@@ -1,5 +1,5 @@
 [{
-  "output": ["HDMI-A-2", "DP-4"],
+  "output": ["HDMI-A-2", "DP-1"],
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   "height": 30, // Waybar height (to be removed for auto height)
