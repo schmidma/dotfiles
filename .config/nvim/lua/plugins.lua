@@ -32,6 +32,10 @@ packer.startup(function(use)
 			require("mason-lspconfig").setup()
 		end,
 	})
+	use({
+		"jose-elias-alvarez/null-ls.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+	})
 
 	-- treesitter
 	use({
@@ -135,9 +139,6 @@ packer.startup(function(use)
 	use({
 		"kyazdani42/nvim-tree.lua",
 		requires = "kyazdani42/nvim-web-devicons",
-		config = function()
-			require("nvim-tree").setup()
-		end,
 	})
 
 	-- A snazzy bufferline for Neovim
