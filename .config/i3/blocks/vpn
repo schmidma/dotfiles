@@ -1,0 +1,60 @@
+#!/bin/sh
+
+mullvad_notify="notify-send -i ~/.config/i3/blocks/mullvad.png"
+
+case $BLOCK_BUTTON in
+1) # Left Click
+	if mullvad status | grep -q Disconnected; then
+		$mullvad_notify "Connecting to mullvad"
+		mullvad connect
+		while mullvad status | grep -q 'Connecting\|Disconn'; do
+			sleep 1
+		done
+		$mullvad_notify "$(mullvad status)"
+		$mullvad_notify "$(mullvad status -l)"
+	else
+		$mullvad_notify "Disconnecting from mullvad"
+		mullvad disconnect
+		while mullvad status | grep -q Disconnecting; do
+			sleep 1
+		done
+		sleep 1
+		$mullvad_notify "$(mullvad status -l)"
+	fi
+	;;
+2) # Middle Click
+	if systemctl is-active mullvad-daemon; then
+		$mullvad_notify "Stopping Mullvad Daemon"
+		sudo systemctl stop mullvad-daemon
+	else
+		$mullvad_notify "Starting Mullvad Daemon"
+		sudo systemctl start mullvad-daemon
+	fi
+	;;
+3) # Right Click
+	$TERMINAL --class float -e fzfmullvad
+	;;
+4 | 5) # Scroll Up/Down
+	$mullvad_notify "$(mullvad status)"
+	$mullvad_notify "$(mullvad status -l)"
+	;;
+esac
+
+if mullvad_status=$(mullvad status); then
+	if echo "$mullvad_status" | grep -q Connected; then
+		status=
+		location=$(echo "$mullvad_status" | awk -F'in' '{print $2}' | xargs)
+		location_color="#a1b56c"
+	else
+		status=
+		location="UNSECURED"
+		location_color="#ab4642"
+	fi
+else
+	status=X
+	location="ERROR"
+fi
+
+printf "<span>%s </span>" "$status"
+printf "<span foreground='%s'>%s</span>\n" "$location_color" "$location"
+
