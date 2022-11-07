@@ -10,7 +10,7 @@ application/vnd.ms-excel; freeoffice-planmaker %s >>/dev/null 2>&1 &; needstermi
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; freeoffice-planmaker %s >>/dev/null 2>&1 &; needsterminal
 
 # HTML
-text/html; firefox %s;copiousoutput
+text/html; firefox --private-window %s;copiousoutput
 
 # Pictures
 image/png; sxiv %s
