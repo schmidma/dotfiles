@@ -7,6 +7,7 @@ vim.opt.splitright = true
 vim.opt.mouse = "a"
 vim.opt.termguicolors = true
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.scrolloff = 15
 vim.opt.signcolumn = "yes"
 vim.opt.ignorecase = true
