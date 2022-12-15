@@ -7,18 +7,6 @@ color = light green
 path = ~/.calendars/Mailbox/Y2FsOi8vMC8zMQ/
 color = light blue
 
-[[MailboxTUHH]]
-path = ~/.calendars/Mailbox/Y2FsOi8vMC81Ng/
-color = light cyan
-
-[[MailboxKlausuren]]
-path = ~/.calendars/Mailbox/Y2FsOi8vMC81NQ/
-color = light red
-
-[[TUHHRemote]]
-path = ~/.calendars/TUHH/
-color = dark cyan
-
 [sqlite]
 path = ~/.cache/khal/khal.db
 
