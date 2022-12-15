@@ -19,7 +19,7 @@ fileext = ".vcf"
 type = "carddav"
 url = "https://dav.mailbox.org/carddav/32"
 username = "schmidma@mailbox.org"
-password.fetch = ["command", "bash", "-c", "pass E-Mail/mailbox.org | head -n 1"]
+password.fetch = ["command", "gopass", "--password", "E-Mail/mailbox.org"]
 
 
 ### Mailbox default
@@ -39,64 +39,7 @@ fileext = ".ics"
 type = "caldav"
 url = "https://dav.mailbox.org/caldav/Y2FsOi8vMC8zMQ"
 username = "schmidma@mailbox.org"
-password.fetch = ["command", "bash", "-c", "pass E-Mail/mailbox.org | head -n 1"]
-
-
-### Mailbox TUHH
-[pair MailboxTUHHCalendar]
-a = "MailboxTUHHCalendarLocal"
-b = "MailboxTUHHCalendarRemote"
-collections = ["from b"]
-metadata = ["MailboxTUHHCalendar", "blue"]
-conflict_resolution = "b wins"
-
-[storage MailboxTUHHCalendarLocal]
-type = "filesystem"
-path = "~/.calendars/Mailbox/"
-fileext = ".ics"
-
-[storage MailboxTUHHCalendarRemote]
-type = "caldav"
-url = "https://dav.mailbox.org/caldav/Y2FsOi8vMC81Ng"
-username = "schmidma@mailbox.org"
-password.fetch = ["command", "bash", "-c", "pass E-Mail/mailbox.org | head -n 1"]
-
-
-### Mailbox Klausuren
-[pair MailboxKlausurenCalendar]
-a = "MailboxKlausurenCalendarLocal"
-b = "MailboxKlausurenCalendarRemote"
-collections = ["from b"]
-metadata = ["MailboxKlausurenCalendar", "blue"]
-conflict_resolution = "b wins"
-
-[storage MailboxKlausurenCalendarLocal]
-type = "filesystem"
-path = "~/.calendars/Mailbox/"
-fileext = ".ics"
-
-[storage MailboxKlausurenCalendarRemote]
-type = "caldav"
-url = "https://dav.mailbox.org/caldav/Y2FsOi8vMC81NQ"
-username = "schmidma@mailbox.org"
-password.fetch = ["command", "bash", "-c", "pass E-Mail/mailbox.org | head -n 1"]
-
-
-### TUHH intranet
-[pair TUHHCalendar]
-a = "TUHHCalendarLocal"
-b = "TUHHCalendarRemote"
-collections = null
-metadata = ["TUHHCalendar", "blue"]
-
-[storage TUHHCalendarLocal]
-type = "filesystem"
-path = "~/.calendars/TUHH/"
-fileext = ".ics"
-
-[storage TUHHCalendarRemote]
-type = "http"
-url = "https://e-learning.tuhh.de/studip/dispatch.php/ical/index/TkhhrZkj"
+password.fetch = ["command", "gopass", "--password", "E-Mail/mailbox.org"]
 
 
 ### HULKs
@@ -116,4 +59,4 @@ fileext = ".ics"
 type = "caldav"
 url = "https://nextcloud.hulks.dev/remote.php/dav/calendars/schmidma/hulks_shared_by_ploth/"
 username = "schmidma"
-password.fetch = ["command", "bash", "-c", "pass HULKs/Nextcloud\\ HULKs | head -n 1"]
+password.fetch = ["command", "gopass", "--password", "HULKs/nextcloud"]
