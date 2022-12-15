@@ -1,0 +1,8 @@
+#!/bin/bash
+notmuch tag +mailbox -- 'folder:/schmidma@mailbox.org/.*/'
+notmuch tag +tuhh -- 'folder:/maximilian.schmidt@tuhh.de/.*/'
+notmuch tag +hulks -- 'folder:/maximilian@hulks.de/.*/'
+
+notmuch tag +deleted -- 'folder:"/.*/Trash/"'
+notmuch tag +junk -- 'folder:"/.*/(Junk|Spam|Spam4|Spam5)/"'
+notmuch tag +sent -- 'folder:"/.*/Sent/"'

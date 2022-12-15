@@ -1,0 +1,69 @@
+# mailbox.org
+IMAPStore schmidma@mailbox.org-remote
+Host imap.mailbox.org
+Port 993
+User schmidma@mailbox.org
+PassCmd "gopass --password E-Mail/mailbox.org"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore schmidma@mailbox.org-local
+Subfolders Verbatim
+Path /home/maximilian/.mail/schmidma@mailbox.org/
+Inbox /home/maximilian/.mail/schmidma@mailbox.org/INBOX
+
+Channel mailbox.org
+Expunge Both
+Far :schmidma@mailbox.org-remote:
+Near :schmidma@mailbox.org-local:
+Patterns *
+Create Near
+SyncState *
+
+# tuhh.de
+IMAPStore maximilian.schmidt@tuhh.de-remote
+Host mail.tu-harburg.de
+Port 993
+User cfa9884
+PassCmd "gopass --password TUHH/TUHH"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore maximilian.schmidt@tuhh.de-local
+Subfolders Verbatim
+Path /home/maximilian/.mail/maximilian.schmidt@tuhh.de/
+Inbox /home/maximilian/.mail/maximilian.schmidt@tuhh.de/INBOX
+
+Channel maximilian.schmidt@tuhh.de
+Expunge Both
+Far :maximilian.schmidt@tuhh.de-remote:
+Near :maximilian.schmidt@tuhh.de-local:
+Patterns *
+Create Near
+SyncState *
+
+# hulks.de
+IMAPStore maximilian@hulks.de-remote
+Host mail9.web-server.biz
+Port 993
+User maximilian@hulks.de
+PassCmd "gopass --password HULKs/maximilian@hulks.de"
+AuthMechs LOGIN
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore maximilian@hulks.de-local
+Subfolders Verbatim
+Path /home/maximilian/.mail/maximilian@hulks.de/
+Inbox /home/maximilian/.mail/maximilian@hulks.de/INBOX
+
+Channel hulks.de
+Expunge Both
+Far :maximilian@hulks.de-remote:
+Near :maximilian@hulks.de-local:
+Patterns *
+Create Near
+SyncState *
+

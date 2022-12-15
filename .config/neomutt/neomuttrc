@@ -1,48 +1,101 @@
-set folder          = "/home/maximilian/.mails"
+set folder = "/home/maximilian/.mail"
 
-source ~/.cache/offlineimap/mailboxes
-source accounts/Mailbox
+set mailcap_path = $HOME/.config/neomutt/mailcap:$mailcap_path
+set mime_type_query_command = "file --mime-type -b %s"
+set header_cache = /home/maximilian/.cache/neomutt
+set message_cachedir = /home/maximilian/.cache/neomutt
 
-# Speed up folder switch
+folder-hook mailbox/*   source ~/.config/neomutt/accounts/schmidma@mailbox.org
+folder-hook TUHH/*      source ~/.config/neomutt/accounts/maximilian.schmidt@tuhh.de
+folder-hook HULKs/*      source ~/.config/neomutt/accounts/maximilian@hulks.de
+
+set date_format="%y-%m-%d %H:%M"
+set index_format = "%Z %{%a %y-%m-%d %H:%M} » %-20.20F › %.100s %> [%g]"
+set sort = 'threads'
+set sort_aux = 'reverse-last-date-received'
+set query_command = "abook --mutt-query '%s'"
 set sleep_time = 0
+set markers = no
+set mark_old = no
+set mime_forward = ask-yes
+set fast_reply
+set forward_quote
+set reverse_name
+set include
+set quit = ask-yes
+set mail_check_stats = yes
+set edit_headers = yes
 
-# Load corresponding settings
-folder-hook Mailbox/*   source ~/.config/neomutt/accounts/Mailbox
-folder-hook TUHH/*      source ~/.config/neomutt/accounts/TUHH
-folder-hook TUDelft/*      source ~/.config/neomutt/accounts/TUDelft
+set nm_default_url = "notmuch:///home/maximilian/.mail/"
+set nm_exclude_tags = "deleted spam"
+set nm_record = yes
+set nm_record_tags = "-inbox sent"
 
-# Switch between mailboxes
-macro index,pager <f2> "<change-folder>+Mailbox/INBOX<enter>"
-macro index,pager <f3> "<change-folder>+TUDelft/INBOX<enter>"
-macro index,pager <f4> "<change-folder>+TUHH/INBOX<enter>"
+named-mailboxes "mailbox/INBOX" "+schmidma@mailbox.org/INBOX"
+named-mailboxes "mailbox/Sent" "+schmidma@mailbox.org/Sent"
+named-mailboxes "mailbox/Junk" "+schmidma@mailbox.org/Junk"
+named-mailboxes "mailbox/Trash" "+schmidma@mailbox.org/Trash"
 
-# Mutt can cache headers of messages so they need to be downloaded just once.
-# This greatly improves speed when opening folders again later.
-set header_cache     = "~/.cache/neomutt/"
-set message_cachedir = "~/.cache/neomutt/"
+named-mailboxes "TUHH/INBOX" "+maximilian.schmidt@tuhh.de/INBOX"
+named-mailboxes "TUHH/Sent" "+maximilian.schmidt@tuhh.de/Sent"
+named-mailboxes "TUHH/Junk" "+maximilian.schmidt@tuhh.de/Spam5"
+named-mailboxes "TUHH/Trash" "+maximilian.schmidt@tuhh.de/Trash"
 
-# Khard commands
-# complete email addresses by pressing the Tab-key in mutt's new mail dialog
-# set query_command= "khard email --search '%s'"
-set query_command= "khard email --parsable '%s'"
-bind editor <Tab> complete-query
-# add email addresses to khard's address book
-macro index,pager A "<pipe-message>khard add-email<return>" "add the sender email address to khard"
+named-mailboxes "HULKs/INBOX" "+maximilian@hulks.de/INBOX"
+named-mailboxes "HULKs/Sent" "+maximilian@hulks.de/Sent"
+named-mailboxes "HULKs/Junk" "+maximilian@hulks.de/Junk"
+named-mailboxes "HULKs/Trash" "+maximilian@hulks.de/Trash"
 
-# Mutt bindings
-bind index p recall-message
+auto_view text/html
+auto_view application/pgp-encrypted
+alternative_order text/plain text/enriched text/html
 
-# Print message
-bind index ^P print-message
+set crypt_auto_sign = yes
+set crypt_reply_sign = yes
+set crypt_reply_encrypt = yes
+set crypt_reply_sign_encrypted = yes
+set pgp_default_key = 'maximilian@schmidt.so'
 
-# Key bindings
-bind index,pager F flag-message
-bind index,pager R group-reply
+set pager_index_lines = 10
+set pager_context = 3
+set pager_stop = yes
+
+set sidebar_visible = yes
+set sidebar_divider_char = '│'
+set sidebar_format = ' %D%?F? [%F]?%* %?N?%N/?%S '
+
+ignore *
+unignore From:
+unignore To:
+unignore Reply-To:
+unignore Subject:
+unignore Date:
+unignore Organization:
+unignore Newsgroups:
+unignore CC:
+unignore BCC:
+hdr_order From: Subject: To: CC: BCC: Reply-To: Date: Organization:
+
+set editor = "nvim -c 'set spell spelllang=de,en_us'"
+
+source /home/maximilian/.config/neomutt/accounts/schmidma@mailbox.org
 
 # Sidebar navigation
 bind index,pager <down>   sidebar-next
 bind index,pager <up>     sidebar-prev
 bind index,pager <right>  sidebar-open
+
+# notmuch query
+macro index \\\\ "<vfolder-from-query>" "Search mailbox"
+
+bind index,pager @ compose-to-sender
+bind index <esc>L limit-current-thread
+
+bind index,pager i noop
+macro index ii "<limit>(~N|~F)<Enter>" "view new/flag"
+macro index,pager i1 "<change-folder>mailbox/INBOX<enter>"
+macro index,pager i2 "<change-folder>TUHH/INBOX<enter>"
+macro index,pager i3 "<change-folder>HULKs/INBOX<enter>"
 
 # Moving around
 bind attach,browser,index g noop
@@ -52,86 +105,11 @@ bind pager g  noop
 bind pager gg  top
 bind pager G   bottom
 
-set nm_exclude_tags = "deleted junk"
-set nm_record = yes
-set nm_record_tags = "-inbox sent"
-
-macro index \\\\ "<vfolder-from-query>" "Search mailbox"
-# open a different virtual folder
-bind index,pager X change-vfolder
-# read entire thread of the current message
-bind index,pager + entire-thread
-bind index,pager \` modify-labels
-
-# delete messages
 bind index,pager d noop
-macro index,pager dd "<delete-message>" "Delete a message"
+bind index,pager dd delete-message
+bind index,pager u undelete-message
 
-# 'a' shows all messages again (supersedes default <alias> binding)
-macro index a "<limit>~A<Enter>" "view all messages (undo limit)"
-macro index i "<limit>(~N|~F)<Enter>" "view new/flag"
-
-# Mutt Behaviour
-set sig_on_top        = no
-set mime_forward      = ask-yes
-set mime_forward_rest = yes
-set move              = no
-set sort              = 'threads'
-set sort_aux          = 'reverse-last-date-received'
-set sort_re           = yes
-set pager_index_lines = 20
-set quit              = ask-yes
-set fast_reply        = yes
-set include           = yes
-set reverse_name      = yes
-set pager_context     = 3     # number of context lines to show
-set pager_stop        = yes   # don't go to next message automatically
-set menu_scroll       = yes   # scroll in menus
-set tilde             = yes   # show tildes like in vim
-set markers           = no    # no ugly plus signs
-set edit_headers      = yes
-set index_format      = "%Z %{%a %Y-%m-%d %H:%M} » %-20.20F › %s %> [%g]"
-
-# Sidebar
-set sidebar_visible=yes
-set sidebar_divider_char='|'
-set mail_check_stats=yes
-#set sidebar_format='%D%?F? [%F]?%* %?N?%N/?%S '
-set sidebar_format = ' %B%?F? [%F]?%* %?N?%N/?%S '
-# set sidebar_short_path=yes
-set sidebar_delim_chars='/'
-set sidebar_folder_indent=no
-set sidebar_indent_string="  "
-set sidebar_width=30
-set sidebar_sort_method=path
-
-# Ignore all headers
-ignore *
-# Then un-ignore the ones I want to see
-unignore From:
-unignore To:
-unignore Reply-To:
-unignore Mail-Followup-To:
-unignore Subject:
-unignore Date:
-unignore Organization:
-unignore Newsgroups:
-unignore CC:
-unignore BCC:
-unignore X-Mailer:
-unignore User-Agent:
-unignore X-Junked-Because:
-unignore X-SpamProbe:
-unignore X-Virus-hagbard:
-# Now order the visable header lines
-hdr_order From: Subject: To: CC: BCC: Reply-To: Mail-Followup-To: Date: Organization: User-Agent: X-Mailer:
-
-# Set editor and enable spell checking
-set editor="nvim -c 'set spell spelllang=de,en_us'"
-
-# View attachments properly.
-set mailcap_path  = ~/.config/neomutt/mailcap
-bind attach <return> view-mailcap
+bind index,pager R group-reply
 
 color indicator underline default default
 color index yellow default ~F # flagged messages
@@ -160,5 +138,3 @@ color   body     brightmagenta   default    "         There is no indication tha
 color   body     brightmagenta   default    "can't handle these multiple signatures"
 color   body     brightmagenta   default    "signature verification suppressed"
 color   body     brightmagenta   default    "invalid node with packet of type"
-
-source gpgrc

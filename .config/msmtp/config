@@ -1,32 +1,26 @@
 defaults
-auth    on
+auth on
 tls on
-tls_trust_file  /etc/ssl/certs/ca-certificates.crt
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/maximilian/.cache/msmtp/msmtp.log
 
-# Mailbox
-account Mailbox
-host    smtp.mailbox.org
-port    587
-from    schmidma@mailbox.org
-user    schmidma@mailbox.org
-passwordeval "/usr/bin/pass E-Mail/mailbox.org | head -n 1"
+account schmidma@mailbox.org
+host smtp.mailbox.org
+port 587
+from schmidma@mailbox.org
+user schmidma@mailbox.org
+passwordeval "gopass --password E-Mail/mailbox.org"
 
+account maximilian.schmidt@tuhh.de
+host mail.tu-harburg.de
+port 587
+from maximilian.schmidt@tuhh.de
+user cfa9884
+passwordeval "gopass --password TUHH/TUHH"
 
-# TUHH
-account TUHH
-host    mail.tu-harburg.de
-port    587
-from    maximilian.schmidt@tuhh.de
-user    cfa9884
-passwordeval "/usr/bin/pass TUHH/TUHH | head -n 1"
-
-# TUD
-account TUDelft
-tls_starttls    off
-host    smtp-a.tudelft.nl
-port    465
-from    m.s.schmidt@tudelft.nl
-user    msschmidt@tudelft.net
-passwordeval "/usr/bin/pass first-line TUDelft/TUDelft"
-
-account default : Mailbox
+account maximilian@hulks.de
+host mail9.web-server.biz
+port 587
+from maximilian@hulks.de
+user maximilian@hulks.de
+passwordeval "gopass --password HULKs/maximilian@hulks.de"

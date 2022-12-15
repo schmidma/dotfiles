@@ -1,0 +1,11 @@
+# vim: filetype=neomuttrc
+
+set real_name = "Maximilian Schmidt"
+set from = "maximilian.schmidt@tuhh.de"
+set sendmail = "msmtp -a maximilian.schmidt@tuhh.de"
+set mbox_type = Maildir
+set spool_file = "tuhh/INBOX"
+set postponed = +maximilian.schmidt@tuhh.de/Drafts
+set trash = +maximilian.schmidt@tuhh.de/Trash
+set record = +maximilian.schmidt@tuhh.de/Sent
+set signature = "~/.config/neomutt/accounts/maximilian.schmidt@tuhh.de.sig"
