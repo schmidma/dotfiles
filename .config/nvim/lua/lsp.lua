@@ -15,6 +15,7 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 end
 
 local nvim_lspconfig = require("lspconfig")
+nvim_lspconfig.clangd.setup({})
 nvim_lspconfig.jsonls.setup({})
 nvim_lspconfig.sumneko_lua.setup({
   settings = {
