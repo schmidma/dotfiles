@@ -86,18 +86,16 @@
   },
   "pulseaudio": {
     "tooltip": false,
-    // "scroll-step": 1, // %, can be a float
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "MUTE",
-    "on-scroll-up": "",
-    "on-scroll-down": "",
+    "on-click": "pavucontrol",
     "format-source": "{volume}%",
     "format-source-muted": "MUTE",
     "format-icons": {
-      "headphones": "",
+      "headphones": " ",
       "handsfree": "",
-      "headset": "",
+      "headset": " ",
       "phone": "",
       "portable": "",
       "car": "",

@@ -11,3 +11,4 @@ try:
     print(str(props['xesam:artist'][0]) + " - " + str(props['xesam:title']))
 except dbus.exceptions.DBusException:
     pass
+

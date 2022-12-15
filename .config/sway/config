@@ -4,7 +4,7 @@ default_border pixel 2
 gaps inner 0
 smart_borders on
 
-font pango:FiraCode Nerd Font 11
+font pango:FuraMono Nerd Font 11
 
 set $mod Mod4
 
@@ -27,7 +27,9 @@ set $screenclip ~/.config/sway/screenshot
 set $menu wofi
 
 # Output configuration
-output * bg /usr/share/backgrounds/hovden.jpg fill
+output * bg /usr/share/backgrounds/images/beach.jpg fill
+
+output 'Dell Inc. DELL U2720Q 8YV09H3' scale 2
 
 set $base00 #181818
 set $base01 #282828
@@ -52,7 +54,7 @@ input $touchpad {
     events disabled
 }
 input "2:10:TPPS/2_IBM_TrackPoint" {
-    pointer_accel 0.3
+    pointer_accel 1.0
 }
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_layout "us"
@@ -152,6 +154,8 @@ bindsym $mod+Shift+q kill
 # exit
 bindsym $mod+Shift+e exit
 
+for_window [app_id="pavucontrol"] floating enable
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -181,9 +185,9 @@ exec swayidle -w before-sleep 'swaylock -f'
 bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
 bindsym --locked XF86MonBrightnessUp exec --no-startup-id light -A 10
 
-bindsym --locked XF86AudioMute exec --no-startup-id pulsemixer --toggle-mute
-bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pulsemixer --change-volume +5
-bindsym --locked XF86AudioLowerVolume exec --no-startup-id pulsemixer --change-volume -5
+bindsym --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute "$(pactl get-default-sink)" toggle
+bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" +3\%
+bindsym --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" -3\%
 bindsym --locked XF86AudioMicMute exec --no-startup-id pactl set-source-mute "$(pactl get-default-source)" toggle
 bindsym --locked XF86AudioPlay exec playerctl -p spotify play
 bindsym --locked XF86AudioPause exec playerctl -p spotify pause

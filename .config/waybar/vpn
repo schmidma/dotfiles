@@ -35,3 +35,4 @@ for a in active:
     if settings['connection']['type'] == "vpn":
         print("嬨")
         break
+

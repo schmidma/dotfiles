@@ -1,4 +1,3 @@
 #!/bin/bash
 
-echo " Mailbox: $(notmuch search tag:mailbox and tag:unread and not tag:junk | wc -l) TUHH: $(notmuch search tag:tuhh and tag:unread and not tag:junk | wc -l)"
-
+echo " Mailbox: $(notmuch search tag:mailbox and tag:unread and not tag:junk | wc -l) TUHH: $(notmuch search tag:tuhh and tag:unread and not tag:junk | wc -l) HULKs: $(notmuch search tag:hulks and tag:unread and not tag:junk | wc -l)"

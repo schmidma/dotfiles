@@ -1,7 +1,7 @@
 ignore-empty-password
-image=/usr/share/backgrounds/hovden_blurred.jpg
+image=/usr/share/backgrounds/images/beach_blured.jpg
 
-font=Sans
+font=FuraMono Nerd Font
 indicator-radius=120
 indicator-thickness=60
 indicator-caps-lock
@@ -35,3 +35,4 @@ bs-hl-color=ee2e24FF
 caps-lock-key-hl-color=ffd204FF
 caps-lock-bs-hl-color=ee2e24FF
 separator-color=231f2000
+

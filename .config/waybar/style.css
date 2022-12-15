@@ -1,7 +1,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: FiraCode Nerd Font;
+  font-family: FuraMono Nerd Font;
   font-size: 13px;
   min-height: 0;
 }
@@ -126,3 +126,4 @@ label:focus {
     margin: 0 10px;
     border-bottom: 2px solid #A1B56C;
 }
+
