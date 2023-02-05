@@ -7,6 +7,10 @@ color = light green
 path = ~/.calendars/Mailbox/Y2FsOi8vMC8zMQ/
 color = light blue
 
+[[SchmidtNASAnna]]
+path = ~/.calendars/SchmidtNAS/rthxfwp/
+color = light red
+
 [sqlite]
 path = ~/.cache/khal/khal.db
 

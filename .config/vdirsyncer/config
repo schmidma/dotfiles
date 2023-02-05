@@ -42,6 +42,26 @@ username = "schmidma@mailbox.org"
 password.fetch = ["command", "gopass", "--password", "E-Mail/mailbox.org"]
 
 
+### Mailbox Anna
+[pair SchmidtNASAnnaCalendar]
+a = "SchmidtNASAnnaCalendarLocal"
+b = "SchmidtNASAnnaCalendarRemote"
+collections = ["from b"]
+metadata = ["SchmidtNASAnnaCalendar", "blue"]
+conflict_resolution = "b wins"
+
+[storage SchmidtNASAnnaCalendarLocal]
+type = "filesystem"
+path = "~/.calendars/SchmidtNAS/"
+fileext = ".ics"
+
+[storage SchmidtNASAnnaCalendarRemote]
+type = "caldav"
+url = "https://schmidtnas.ddnss.eu:5001/caldav/maximilian/rthxfwp/"
+username = "maximilian"
+password.fetch = ["command", "gopass", "--password", "Private/schmidtNAS"]
+
+
 ### HULKs
 [pair HULKsCalendar]
 a = "HULKsCalendarLocal"
