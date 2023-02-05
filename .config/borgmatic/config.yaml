@@ -27,6 +27,8 @@ location:
         - '**/.\#lk*'
         - '*.pyc'
         - '*/.vim*.tmp'
+        - '~/Downloads/'
+        - '~/.naosdk/'
 
 storage:
     encryption_passcommand: bash -c "pass Private/Borg | head -n 1"
