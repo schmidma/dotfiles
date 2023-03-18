@@ -15,3 +15,5 @@ vim.opt.smartcase = true
 vim.opt.spelllang = "en,de"
 vim.opt.updatetime = 250
 vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.showcmd = false
+vim.opt.shm = "I"
