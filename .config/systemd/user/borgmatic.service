@@ -5,7 +5,6 @@ After=network-online.target
 # Prevent borgmatic from running unless the machine is plugged into power. Remove this line if you
 # want to allow borgmatic to run anytime.
 ConditionACPower=true
-ConditionPathExists=/dev/yubikey
 
 [Service]
 Type=oneshot
