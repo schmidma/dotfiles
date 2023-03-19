@@ -22,7 +22,7 @@ local function setup_borders(opts)
 	vim.diagnostic.config(opts)
 end
 
-function setup_diagnostic_signs()
+local function setup_diagnostic_signs()
 	for name, icon in pairs(require("icons").diagnostics) do
 		name = "DiagnosticSign" .. name
 		vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
@@ -38,7 +38,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = { "mason.nvim" },
 		opts = {
-			ensure_installed = { "lua_ls", "rust_analyzer@nightly", "texlab" },
+			ensure_installed = { "lua_ls", "rust_analyzer", "texlab" },
 		},
 	},
 	{

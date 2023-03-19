@@ -17,7 +17,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "R", [["_dP]])
-vim.keymap.set({"n", "v"}, keys.yank_to_clipboard, [["+y]])
+vim.keymap.set({ "n", "v" }, keys.yank_to_clipboard, [["+y]])
 vim.keymap.set("n", "Q", "<nop>")
 
 -- write shortcuts
@@ -27,12 +27,12 @@ vim.keymap.set("n", keys.write, ":w")
 vim.keymap.set("n", keys.hide_search_highlight, vim.cmd.noh)
 
 -- Copy to clipboard in normal, visual, select and operator modes
-vim.keymap.set({"n", "v"}, keys.yank_to_clipboard, [["+y]])
-vim.keymap.set({"n", "v"}, keys.paste_from_clipboard, [["+p]])
+vim.keymap.set({ "n", "v" }, keys.yank_to_clipboard, [["+y]])
+vim.keymap.set({ "n", "v" }, keys.paste_from_clipboard, [["+p]])
 
 -- movement
-vim.keymap.set("n", keys.movement.start_of_line, "0")
-vim.keymap.set("n", keys.movement.end_of_line, "$")
+vim.keymap.set({ "n", "v" }, keys.movement.start_of_line, "0")
+vim.keymap.set({ "n", "v" }, keys.movement.end_of_line, "$")
 
 -- redo to 'U'
 vim.keymap.set("n", keys.redo, "<C-r>")

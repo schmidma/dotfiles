@@ -50,7 +50,7 @@ return {
 			},
 			{
 				keys.diagnostic.show_list,
-				telescope("diagnostics"),
+				telescope("diagnostics", { previewer = false }),
 				desc = "Show Diagnostics",
 			},
 			{
