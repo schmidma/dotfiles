@@ -1,4 +1,5 @@
 text/plain; nvim -c 'set spell spelllang=de,en_us' %s
+text/html; firefox --private-window %s;
 text/html; lynx -assume_charset=%{charset} -display_charset=utf-8 -dump -width=1024 %s; nametemplate=%s.html; copiousoutput;
 image/*; imv %s ;
 video/*; setsid mpv --quiet %s &; copiousoutput
