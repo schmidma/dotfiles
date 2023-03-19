@@ -6,7 +6,7 @@ set $mod Mod4
 set $term alacritty
 
 # font settings
-font pango: FiraCode Nerd Font 11
+font pango: FuraMono Nerd Font 11
 
 ## Base16 Default Dark
 set $base00 #181818
