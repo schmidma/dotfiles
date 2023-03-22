@@ -21,7 +21,7 @@ vim.keymap.set({ "n", "v" }, keys.yank_to_clipboard, [["+y]])
 vim.keymap.set("n", "Q", "<nop>")
 
 -- write shortcuts
-vim.keymap.set("n", keys.write, ":w")
+vim.keymap.set("n", keys.write, vim.cmd.write)
 
 -- hide search highlight
 vim.keymap.set("n", keys.hide_search_highlight, vim.cmd.noh)
