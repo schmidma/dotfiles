@@ -38,7 +38,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = { "mason.nvim" },
 		opts = {
-			ensure_installed = { "lua_ls", "rust_analyzer", "texlab" },
+			ensure_installed = { "lua_ls", "texlab" },
 		},
 	},
 	{
@@ -83,6 +83,7 @@ return {
 				severity_sort = true,
 				float = { border = "rounded" },
 			},
+			manual_register = { "rust_analyzer" },
 		},
 		config = function(_, opts)
 			register_lsp_attach(function(client, buffer)
@@ -106,6 +107,10 @@ return {
 				end
 			end
 			require("mason-lspconfig").setup_handlers({ setup })
+
+			for _, server in ipairs(opts.manual_register) do
+				setup(server)
+			end
 		end,
 	},
 	{
