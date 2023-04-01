@@ -2,7 +2,7 @@ local options = {
 	["rust_analyzer"] = {
 		tools = {
 			inlay_hints = {
-				auto = false,
+				auto = true,
 			},
 		},
 		server = {
@@ -12,10 +12,12 @@ local options = {
 					cargo = {
 						features = "all",
 					},
-					assist = {
-						importEnforceGranularity = true,
+					imports = {
+						granularity = {
+							enforce = true,
+						},
 					},
-					checkOnSave = {
+					check = {
 						command = "clippy",
 					},
 				},
