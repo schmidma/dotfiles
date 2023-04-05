@@ -25,6 +25,10 @@ local keys = {
 		location_list = "<leader>xL",
 		quickfix_list = "<leader>xQ",
 	},
+	conflict = {
+		next = "]x",
+		previous = "[x",
+	},
 	open_file_selection = "<leader>e",
 	show_buffers = "<leader>,",
 	live_grep = "<leader>/",
