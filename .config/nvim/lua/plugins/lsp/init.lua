@@ -52,15 +52,14 @@ return {
 			require("mason-null-ls").setup(opts)
 			local null_ls = require("null-ls")
 			null_ls.setup({})
-			require("mason-null-ls").setup_handlers({
-				function(source_name, methods)
-					require("mason-null-ls.automatic_setup")(source_name, methods)
-				end,
-				misspell = function(_, methods)
-					null_ls.register(null_ls.builtins.diagnostics.misspell.with({
-						method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-					}))
-				end,
+			require("mason-null-ls").setup({
+				handlers = {
+					misspell = function(_, _)
+						null_ls.register(null_ls.builtins.diagnostics.misspell.with({
+							method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
+						}))
+					end,
+				},
 			})
 		end,
 	},
