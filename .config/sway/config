@@ -20,11 +20,11 @@ set $right l
 set $term alacritty
 
 # locking application
-set $lock swaylock
+set $lock ~/.config/sway/screenlock
 
 set $screenclip ~/.config/sway/screenshot
 
-set $menu wofi
+set $menu ~/.cargo/bin/yofi
 
 # Output configuration
 output * bg /usr/share/backgrounds/images/beach.jpg fill
@@ -60,6 +60,13 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_layout "us"
     xkb_variant "altgr-intl"
     xkb_options caps:escape
+    repeat_delay 200
+    repeat_rate 30
+}
+
+input "7504:24868:Ultimate_Gadget_Laboratories_UHK_60_v2" {
+    xkb_layout "us"
+    xkb_variant "altgr-intl"
     repeat_delay 200
     repeat_rate 30
 }
@@ -179,7 +186,9 @@ bindsym XF86Display exec --no-startup-id wdisplays
 # Lock
 bindsym Control+Mod1+l exec --no-startup-id $lock
 
-exec swayidle -w before-sleep 'swaylock -f'
+exec swayidle -w \
+    before-sleep 'swaylock -f' \
+    resume 'swaymsg "output * dpms on"'
 
 # Backlight control
 bindsym --locked XF86MonBrightnessDown exec --no-startup-id light -U 10
@@ -189,10 +198,9 @@ bindsym --locked XF86AudioMute exec --no-startup-id pactl set-sink-mute "$(pactl
 bindsym --locked XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" +3\%
 bindsym --locked XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume "$(pactl get-default-sink)" -3\%
 bindsym --locked XF86AudioMicMute exec --no-startup-id pactl set-source-mute "$(pactl get-default-source)" toggle
-bindsym --locked XF86AudioPlay exec playerctl -p spotify play
-bindsym --locked XF86AudioPause exec playerctl -p spotify pause
+bindsym --locked XF86AudioPlay exec playerctl -p spotify play-pause
 bindsym --locked XF86AudioNext exec playerctl -p spotify next
-bindsym --locked XF86AudioPrev exec playerctl -p spotify prev
+bindsym --locked XF86AudioPrev exec playerctl -p spotify previous
 
 bindsym --locked Control+Mod1+Down exec playerctl -p spotify play-pause
 bindsym --locked Control+Mod1+Right exec playerctl -p spotify next
@@ -202,6 +210,7 @@ bindsym --locked Control+Mod1+Left exec playerctl -p spotify previous
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
      dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec /usr/libexec/polkit-gnome-authentication-agent-1
 
 bar {
     swaybar_command waybar
