@@ -1,0 +1,9 @@
+font=FuraMono Nerd Font
+default-timeout=3000
+
+background-color=#585858
+text-color=#f8f8f8
+border-color=#f8f8f8
+
+[urgency=high]
+text-color=#ab4642
