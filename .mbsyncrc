@@ -25,7 +25,7 @@ SyncState *
 IMAPStore maximilian.schmidt@tuhh.de-remote
 Host mail.tu-harburg.de
 Port 993
-User cfa9884
+User cms8231
 PassCmd "gopass --password TUHH/TUHH"
 AuthMechs LOGIN
 SSLType IMAPS
