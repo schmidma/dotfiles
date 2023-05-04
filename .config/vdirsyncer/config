@@ -41,6 +41,25 @@ url = "https://dav.mailbox.org/caldav/Y2FsOi8vMC8zMQ"
 username = "schmidma@mailbox.org"
 password.fetch = ["command", "gopass", "--password", "E-Mail/mailbox.org"]
 
+### TUHH caldav
+[pair TUHHCalendar]
+a = "TUHHCalendarLocal"
+b = "TUHHCalendarRemote"
+collections = ["from b"]
+metadata = ["TUHHCalendar", "red"]
+conflict_resolution = "b wins"
+
+[storage TUHHCalendarLocal]
+type = "filesystem"
+path = "~/.calendars/TUHH/"
+fileext = ".ics"
+
+[storage TUHHCalendarRemote]
+type = "caldav"
+url = "https://sogo.tuhh.de/SOGo/dav/cms8231/Calendar/personal/"
+username = "cms8231"
+password.fetch = ["command", "gopass", "--password", "TUHH/TUHH"]
+
 
 ### Mailbox Anna
 [pair SchmidtNASAnnaCalendar]

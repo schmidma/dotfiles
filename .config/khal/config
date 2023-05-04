@@ -3,6 +3,10 @@
 path = ~/.calendars/HULKs/hulks_shared_by_ploth/
 color = light green
 
+[[TUHHCalendar]]
+path = ~/.calendars/TUHH/personal/
+color = light cyan
+
 [[MailboxCalendar]]
 path = ~/.calendars/Mailbox/Y2FsOi8vMC8zMQ/
 color = light blue
