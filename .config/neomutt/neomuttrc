@@ -88,6 +88,7 @@ bind index,pager <right>  sidebar-open
 
 # notmuch query
 macro index \\\\ "<vfolder-from-query>" "Search mailbox"
+bind editor <tab> complete-query
 
 bind index,pager @ compose-to-sender
 bind index <esc>L limit-current-thread
@@ -97,6 +98,9 @@ macro index ii "<limit>(~N|~F)<Enter>" "view new/flag"
 macro index,pager i1 "<change-folder>mailbox/INBOX<enter>"
 macro index,pager i2 "<change-folder>TUHH/INBOX<enter>"
 macro index,pager i3 "<change-folder>HULKs/INBOX<enter>"
+
+macro attach A "<pipe-message>vcalendar-filter | mutt2khal<enter>"
+macro index,pager A "<pipe-message>khard add-email<enter>"
 
 # Moving around
 bind attach,browser,index g noop
