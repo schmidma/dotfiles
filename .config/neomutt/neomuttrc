@@ -48,7 +48,8 @@ named-mailboxes "HULKs/Trash" "+maximilian@hulks.de/Trash"
 
 auto_view text/html
 auto_view application/pgp-encrypted
-alternative_order text/plain text/enriched text/html
+auto_view text/calendar application/ics
+alternative_order text/plain text/enriched text/html text/calendar
 
 set crypt_auto_sign = yes
 set crypt_reply_sign = yes
