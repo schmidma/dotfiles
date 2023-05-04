@@ -15,7 +15,7 @@ account maximilian.schmidt@tuhh.de
 host mail.tu-harburg.de
 port 587
 from maximilian.schmidt@tuhh.de
-user cfa9884
+user cms8231
 passwordeval "gopass --password TUHH/TUHH"
 
 account maximilian@hulks.de
