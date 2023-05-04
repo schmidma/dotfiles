@@ -29,8 +29,6 @@ set $menu ~/.cargo/bin/yofi
 # Output configuration
 output * bg /usr/share/backgrounds/images/beach.jpg fill
 
-output 'Dell Inc. DELL U2720Q 8YV09H3' scale 2
-
 set $base00 #181818
 set $base01 #282828
 set $base02 #383838
