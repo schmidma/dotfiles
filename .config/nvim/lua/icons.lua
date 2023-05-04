@@ -1,15 +1,15 @@
 local icons = {
 	diagnostics = {
-		Error = " ",
-		Warn = " ",
+		Error = " ",
+		Warn = " ",
 		Hint = " ",
-		Info = " ",
-		Debug = " ",
-		Trace = "✎",
+		Info = " ",
+		Debug = " ",
+		Trace = " ",
 	},
 	git = {
 		added = " ",
-		modified = "柳",
+		modified = " ",
 		removed = " ",
 	},
 }
