@@ -46,13 +46,13 @@
     "format-wifi": " {essid}",
     "tooltip": false,
     "format-alt": "{ifname}: {ipaddr}/{cidr} ({signalStrength}%)",
-    "format-linked": "睊"
+    "format-linked": "󰖪"
   },
   "network#eth": {
     "interface": "enp0s31f6",
     "interval": 2,
     "format-ethernet": "",
-    "format-linked": "",
+    "format-linked": "󰌙",
     "tooltip": false,
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
@@ -94,7 +94,7 @@
     "format-source-muted": "MUTE",
     "format-icons": {
       "headphones": " ",
-      "handsfree": "",
+      "handsfree": "󰂑",
       "headset": " ",
       "phone": "",
       "portable": "",
