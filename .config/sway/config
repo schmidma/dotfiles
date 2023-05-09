@@ -4,7 +4,7 @@ default_border pixel 2
 gaps inner 0
 smart_borders on
 
-font pango:FuraMono Nerd Font 11
+font pango:FiraMono Nerd Font 11
 
 set $mod Mod4
 
