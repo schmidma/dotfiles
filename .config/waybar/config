@@ -1,5 +1,5 @@
 [{
-  "output": ["HDMI-A-2", "DP-1", "DP-4", "DP-6"],
+  "output": ["HDMI-A-2", "DP-1", "DP-2", "DP-3", "DP-4", "DP-5", "DP-6", "DP-7"],
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   "height": 30, // Waybar height (to be removed for auto height)
@@ -41,9 +41,9 @@
     "format": "<span weight=\"bold\">{}</span>"
   },
   "network#wifi": {
-    "interface": "wlp3s0", // (Optional) To force the use of this interface
+    "interface": "wlo1", // (Optional) To force the use of this interface
     "interval": 2,
-    "format-wifi": " {essid}",
+    "format-wifi": "  {essid}",
     "tooltip": false,
     "format-alt": "{ifname}: {ipaddr}/{cidr} ({signalStrength}%)",
     "format-linked": "󰖪"
@@ -69,7 +69,7 @@
         "critical": 15
     },
     "bat": "BAT0",
-    "format": "{icon} {capacity}%",
+    "format": "{icon}  {capacity}%",
     "format-charging": " {capacity}%",
     "format-icons": [" ", " ", " ", " ", " "]
   },
