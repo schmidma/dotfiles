@@ -25,6 +25,15 @@ local keys = {
 		location_list = "<leader>xL",
 		quickfix_list = "<leader>xQ",
 	},
+	magma = {
+		init = "<localleader>i",
+		enter_output = "<localleader><return>",
+		evaluate_operator = "<localleader>r",
+		evaluate_visual = "<localleader>r",
+		evaluate_line = "<localleader>rr",
+		reevaluate_cell = "<localleader>rc",
+		delete = "<localleader>rd",
+	},
 	conflict = {
 		next = "]x",
 		previous = "[x",
