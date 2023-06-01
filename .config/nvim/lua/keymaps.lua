@@ -1,6 +1,7 @@
 local keys = require("keys")
 
 vim.g.mapleader = keys.leader
+vim.g.maplocalleader = ","
 
 -- navigate properly when lines are wrapped
 vim.keymap.set("n", "j", "gj")
