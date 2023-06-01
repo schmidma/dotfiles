@@ -7,6 +7,10 @@ color = light green
 path = ~/.calendars/TUHH/personal/
 color = light cyan
 
+[[AbwesenheitCalendar]]
+path = ~/.calendars/Abwesenheit/
+color = yellow
+
 [[MailboxCalendar]]
 path = ~/.calendars/Mailbox/Y2FsOi8vMC8zMQ/
 color = light blue
