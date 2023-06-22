@@ -22,7 +22,7 @@ window#waybar.hidden {
 }
 
 window#waybar.empty {
-    background-color: transparent;
+  background-color: transparent;
 }
 /*
 window#waybar.solo {
@@ -90,6 +90,13 @@ window#waybar.solo {
   border-bottom: transparent;
 }
 
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
+
 #battery {
   border-bottom: 2px solid #7cafc2;
 }
@@ -100,6 +107,11 @@ window#waybar.solo {
 
 #battery.critical:not(.charging) {
   border-bottom: 2px solid #ab4642;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 label:focus {
@@ -123,7 +135,6 @@ label:focus {
 }
 
 #custom-spotify {
-    margin: 0 10px;
-    border-bottom: 2px solid #A1B56C;
+  margin: 0 10px;
+  border-bottom: 2px solid #a1b56c;
 }
-
