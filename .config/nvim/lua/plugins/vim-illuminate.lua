@@ -7,7 +7,7 @@ return {
 		opts = { delay = 200 },
 		config = function(_, opts)
 			require("illuminate").configure(opts)
-
+	
 			vim.keymap.set("n", keys.lsp.next_reference, function()
 				require("illuminate")["goto_next_reference"](false)
 			end, { desc = "Next Reference" })
