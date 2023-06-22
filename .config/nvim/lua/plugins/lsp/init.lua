@@ -45,7 +45,7 @@ return {
 		"jay-babu/mason-null-ls.nvim",
 		dependencies = { "mason.nvim", "jose-elias-alvarez/null-ls.nvim" },
 		opts = {
-			ensure_installed = { "stylua", "misspell", "markdownlint", "proselint", "prettier", "yapf" },
+			ensure_installed = { "stylua", "misspell", "markdownlint", "proselint", "prettier" },
 			automatic_setup = true,
 		},
 		config = function(_, opts)
