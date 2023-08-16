@@ -10,6 +10,11 @@ profile ITL {
   output "Dell Inc. DELL SE2416H P7HT86AT0RLL" enable position 0,0 mode 1920x1080@60Hz
 }
 
+profile HULKs-best {
+  output eDP-1 enable position 0,1440 mode 1920x1080@60Hz
+  output "Dell Inc. DELL U2720Q 8YV09H3" enable position 0,0 mode 2560x1440@60Hz
+}
+
 profile one_unknown {
   output eDP-1 enable position 0,0
   output * enable position 1920,0
