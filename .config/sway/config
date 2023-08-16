@@ -161,6 +161,7 @@ bindsym $mod+Shift+e exit
 
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="zoom"] floating enable
+for_window [app_id="Element"] floating enable
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
