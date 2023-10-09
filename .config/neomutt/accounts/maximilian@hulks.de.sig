@@ -1,5 +1,4 @@
 Maximilian Schmidt
-1. stellv. Vorsitzender
 
 HULKs e.V.
 Am Schwarzenberg-Campus 3
