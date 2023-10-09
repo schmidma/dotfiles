@@ -53,6 +53,11 @@ local options = {
 			},
 		},
 	},
+	["ruff_lsp"] = {
+		on_attach = function(client, bufnr)
+			client.server_capabilities.hoverProvider = false
+		end,
+	},
 }
 
 return options
