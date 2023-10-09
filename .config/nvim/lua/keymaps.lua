@@ -4,8 +4,8 @@ vim.g.mapleader = keys.leader
 vim.g.maplocalleader = ","
 
 -- navigate properly when lines are wrapped
-vim.keymap.set("n", "j", "gj")
-vim.keymap.set("n", "k", "gk")
+vim.keymap.set({ "n", "v" }, "j", "gj")
+vim.keymap.set({ "n", "v" }, "k", "gk")
 
 -- maintain visual mode after shifting
 vim.keymap.set("v", "<", "<gv")
