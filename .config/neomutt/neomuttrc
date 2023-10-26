@@ -123,15 +123,13 @@ color index brightblue default (~N|~O) # new and unread messages
 color tilde cyan default
 color status brightcyan brightblack
 color sidebar_divider brightcyan brightblack
-color sidebar_indicator brightcyan default
+color sidebar_indicator green default
 
-color quoted        magenta             default # Quoting Ebene 1
+# Quoting Ebene 1
+color quoted        magenta             default
 
-# Color if the attachment is autoviewed
-color   attach_headers     brightgreen     default    "Autoview"
-# Color only the brackets around the headers
-color   attach_headers     yellow    default    "^\\[--"
-color   attach_headers     yellow    default    "--]$"
+color   attach_headers     color8     default
+
 # Color GPGME signature checks
 color   body     brightgreen     default    "Good signature from.*"
 color   body     brightred       default    "Bad signature from.*"
