@@ -7,3 +7,8 @@ border-color=#f8f8f8
 
 [urgency=high]
 text-color=#ab4642
+
+[mode=normal]
+
+[mode=do-not-disturb]
+invisible=1
