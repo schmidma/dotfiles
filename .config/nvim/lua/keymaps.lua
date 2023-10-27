@@ -32,8 +32,8 @@ vim.keymap.set({ "n", "v" }, keys.yank_to_clipboard, [["+y]])
 vim.keymap.set({ "n", "v" }, keys.paste_from_clipboard, [["+p]])
 
 -- movement
-vim.keymap.set({ "n", "v" }, keys.movement.start_of_line, "0")
-vim.keymap.set({ "n", "v" }, keys.movement.end_of_line, "$")
+vim.keymap.set({ "n", "v" }, keys.movement.start_of_line, "g0")
+vim.keymap.set({ "n", "v" }, keys.movement.end_of_line, "g$")
 
 -- redo to 'U'
 vim.keymap.set("n", keys.redo, "<C-r>")
