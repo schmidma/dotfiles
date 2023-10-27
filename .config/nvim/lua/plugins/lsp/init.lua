@@ -43,7 +43,7 @@ return {
 	},
 	{
 		"jay-babu/mason-null-ls.nvim",
-		dependencies = { "mason.nvim", "jose-elias-alvarez/null-ls.nvim" },
+		dependencies = { "mason.nvim", "nvimtools/none-ls.nvim" },
 		opts = {
 			ensure_installed = { "stylua", "misspell", "markdownlint", "proselint", "prettier" },
 			automatic_setup = true,
