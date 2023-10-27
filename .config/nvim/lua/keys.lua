@@ -21,7 +21,7 @@ local keys = {
 	},
 	trouble = {
 		document_diagnostics = "<leader>xx",
-		workspace_diagnostics = "<leader>xX",
+		workspace_diagnostics = "<leader>xw",
 		location_list = "<leader>xL",
 		quickfix_list = "<leader>xQ",
 	},
