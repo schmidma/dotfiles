@@ -17,3 +17,7 @@ vim.opt.updatetime = 250
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.showcmd = false
 vim.opt.shm = "I"
+
+if vim.g.neovide then
+	vim.o.guifont = "FiraMono Nerd Font:h14"
+end
