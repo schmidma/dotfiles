@@ -38,6 +38,7 @@ local keys = {
 		next = "]x",
 		previous = "[x",
 	},
+	resume_selection = "<leader><tab>",
 	open_file_selection = "<leader>e",
 	show_buffers = "<leader>,",
 	live_grep = "<leader>/",

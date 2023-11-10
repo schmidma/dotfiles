@@ -18,6 +18,11 @@ return {
 		},
 		keys = {
 			{
+				keys.resume_selection,
+				telescope("resume"),
+				desc = "Resume",
+			},
+			{
 				keys.open_file_selection,
 				telescope("find_files"),
 				desc = "Find Files",
