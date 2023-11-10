@@ -43,3 +43,6 @@ vim.keymap.set("n", keys.split_navigation.left, "<C-w>h")
 vim.keymap.set("n", keys.split_navigation.down, "<C-w>j")
 vim.keymap.set("n", keys.split_navigation.up, "<C-w>k")
 vim.keymap.set("n", keys.split_navigation.right, "<C-w>l")
+
+-- terminal mode
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
