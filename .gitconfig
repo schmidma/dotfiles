@@ -1,7 +1,7 @@
 [user]
 	email = maximilian@schmidt.so
 	name = Maximilian Schmidt
-	signingKey = D6C281FAC8EB13167F1FE49C4381398EA6FC8638
+	signingkey = 4381398EA6FC8638
 [commit]
 	gpgSign = true
 [init]
