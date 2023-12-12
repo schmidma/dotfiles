@@ -40,4 +40,8 @@ return {
 			"TSPlaygroundToggle",
 		},
 	},
+	{
+		"kaarmu/typst.vim",
+		ft = "typst",
+	},
 }
