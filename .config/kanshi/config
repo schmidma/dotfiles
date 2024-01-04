@@ -1,7 +1,7 @@
 profile IES {
-  output eDP-1 enable position 3840,0 mode 1920x1080@60Hz
-  output "Dell Inc. DELL U2422H 75BNF83" enable position 1920,0 mode 1920x1080@60Hz
-  output "Dell Inc. DELL U2422H 5V9NF83" enable position 0,0 mode 1920x1080@60Hz
+  output eDP-1 enable position 3000,420 mode 1920x1080@60Hz
+  output "Dell Inc. DELL U2422H 75BNF83" enable position 1080,420 mode 1920x1080@60Hz
+  output "Dell Inc. DELL U2422H 5V9NF83" enable position 0,0 mode 1920x1080@60Hz transform 90
 }
 
 profile ITL {
