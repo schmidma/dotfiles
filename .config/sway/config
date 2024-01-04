@@ -80,7 +80,7 @@ input "12951:6519:ZSA_Technology_Labs_Voyager" {
 floating_modifier $mod normal
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+c reload
 # start a terminal
 bindsym $mod+Return exec --no-startup-id $term
 
@@ -97,10 +97,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # use cursor keys to move workspace to outputs:
-bindsym $mod+Shift+Left move workspace to output left
-bindsym $mod+Shift+Down move workspace to output down
-bindsym $mod+Shift+Up move workspace to output up
-bindsym $mod+Shift+Right move workspace to output right
+bindsym $mod+Left move workspace to output left
+bindsym $mod+Down move workspace to output down
+bindsym $mod+Up move workspace to output up
+bindsym $mod+Right move workspace to output right
 
 # split in horizontal orientation
 bindsym $mod+b splith
@@ -129,7 +129,7 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+f fullscreen toggle
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+m floating toggle
 
 # menu
 bindsym $mod+space exec $menu
