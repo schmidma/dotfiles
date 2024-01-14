@@ -192,7 +192,7 @@ bindsym $mod+r mode "resize"
 bindsym XF86Display exec --no-startup-id wdisplays
 
 # Lock
-bindsym Control+Mod1+l exec --no-startup-id $lock
+bindsym $mod+Escape exec --no-startup-id $lock
 
 exec swayidle -w \
     before-sleep "/home/maximilian/.config/sway/screenlock" \
