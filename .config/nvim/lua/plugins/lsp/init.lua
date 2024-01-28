@@ -114,13 +114,8 @@ return {
 	},
 	{
 		"j-hui/fidget.nvim",
-		tag = "legacy",
 		lazy = true,
-		opts = {
-			text = {
-				spinner = "meter",
-			},
-		},
+		opts = {},
 	},
 	{
 		"linux-cultist/venv-selector.nvim",
