@@ -24,7 +24,7 @@ set $lock ~/.config/sway/screenlock
 
 set $screenclip ~/.config/sway/screenshot
 
-set $menu ~/.cargo/bin/yofi
+set $menu fuzzel
 
 # Output configuration
 output * bg /usr/share/backgrounds/images/beach.jpg fill
