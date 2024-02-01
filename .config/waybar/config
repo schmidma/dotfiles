@@ -41,7 +41,7 @@
     "format": "<span weight=\"bold\">{}</span>"
   },
   "network#wifi": {
-    "interface": "wlo1", // (Optional) To force the use of this interface
+    "interface": "wlp0s20f3", // (Optional) To force the use of this interface
     "interval": 2,
     "format-wifi": "  {essid}",
     "tooltip": false,
