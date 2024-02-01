@@ -73,17 +73,6 @@
     "format-charging": " {capacity}%",
     "format-icons": [" ", " ", " ", " ", " "]
   },
-  "battery#ext": {
-    "interval": 8,
-    "states": {
-        "warning": 30,
-        "critical": 15
-    },
-    "bat": "BAT1",
-    "format": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-icons": [" ", " ", " ", " ", " "]
-  },
   "pulseaudio": {
     "tooltip": false,
     "format": "{volume}% {icon}",
