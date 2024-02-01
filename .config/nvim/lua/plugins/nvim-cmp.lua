@@ -7,7 +7,7 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"onsails/lspkind.nvim",
-      "saadparwaiz1/cmp_luasnip",
+			"saadparwaiz1/cmp_luasnip",
 		},
 		opts = function()
 			local cmp = require("cmp")
@@ -16,11 +16,11 @@ return {
 				completion = {
 					completeopt = "menu,menuone,noinsert",
 				},
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
-        },
+				snippet = {
+					expand = function(args)
+						require("luasnip").lsp_expand(args.body)
+					end,
+				},
 				formatting = {
 					format = lspkind.cmp_format({
 						mode = "symbol",
@@ -39,16 +39,16 @@ return {
 				}),
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
-          { name = "luasnip" },
+					{ name = "luasnip" },
 					{ name = "buffer" },
 					{ name = "path" },
 				}),
 				experimental = {
 					ghost_text = {
-						hl_group = "LspCodeLens",
+						hl_group = "LspInlayHint",
 					},
 				},
 			}
 		end,
-	}
+	},
 }
