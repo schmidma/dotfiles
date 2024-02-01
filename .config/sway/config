@@ -218,9 +218,11 @@ bindsym --locked Control+Mod1+Left exec playerctl -p spotify previous
 # fix gtk apps waiting for xdg-desktop-portal
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
 exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
-exec /usr/libexec/polkit-gnome-authentication-agent-1
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway
+
+exec /usr/libexec/lxqt-policykit-agent
 exec kanshi
+exec gsettings list-keys org.gnome.desktop.interface color-scheme 'prefer-dark'
 
 bar {
     swaybar_command waybar
