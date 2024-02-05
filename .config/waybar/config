@@ -34,7 +34,7 @@
   // Choose the order of the modules
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["custom/spotify"],
-  "modules-right": ["network#wifi", "network#eth", "custom/vpn", "battery#int", "battery#ext", "pulseaudio", "custom/mail", "clock", "tray"],
+  "modules-right": ["network#wifi", "network#eth", "custom/vpn", "battery#int", "pulseaudio", "custom/mail", "clock", "tray"],
   // Module config
   "sway/mode": {
     "tooltip": false,
