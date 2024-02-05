@@ -24,7 +24,7 @@ set $base0E #ba8baf
 set $base0F #a16946
 
 # class         border  background text
-client.focused  $base09 $base09 $base00
+client.focused  $base0D $base0D $base00
 client.focused_inactive $base04 $base02 $base05
 client.unfocused $base01 $base01 $base04
 client.urgent   $base05 $base08 $base00
