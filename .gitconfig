@@ -33,3 +33,5 @@
 	clean = git-lfs clean -- %f
 [rerere]
 	enable = true
+[branch]
+	sort = -committerdate
