@@ -78,7 +78,7 @@
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "MUTE",
-    "on-click": "pavucontrol",
+    "on-click": "pavucontrol-qt",
     "format-source": "{volume}%",
     "format-source-muted": "MUTE",
     "format-icons": {
