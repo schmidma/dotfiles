@@ -5,3 +5,4 @@ alias rules 'pdf ~/Documents/HULKs/SPL-Rules-master.pdf'
 alias pass gopass
 alias gpc "gopass -c"
 alias exa eza
+alias evince "flatpak run org.gnome.Evince"
