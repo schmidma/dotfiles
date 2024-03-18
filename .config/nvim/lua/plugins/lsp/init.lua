@@ -57,22 +57,14 @@ return {
 		"jay-babu/mason-null-ls.nvim",
 		dependencies = { "mason.nvim", "nvimtools/none-ls.nvim" },
 		opts = {
-			ensure_installed = { "stylua", "misspell", "markdownlint", "proselint", "prettier" },
+			ensure_installed = { "stylua", "markdownlint", "proselint", "prettier" },
 			automatic_setup = true,
 		},
 		config = function(_, opts)
 			require("mason-null-ls").setup(opts)
 			local null_ls = require("null-ls")
 			null_ls.setup({})
-			require("mason-null-ls").setup({
-				handlers = {
-					misspell = function(_, _)
-						null_ls.register(null_ls.builtins.diagnostics.misspell.with({
-							method = null_ls.methods.DIAGNOSTICS_ON_SAVE,
-						}))
-					end,
-				},
-			})
+			require("mason-null-ls").setup()
 		end,
 	},
 	{
