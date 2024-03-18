@@ -65,21 +65,21 @@ input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_variant "altgr-intl"
     xkb_options caps:escape
     repeat_delay 200
-    repeat_rate 30
+    repeat_rate 50
 }
 
 input "7504:24868:Ultimate_Gadget_Laboratories_UHK_60_v2" {
     xkb_layout "us"
     xkb_variant "altgr-intl"
     repeat_delay 200
-    repeat_rate 30
+    repeat_rate 50
 }
 
 input "12951:6519:ZSA_Technology_Labs_Voyager" {
     xkb_layout "us"
     xkb_variant "altgr-intl"
     repeat_delay 200
-    repeat_rate 30
+    repeat_rate 50
 }
 
 # floating modifier for moving and resizing
