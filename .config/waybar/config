@@ -78,7 +78,7 @@
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
     "format-muted": "MUTE",
-    "on-click": "pavucontrol-qt",
+    "on-click": "flatpak run org.pulseaudio.pavucontrol",
     "format-source": "{volume}%",
     "format-source-muted": "MUTE",
     "format-icons": {
