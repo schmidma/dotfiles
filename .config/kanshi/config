@@ -10,9 +10,31 @@ profile ITL {
   output "Dell Inc. DELL SE2416H P7HT86AT0RLL" enable position 0,0 mode 1920x1080@60Hz
 }
 
-profile HULKs {
-  output eDP-1 enable position 2397,268
-  output "Dell Inc. DELL U2720Q 8YV09H3" enable position 0,0 mode 3840x2160@60Hz scale 1.6
+profile HULKs-1 {
+  output eDP-1 enable position 3840,600
+  output "Dell Inc. DELL U2720Q 8YV09H3" enable position 0,0 mode 3840x2160@60Hz scale 1
+}
+
+profile HULKs-2 {
+  output eDP-1 enable position 3840,600
+  output "Dell Inc. DELL P3222QE 105S6H3" enable position 0,0 mode 3840x2160@60Hz scale 1
+}
+
+profile HULKs-3 {
+  output eDP-1 enable position 2560,240
+  output "Dell Inc. DELL P2723DE 6ZRM5V3" enable position 0,0 mode 2560x1440@60Hz scale 1
+
+}
+
+profile HULKs-HDF {
+  output eDP-1 enable position 3840,0
+  output "Dell Inc. DELL U2720Q 1YV09H3" enable position 1920,0 scale 2.0
+  output "AOC 24G1WG4 0x00002B30" enable position 0,0
+}
+
+profile Home-21-9 {
+  output eDP-1 enable position 3440,642
+  output "Dell Inc. DELL S3422DWG 74T0T63" enable position 0,0 mode 3440x1440@60Hz
 }
 
 profile one_unknown {
