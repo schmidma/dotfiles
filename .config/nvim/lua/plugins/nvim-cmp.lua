@@ -13,6 +13,7 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 			"petertriho/cmp-git",
 			"hrsh7th/cmp-cmdline",
+			"zbirenbaum/copilot-cmp",
 		},
 		init = function()
 			local cmp = require("cmp")
@@ -43,6 +44,7 @@ return {
 						mode = "symbol",
 						maxwidth = 50,
 						ellipsis_char = "...",
+						symbol_map = { Copilot = "" },
 					}),
 				},
 				mapping = cmp.mapping.preset.insert({
@@ -57,6 +59,7 @@ return {
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
 					{ name = "nvim_lsp_signature_help" },
+					{ name = "copilot" },
 					{ name = "luasnip" },
 					{ name = "buffer" },
 					{ name = "path" },
@@ -76,5 +79,11 @@ return {
 			"nvim-lua/plenary.nvim",
 		},
 		opts = {},
+	},
+	{
+		"zbirenbaum/copilot-cmp",
+		config = function()
+			require("copilot_cmp").setup({})
+		end,
 	},
 }

@@ -60,9 +60,6 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 -- Preview substitutions live
 vim.opt.inccommand = "split"
 
--- Highlight the text line of the cursor
-vim.opt.cursorline = true
-
 -- don't give the intro message
 vim.opt.shortmess:append("I")
 
