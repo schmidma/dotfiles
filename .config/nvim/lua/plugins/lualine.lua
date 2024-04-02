@@ -56,9 +56,9 @@ return {
 			return {
 				options = {
 					theme = compose_theme(),
-					component_separators = { left = " ", right = " " },
-					section_separators = { left = " ", right = " " },
-					-- disabled_filetypes = { "neo-tree" },
+					component_separators = { left = "", right = "" },
+					section_separators = { left = "", right = "" },
+					disabled_filetypes = { "neo-tree" },
 				},
 				sections = {
 					lualine_a = { "mode" },
@@ -81,9 +81,7 @@ return {
 							symbols = { modified = " ", readonly = " " },
 						},
 					},
-					lualine_x = {
-						"require'lsp-status'.status()",
-					},
+					lualine_x = {},
 					lualine_y = {
 						"filetype",
 						{ "progress", separator = "|" },

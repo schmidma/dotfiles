@@ -1,11 +1,14 @@
 local keys = require("keys")
 
 vim.g.mapleader = keys.leader
-vim.g.maplocalleader = ","
+vim.g.maplocalleader = keys.leader
 
 -- navigate properly when lines are wrapped
 vim.keymap.set({ "n", "v" }, "j", "gj")
 vim.keymap.set({ "n", "v" }, "k", "gk")
+
+-- matching items
+vim.keymap.set({ "n", "v" }, keys.movement.matching_item, "%")
 
 -- maintain visual mode after shifting
 vim.keymap.set("v", "<", "<gv")
@@ -25,7 +28,7 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", keys.write, vim.cmd.write)
 
 -- hide search highlight
-vim.keymap.set("n", keys.hide_search_highlight, vim.cmd.noh)
+vim.keymap.set("n", keys.hide_search_highlight, vim.cmd.nohlsearch)
 
 -- Copy to clipboard in normal, visual, select and operator modes
 vim.keymap.set({ "n", "v" }, keys.yank_to_clipboard, [["+y]])
@@ -38,11 +41,19 @@ vim.keymap.set({ "n", "v" }, keys.movement.end_of_line, "g$")
 -- redo to 'U'
 vim.keymap.set("n", keys.redo, "<C-r>")
 
+-- close window
+vim.keymap.set("n", keys.close_window, "<C-w><C-q>")
+
 -- better window movement
-vim.keymap.set("n", keys.split_navigation.left, "<C-w>h")
-vim.keymap.set("n", keys.split_navigation.down, "<C-w>j")
-vim.keymap.set("n", keys.split_navigation.up, "<C-w>k")
-vim.keymap.set("n", keys.split_navigation.right, "<C-w>l")
+vim.keymap.set("n", keys.split_navigation.left, "<C-w><C-h>")
+vim.keymap.set("n", keys.split_navigation.down, "<C-w><C-j>")
+vim.keymap.set("n", keys.split_navigation.up, "<C-w><C-k>")
+vim.keymap.set("n", keys.split_navigation.right, "<C-w><C-l>")
 
 -- terminal mode
-vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
+
+-- diagnostics
+vim.keymap.set("n", keys.diagnostic.goto_prev, vim.diagnostic.goto_prev)
+vim.keymap.set("n", keys.diagnostic.goto_next, vim.diagnostic.goto_next)
+vim.keymap.set("n", keys.diagnostic.open_float, vim.diagnostic.open_float)

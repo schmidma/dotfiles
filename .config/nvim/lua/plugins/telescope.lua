@@ -9,12 +9,12 @@ local keys = require("keys")
 return {
 	{
 		"nvim-telescope/telescope.nvim",
+		event = "VeryLazy",
 		branch = "0.1.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			{
-				"nvim-telescope/telescope-fzy-native.nvim",
-			},
+			"nvim-telescope/telescope-fzy-native.nvim",
+			"nvim-tree/nvim-web-devicons",
 		},
 		keys = {
 			{
@@ -61,11 +61,6 @@ return {
 				keys.show_keymaps,
 				telescope("keymaps"),
 				desc = "Show Keymaps",
-			},
-			{
-				keys.pick_symbols,
-				telescope("lsp_dynamic_workspace_symbols"),
-				desc = "Goto Symbol",
 			},
 		},
 		opts = {

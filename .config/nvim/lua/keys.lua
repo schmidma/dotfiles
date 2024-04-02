@@ -4,7 +4,9 @@ local keys = {
 	movement = {
 		start_of_line = "gh",
 		end_of_line = "gl",
+		matching_item = "mm",
 	},
+	close_window = "<leader>q",
 	dismiss_notifications = "<leader>;",
 	yank_to_clipboard = "<leader>y",
 	paste_from_clipboard = "<leader>p",
@@ -37,6 +39,10 @@ local keys = {
 	conflict = {
 		next = "]x",
 		previous = "[x",
+		choose_ours = "co",
+		choose_theirs = "ct",
+		choose_both = "cb",
+		choose_none = "c0",
 	},
 	resume_selection = "<leader><tab>",
 	open_file_selection = "<leader>e",
@@ -44,15 +50,14 @@ local keys = {
 	live_grep = "<leader>/",
 	command_history = "<leader>:",
 	show_keymaps = "<leader>?",
-	toggle_file_tree = "<leader>nt",
-	pick_symbols = "<leader>ss",
+	toggle_file_tree = "<leader>t",
 	split_navigation = {
 		left = "<C-h>",
 		down = "<C-j>",
 		up = "<C-k>",
 		right = "<C-l>",
 	},
-	iswap = "gs",
+	iswap = "<leader>s",
 	lsp = {
 		code_action = "<leader>a",
 		hover = "K",
@@ -77,8 +82,8 @@ local keys = {
 	surround = {
 		add = "ma",
 		delete = "md",
-		find = "mm",
-		find_left = "mM",
+		find = "mf",
+		find_left = "mF",
 		highlight = "mh",
 		replace = "mr",
 	},
@@ -110,10 +115,10 @@ local keys = {
 	completion = {
 		scroll_docs_down = "<C-d>",
 		scroll_docs_up = "<C-u>",
-		trigger = "<C-Space>",
+		complete = "<C-Space>",
 		next = "<C-n>",
-		prev = "<C-p>",
-		close = "<C-e>",
+		previous = "<C-p>",
+		abort = "<C-c>",
 		confirm = "<C-y>",
 	},
 }

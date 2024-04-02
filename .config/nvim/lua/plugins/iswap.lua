@@ -4,13 +4,13 @@ return {
 	{
 		"mizlan/iswap.nvim",
 		cmd = { "ISwap" },
-		opts = {},
+		opts = {
+			autoswap = true,
+		},
 		keys = {
 			{
 				keys.iswap,
-				function()
-					vim.cmd.ISwap()
-				end,
+				vim.cmd.ISwap,
 				desc = "ISwap",
 			},
 		},

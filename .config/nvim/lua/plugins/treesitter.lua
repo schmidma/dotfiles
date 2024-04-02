@@ -3,7 +3,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = { "BufReadPost", "BufNewFile" },
-		-- dependencies = { "nvim-treesitter/nvim-treesitter-textobjects", },
 		opts = {
 			ensure_installed = { "vimdoc", "c", "lua", "rust", "vim", "regex", "bash", "markdown_inline" },
 			auto_install = true,
@@ -13,21 +12,6 @@ return {
 		},
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
-			-- local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-			-- parser_config.typst = {
-			-- 	install_info = {
-			-- 		url = "https://github.com/SeniorMars/tree-sitter-typst",
-			-- 		files = { "src/parser.c", "src/scanner.c" },
-			-- 		branch = "main",
-			-- 	},
-			-- 	filetype = "typst",
-			-- }
-			-- vim.filetype.add({
-			-- 	extension = {
-			-- 		typ = "typst",
-			-- 	},
-			-- })
-			-- vim.treesitter.language.register("typst", "typst")
 		end,
 	},
 	{
@@ -39,9 +23,5 @@ return {
 		cmd = {
 			"TSPlaygroundToggle",
 		},
-	},
-	{
-		"kaarmu/typst.vim",
-		ft = "typst",
 	},
 }
