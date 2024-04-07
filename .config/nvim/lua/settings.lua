@@ -50,9 +50,6 @@ vim.opt.breakindent = true
 -- save undo history
 vim.opt.undofile = true
 
--- decrease time to wait for a key code sequence to complete
-vim.opt.timeoutlen = 300
-
 -- display certain whitespace characters
 vim.opt.list = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }

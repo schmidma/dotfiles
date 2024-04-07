@@ -31,6 +31,11 @@ return {
 			})
 
 			cmp.setup({
+				window = {
+					documentation = {
+						winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+					},
+				},
 				completion = {
 					completeopt = "menu,menuone,noinsert",
 				},

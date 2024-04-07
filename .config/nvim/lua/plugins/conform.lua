@@ -1,5 +1,14 @@
 local keys = require("keys")
 
+local function toggle_autoformat()
+	vim.g.disable_autoformat = not vim.g.disable_autoformat
+	if vim.g.disable_autoformat then
+		vim.notify("Disabled format on save", vim.log.levels.INFO, { title = "Format" })
+	else
+		vim.notify("Enabled format on save", vim.log.levels.INFO, { title = "Format" })
+	end
+end
+
 return {
 	"stevearc/conform.nvim",
 	event = { "BufWritePre" },
@@ -13,20 +22,10 @@ return {
 			mode = "",
 			desc = "Format buffer",
 		},
-		{
-			keys.lsp.toggle_autoformat,
-			function()
-				vim.g.disable_autoformat = not vim.g.disable_autoformat
-				if vim.g.disable_autoformat then
-					vim.notify("Disabled format on save", vim.log.levels.INFO, { title = "Format" })
-				else
-					vim.notify("Enabled format on save", vim.log.levels.INFO, { title = "Format" })
-				end
-			end,
-			mode = "n",
-			desc = "Toggle autoformat-on-save",
-		},
 	},
+	init = function()
+		vim.api.nvim_create_user_command("ToggleAutoformat", toggle_autoformat, {})
+	end,
 	opts = {
 		notify_on_error = false,
 		formatters_by_ft = {
