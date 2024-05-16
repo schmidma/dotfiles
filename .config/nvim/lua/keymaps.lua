@@ -21,6 +21,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("x", "R", [["_dP]])
+vim.keymap.set("x", "p", "P")
+vim.keymap.set("x", "P", "p")
 vim.keymap.set({ "n", "v" }, keys.yank_to_clipboard, [["+y]])
 vim.keymap.set("n", "Q", "<nop>")
 
