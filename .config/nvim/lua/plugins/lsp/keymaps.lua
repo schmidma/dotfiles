@@ -37,12 +37,6 @@ function M.on_attach(client, buffer)
 	end, { buffer = buffer, desc = "Go to type definition" })
 	if client.server_capabilities["signatureHelpProvider"] then
 		vim.keymap.set(
-			"n",
-			keys.lsp.signature_help,
-			vim.lsp.buf.signature_help,
-			{ buffer = buffer, desc = "Signature help" }
-		)
-		vim.keymap.set(
 			"i",
 			keys.lsp.signature_help,
 			vim.lsp.buf.signature_help,
