@@ -26,7 +26,7 @@ IMAPStore maximilian.schmidt@tuhh.de-remote
 Host mail.tu-harburg.de
 Port 993
 User cms8231
-PassCmd "gopass --password TUHH/TUHH"
+PassCmd "gopass --password maximilian.schmidt@tuhh.de"
 AuthMechs LOGIN
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
