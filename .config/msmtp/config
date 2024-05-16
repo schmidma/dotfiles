@@ -16,7 +16,7 @@ host mail.tu-harburg.de
 port 587
 from maximilian.schmidt@tuhh.de
 user cms8231
-passwordeval "gopass --password TUHH/TUHH"
+passwordeval "gopass --password maximilian.schmidt@tuhh.de"
 
 account maximilian@hulks.de
 host mail9.web-server.biz
