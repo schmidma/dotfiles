@@ -1,4 +1,4 @@
-local function compose_theme()
+local function derive_base16_theme()
 	local base16 = require("base16-colorscheme")
 	local colors = {
 		black = base16.colors.base00,
@@ -55,7 +55,7 @@ return {
 		opts = function()
 			return {
 				options = {
-					theme = compose_theme(),
+					theme = derive_base16_theme,
 					component_separators = { left = "", right = "" },
 					section_separators = { left = "", right = "" },
 					disabled_filetypes = { "neo-tree" },
@@ -106,14 +106,6 @@ return {
 				extensions = { "neo-tree" },
 			}
 		end,
-		config = function(_, opts)
-			require("lualine").setup(opts)
-			vim.api.nvim_create_autocmd("Colorscheme", {
-				group = vim.api.nvim_create_augroup("lualine-colorscheme", {}),
-				callback = function()
-					require("lualine").setup({ options = { theme = compose_theme() } })
-				end,
-			})
-		end,
+		config = true,
 	},
 }
