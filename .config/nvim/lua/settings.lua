@@ -50,10 +50,6 @@ vim.opt.breakindent = true
 -- save undo history
 vim.opt.undofile = true
 
--- display certain whitespace characters
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
 -- Preview substitutions live
 vim.opt.inccommand = "split"
 
