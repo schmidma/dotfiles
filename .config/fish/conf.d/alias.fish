@@ -6,3 +6,4 @@ alias pass gopass
 alias gpc "gopass -c"
 alias exa eza
 alias evince "flatpak run org.gnome.Evince"
+alias tree "exa --tree --level=2"
