@@ -16,11 +16,5 @@ return {
 				["<leader>g"] = { "Git" },
 			})
 		end,
-		-- opts = {
-		-- 	defaults = {
-		-- 		["<leader>h"] = { name = "+prefix githunks" },
-		-- 	},
-		-- 	window = { border = "rounded" },
-		-- },
 	},
 }

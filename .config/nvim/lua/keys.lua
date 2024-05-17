@@ -42,7 +42,10 @@ local keys = {
 	live_grep = "<leader>/",
 	command_history = "<leader>:",
 	show_keymaps = "<leader>?",
-	toggle_file_tree = "<leader>t",
+	files = {
+		open = "<leader>t",
+		open_cwd = "<leader>.",
+	},
 	split_navigation = {
 		left = "<C-h>",
 		down = "<C-j>",

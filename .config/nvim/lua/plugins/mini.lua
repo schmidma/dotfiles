@@ -47,24 +47,6 @@ return {
 		end,
 	},
 	{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
-	-- {
-	-- 	"echasnovski/mini.comment",
-	-- 	opts = {
-	-- 		hooks = {
-	-- 			pre = function()
-	-- 				require("ts_context_commentstring.internal").update_commentstring({})
-	-- 			end,
-	-- 		},
-	-- 		mappings = {
-	-- 			comment = keys.comment.comment,
-	-- 			comment_line = keys.comment.comment_line,
-	-- 			text_object = keys.comment.text_object,
-	-- 		},
-	-- 	},
-	-- 	config = function(_, opts)
-	-- 		require("mini.comment").setup(opts)
-	-- 	end,
-	-- },
 	{
 		"echasnovski/mini.indentscope",
 		event = { "BufReadPre", "BufNewFile" },
@@ -102,5 +84,42 @@ return {
 				desc = "Delete Buffer (Force)",
 			},
 		},
+	},
+	{
+		"echasnovski/mini.files",
+		keys = {
+			{
+				keys.files.open,
+				function()
+					require("mini.files").open(vim.api.nvim_buf_get_name(0), false)
+				end,
+				"Mini.Files",
+				desc = "Open file view at current file",
+			},
+			{
+				keys.files.open_cwd,
+				function()
+					require("mini.files").open(nil, false)
+				end,
+				"Mini.Files",
+				desc = "Open file view at current directory",
+			},
+		},
+		opts = {
+			windows = {
+				preview = true,
+				width_nofocus = 20,
+				width_preview = 20,
+			},
+			mappings = {
+				close = "<Esc>",
+				go_in_plus = "<CR>",
+				go_in = "",
+				go_out = "<BS>",
+				reset = "g<BS>",
+				synchronize = keys.write,
+			},
+		},
+		config = true,
 	},
 }
