@@ -60,3 +60,16 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
 -- diagnostics
 vim.keymap.set("n", keys.diagnostic.open_float, vim.diagnostic.open_float, { desc = "Open diagnostic float" })
+
+-- mistyped quits
+vim.api.nvim_create_user_command("W", "w", {})
+vim.api.nvim_create_user_command("Q", "q", {})
+vim.api.nvim_create_user_command("Wq", "wq", {})
+vim.api.nvim_create_user_command("WQ", "wq", {})
+vim.api.nvim_create_user_command("Wa", "wa", {})
+vim.api.nvim_create_user_command("WA", "wa", {})
+vim.api.nvim_create_user_command("Wqa", "wqa", {})
+vim.api.nvim_create_user_command("WQa", "wqa", {})
+vim.api.nvim_create_user_command("WQA", "wqa", {})
+vim.api.nvim_create_user_command("Qa", "qa", {})
+vim.api.nvim_create_user_command("QA", "qa", {})
