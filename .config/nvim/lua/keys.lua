@@ -52,7 +52,6 @@ local keys = {
 	iswap = "<leader>s",
 	lsp = {
 		code_action = "<leader>a",
-		hover = "K",
 		signature_help = "<c-k>",
 		rename = "<leader>r",
 		format = "<leader>f",
@@ -65,8 +64,6 @@ local keys = {
 		prev_reference = "[r",
 	},
 	diagnostic = {
-		goto_prev = "[d",
-		goto_next = "]d",
 		open_float = "<leader>d",
 		show_list = "<leader>l",
 	},
@@ -78,11 +75,11 @@ local keys = {
 		highlight = "mh",
 		replace = "mr",
 	},
-	comment = {
-		comment = "gc",
-		comment_line = "gcc",
-		text_object = "gc",
-	},
+	-- comment = {
+	-- 	comment = "gc",
+	-- 	comment_line = "gcc",
+	-- 	text_object = "gc",
+	-- },
 	git = {
 		next_hunk = "]h",
 		prev_hunk = "[h",

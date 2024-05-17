@@ -1,3 +1,8 @@
+local keys = require("keys")
+
+vim.g.mapleader = keys.leader
+vim.g.maplocalleader = keys.leader
+
 -- Install lazy.nvim if it doesn't exist
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -12,9 +17,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("keymaps")
-require("settings")
-require("autocommands")
 require("lazy").setup("plugins", {
 	ui = {
 		border = "rounded",

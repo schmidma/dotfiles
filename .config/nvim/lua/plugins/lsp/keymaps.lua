@@ -11,7 +11,6 @@ function M.on_attach(client, buffer)
 			{ buffer = buffer, desc = "Code action" }
 		)
 	end
-	vim.keymap.set("n", keys.lsp.hover, vim.lsp.buf.hover, { buffer = buffer, desc = "Hover" })
 	if client.server_capabilities["renameProvider"] then
 		vim.keymap.set("n", keys.lsp.rename, vim.lsp.buf.rename, { buffer = buffer, desc = "Rename symbol" })
 	end

@@ -15,9 +15,6 @@ vim.opt.splitright = true
 -- Enable mouse support
 vim.opt.mouse = "a"
 
--- Enables 24-bit RGB color
-vim.opt.termguicolors = true
-
 -- Show line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true

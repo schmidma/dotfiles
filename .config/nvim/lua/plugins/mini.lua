@@ -47,24 +47,24 @@ return {
 		end,
 	},
 	{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
-	{
-		"echasnovski/mini.comment",
-		opts = {
-			hooks = {
-				pre = function()
-					require("ts_context_commentstring.internal").update_commentstring({})
-				end,
-			},
-			mappings = {
-				comment = keys.comment.comment,
-				comment_line = keys.comment.comment_line,
-				text_object = keys.comment.text_object,
-			},
-		},
-		config = function(_, opts)
-			require("mini.comment").setup(opts)
-		end,
-	},
+	-- {
+	-- 	"echasnovski/mini.comment",
+	-- 	opts = {
+	-- 		hooks = {
+	-- 			pre = function()
+	-- 				require("ts_context_commentstring.internal").update_commentstring({})
+	-- 			end,
+	-- 		},
+	-- 		mappings = {
+	-- 			comment = keys.comment.comment,
+	-- 			comment_line = keys.comment.comment_line,
+	-- 			text_object = keys.comment.text_object,
+	-- 		},
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 		require("mini.comment").setup(opts)
+	-- 	end,
+	-- },
 	{
 		"echasnovski/mini.indentscope",
 		event = { "BufReadPre", "BufNewFile" },
