@@ -75,11 +75,6 @@ local keys = {
 		highlight = "mh",
 		replace = "mr",
 	},
-	-- comment = {
-	-- 	comment = "gc",
-	-- 	comment_line = "gcc",
-	-- 	text_object = "gc",
-	-- },
 	git = {
 		next_hunk = "]h",
 		prev_hunk = "[h",
