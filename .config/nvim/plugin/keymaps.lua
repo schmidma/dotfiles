@@ -55,6 +55,9 @@ vim.keymap.set("n", keys.split_navigation.down, "<C-w><C-j>")
 vim.keymap.set("n", keys.split_navigation.up, "<C-w><C-k>")
 vim.keymap.set("n", keys.split_navigation.right, "<C-w><C-l>")
 
+-- do not exit insert mode on C-c
+vim.keymap.set("i", "<C-c>", "<Nop>")
+
 -- escape terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 

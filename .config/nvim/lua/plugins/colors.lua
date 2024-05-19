@@ -1,3 +1,5 @@
+local keys = require("keys")
+
 local function get_color(group, attr)
 	return vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID(group)), attr)
 end
@@ -64,5 +66,28 @@ return {
 
 			vim.cmd.colorscheme(opts.theme)
 		end,
+	},
+	{
+		"RRethy/vim-illuminate",
+		event = { "BufReadPost", "BufNewFile" },
+		init = function()
+			require("illuminate").configure({})
+		end,
+		keys = {
+			{
+				keys.lsp.next_reference,
+				function()
+					require("illuminate")["goto_next_reference"](false)
+				end,
+				desc = "Next Reference",
+			},
+			{
+				keys.lsp.prev_reference,
+				function()
+					require("illuminate")["goto_prev_reference"](false)
+				end,
+				desc = "Previous Reference",
+			},
+		},
 	},
 }

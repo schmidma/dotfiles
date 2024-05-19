@@ -41,6 +41,40 @@ return {
 				highlight = keys.surround.highlight,
 				replace = keys.surround.replace,
 			},
+			custom_surroundings = {
+				["("] = {
+					input = { "%b()", "^.().*().$" },
+					output = { left = "(", right = ")" },
+				},
+				[")"] = {
+					input = { "%b()", "^.%s*().-()%s*.$" },
+					output = { left = "( ", right = " )" },
+				},
+				["["] = {
+					input = { "%b[]", "^.().*().$" },
+					output = { left = "[", right = "]" },
+				},
+				["]"] = {
+					input = { "%b[]", "^.%s*().-()%s*.$" },
+					output = { left = "[ ", right = " ]" },
+				},
+				["{"] = {
+					input = { "%b{}", "^.().*().$" },
+					output = { left = "{", right = "}" },
+				},
+				["}"] = {
+					input = { "%b{}", "^.%s*().-()%s*.$" },
+					output = { left = "{ ", right = " }" },
+				},
+				["<"] = {
+					input = { "%b<>", "^.().*().$" },
+					output = { left = "<", right = ">" },
+				},
+				[">"] = {
+					input = { "%b<>", "^.%s*().-()%s*.$" },
+					output = { left = "< ", right = " >" },
+				},
+			},
 		},
 		config = function(_, opts)
 			require("mini.surround").setup(opts)

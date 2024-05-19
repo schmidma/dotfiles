@@ -55,7 +55,7 @@ local keys = {
 	iswap = "<leader>s",
 	lsp = {
 		code_action = "<leader>a",
-		signature_help = "<c-k>",
+		signature_help = "<c-i>",
 		rename = "<leader>r",
 		format = "<leader>f",
 		goto_definition = "gd",
@@ -105,6 +105,10 @@ local keys = {
 		previous = "<C-p>",
 		abort = "<C-c>",
 		confirm = "<C-y>",
+		copilot = {
+			next = "<C-j>",
+			previous = "<C-k>",
+		},
 	},
 }
 
