@@ -22,10 +22,12 @@ local keys = {
 		close_force = "<leader>C",
 	},
 	trouble = {
-		document_diagnostics = "<leader>xx",
-		workspace_diagnostics = "<leader>xw",
-		location_list = "<leader>xL",
-		quickfix_list = "<leader>xQ",
+		diagnostics = "<leader>xx",
+		buffer_diagnostics = "<leader>xb",
+		symbols = "<leader>xs",
+		lsp = "<leader>xl",
+		location = "<leader>xL",
+		quickfix = "<leader>xq",
 	},
 	magma = {
 		init = "<localleader>i",

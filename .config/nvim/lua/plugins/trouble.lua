@@ -8,30 +8,44 @@ return {
 		opts = { use_diagnostic_signs = true },
 		keys = {
 			{
-				keys.trouble.document_diagnostics,
+				keys.trouble.diagnostics,
 				function()
-					vim.cmd.TroubleToggle("document_diagnostics")
+					vim.cmd.Trouble("diagnostics toggle")
 				end,
-				desc = "Document Diagnostics (Trouble)",
+				desc = "Diagnostics (Trouble)",
 			},
 			{
-				keys.trouble.workspace_diagnostics,
+				keys.trouble.buffer_diagnostics,
 				function()
-					vim.cmd.TroubleToggle("workspace_diagnostics")
+					vim.cmd.Trouble("diagnostics toggle filter.buf=0")
 				end,
-				desc = "Workspace Diagnostics (Trouble)",
+				desc = "Buffer Diagnostics (Trouble)",
 			},
 			{
-				keys.trouble.location_list,
+				keys.trouble.symbols,
 				function()
-					vim.cmd.TroubleToggle("loclist")
+					vim.cmd.Trouble("symbols toggle focus=false")
+				end,
+				desc = "Symbols (Trouble)",
+			},
+			{
+				keys.trouble.lsp,
+				function()
+					vim.cmd.Trouble("lsp toggle focus=false win.position=right")
+				end,
+				desc = "LSP Definitions / References / ... (Trouble)",
+			},
+			{
+				keys.trouble.location,
+				function()
+					vim.cmd.Trouble("loclist toggle")
 				end,
 				desc = "Location List (Trouble)",
 			},
 			{
-				keys.trouble.quickfix_list,
+				keys.trouble.quickfix,
 				function()
-					vim.cmd.TroubleToggle("quickfix")
+					vim.cmd.Trouble("qflist toggle")
 				end,
 				desc = "Quickfix List (Trouble)",
 			},
