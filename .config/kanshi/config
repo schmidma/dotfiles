@@ -21,12 +21,16 @@ profile HULKs-2 {
 }
 
 profile HULKs-3 {
-  output eDP-1 enable position 2560,240
-  output "Dell Inc. DELL P2723DE 6ZRM5V3" enable position 0,0 mode 2560x1440@60Hz scale 1
-
+  output eDP-1 enable position 2397,148
+  output "Dell Inc. DELL P3222QE 915S6H3" enable position 0,0 mode 3840x2160@60Hz scale 1.6
 }
 
 profile HULKs-4 {
+  output eDP-1 enable position 2560,240
+  output "Dell Inc. DELL P2723DE 6ZRM5V3" enable position 0,0 mode 2560x1440@60Hz scale 1
+}
+
+profile HULKs-5 {
   output eDP-1 enable position 2400,150
   output "Dell Inc. DELL U2720Q 1YV09H3" enable position 0,0 scale 1.6
 }
