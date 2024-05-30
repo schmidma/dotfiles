@@ -79,4 +79,21 @@ return {
 			require("telescope").load_extension("fzy_native")
 		end,
 	},
+	{
+		"2kabhishek/co-author.nvim",
+		dependencies = {
+			"stevearc/dressing.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		cmd = { "CoAuthor" },
+		keys = {
+			{
+				keys.git.coauthors,
+				function()
+					require("co-author").list()
+				end,
+				desc = "Open List of possible Co-Authors",
+			},
+		},
+	},
 }
