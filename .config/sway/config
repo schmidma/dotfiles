@@ -176,6 +176,7 @@ bindsym $mod+Shift+e exit
 for_window [app_id="pavucontrol"] floating enable
 for_window [app_id="zoom"] floating enable
 for_window [app_id="Element"] floating enable
+for_window [app_id="^org.mozilla.firefox$" title="^Extension: \(Bitwarden Password Manager\) - Bitwarden — Mozilla Firefox$"] floating enable
 
 mode "resize" {
         bindsym $left resize shrink width 2 px or 2 ppt
