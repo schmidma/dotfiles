@@ -1,7 +1,7 @@
 profile IES {
   output eDP-1 enable position 3000,420
-  output "Dell Inc. DELL U2422H 75BNF83" enable position 1080,420 mode 1920x1080@60Hz
-  output "Dell Inc. DELL U2422H 5V9NF83" enable position 0,0 mode 1920x1080@60Hz transform 90
+  output "Dell Inc. DELL U2422H 75BNF83" enable position 1080,420 mode 1920x1080@60Hz scale 1
+  output "Dell Inc. DELL U2422H 5V9NF83" enable position 0,0 mode 1920x1080@60Hz transform 90 scale 1
 }
 
 profile ITL {
@@ -16,13 +16,13 @@ profile HULKs-1 {
 }
 
 profile HULKs-2 {
-  output eDP-1 enable position 2397,148
-  output "Dell Inc. DELL P3222QE 105S6H3" enable position 0,0 mode 3840x2160@60Hz scale 1.6
+  output eDP-1 enable position 2560,240
+  output "Dell Inc. DELL P3222QE 105S6H3" enable position 0,0 mode 3840x2160@60Hz scale 1.5
 }
 
 profile HULKs-3 {
-  output eDP-1 enable position 2397,148
-  output "Dell Inc. DELL P3222QE 915S6H3" enable position 0,0 mode 3840x2160@60Hz scale 1.6
+  output eDP-1 enable position 2560,240
+  output "Dell Inc. DELL P3222QE 915S6H3" enable position 0,0 mode 3840x2160@60Hz scale 1.5
 }
 
 profile HULKs-4 {
@@ -31,8 +31,14 @@ profile HULKs-4 {
 }
 
 profile HULKs-5 {
-  output eDP-1 enable position 2400,150
-  output "Dell Inc. DELL U2720Q 1YV09H3" enable position 0,0 scale 1.6
+  output eDP-1 enable position 2560,240
+  output "Dell Inc. DELL U2720Q 1YV09H3" enable position 0,0 scale 1.5
+}
+
+profile HULKs-two {
+  output eDP-1 enable position 4000,1254
+  output "Dell Inc. DELL U2720Q 8YV09H3" enable position 0,0 mode 3840x2160@60Hz scale 1.5 transform 90
+  output "Dell Inc. DELL P3222QE 105S6H3" enable position 1440,693 mode 3840x2160@60Hz scale 1.5 transform normal
 }
 
 profile HULKs-HDF {
