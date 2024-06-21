@@ -19,7 +19,7 @@ user cms8231
 passwordeval "gopass --password maximilian.schmidt@tuhh.de"
 
 account maximilian@hulks.de
-host mail9.web-server.biz
+host smtp.webspace.bz
 port 587
 from maximilian@hulks.de
 user maximilian@hulks.de
