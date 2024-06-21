@@ -29,7 +29,7 @@ return {
 			{ keys.surround.delete, desc = "Delete surrounding" },
 			{ keys.surround.find, desc = "Find surrounding" },
 			{ keys.surround.find_left, desc = "Find left surrounding" },
-			{ keys.surround.highlight, desc = "Hightlight surrounding" },
+			{ keys.surround.highlight, desc = "Highlight surrounding" },
 			{ keys.surround.replace, desc = "Replace surrounding" },
 		},
 		opts = {
@@ -40,40 +40,6 @@ return {
 				find_left = keys.surround.find_left,
 				highlight = keys.surround.highlight,
 				replace = keys.surround.replace,
-			},
-			custom_surroundings = {
-				["("] = {
-					input = { "%b()", "^.().*().$" },
-					output = { left = "(", right = ")" },
-				},
-				[")"] = {
-					input = { "%b()", "^.%s*().-()%s*.$" },
-					output = { left = "( ", right = " )" },
-				},
-				["["] = {
-					input = { "%b[]", "^.().*().$" },
-					output = { left = "[", right = "]" },
-				},
-				["]"] = {
-					input = { "%b[]", "^.%s*().-()%s*.$" },
-					output = { left = "[ ", right = " ]" },
-				},
-				["{"] = {
-					input = { "%b{}", "^.().*().$" },
-					output = { left = "{", right = "}" },
-				},
-				["}"] = {
-					input = { "%b{}", "^.%s*().-()%s*.$" },
-					output = { left = "{ ", right = " }" },
-				},
-				["<"] = {
-					input = { "%b<>", "^.().*().$" },
-					output = { left = "<", right = ">" },
-				},
-				[">"] = {
-					input = { "%b<>", "^.%s*().-()%s*.$" },
-					output = { left = "< ", right = " >" },
-				},
 			},
 		},
 		config = function(_, opts)
