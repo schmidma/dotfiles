@@ -46,7 +46,7 @@ SyncState *
 
 # hulks.de
 IMAPStore maximilian@hulks.de-remote
-Host mail9.web-server.biz
+Host mail.webspace.bz
 Port 993
 User maximilian@hulks.de
 PassCmd "gopass --password HULKs/maximilian@hulks.de"
