@@ -55,6 +55,7 @@ local keys = {
 		right = "<C-l>",
 	},
 	iswap = "<leader>s",
+	select_venv = "<leader>v",
 	lsp = {
 		code_action = "<leader>a",
 		signature_help = "<C-o>",

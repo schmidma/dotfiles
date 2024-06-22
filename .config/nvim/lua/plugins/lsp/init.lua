@@ -1,3 +1,5 @@
+local keys = require("keys")
+
 local function register_lsp_attach(on_attach)
 	vim.api.nvim_create_autocmd("LspAttach", {
 		callback = function(args)
@@ -28,18 +30,6 @@ local function setup_diagnostic_signs()
 		vim.fn.sign_define(name, { text = icon, texthl = name, numhl = "" })
 	end
 end
-
-vim.api.nvim_create_autocmd("VimEnter", {
-	desc = "Auto select virtualenv Nvim open",
-	pattern = "*",
-	callback = function()
-		local venv = vim.fn.findfile("pyproject.toml", vim.fn.getcwd() .. ";")
-		if venv ~= "" then
-			require("venv-selector").retrieve_from_cache()
-		end
-	end,
-	once = true,
-})
 
 return {
 	{
@@ -113,6 +103,18 @@ return {
 		},
 		opts = {
 			name = { "venv", ".venv" },
+		},
+	},
+
+	{
+		"linux-cultist/venv-selector.nvim",
+		branch = "regexp",
+		lazy = false,
+		config = function()
+			require("venv-selector").setup()
+		end,
+		keys = {
+			{ keys.select_venv, vim.cmd.VenvSelect },
 		},
 	},
 }
