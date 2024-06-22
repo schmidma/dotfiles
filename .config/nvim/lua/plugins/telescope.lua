@@ -24,7 +24,7 @@ return {
 			},
 			{
 				keys.open_file_selection,
-				telescope("find_files"),
+				telescope("find_files", { hidden = true }),
 				desc = "Find Files",
 			},
 			{
