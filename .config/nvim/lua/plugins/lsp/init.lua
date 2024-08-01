@@ -12,7 +12,7 @@ end
 
 local custom_server_setup = {
 	["rust_analyzer"] = function(opts)
-		require("rust-tools").setup(opts)
+		-- 	require("rust-tools").setup(opts)
 	end,
 }
 
@@ -51,7 +51,6 @@ return {
 			"mason-lspconfig.nvim",
 			"fidget.nvim",
 			"hrsh7th/cmp-nvim-lsp",
-			"simrat39/rust-tools.nvim",
 		},
 		opts = {
 			diagnostics = {
@@ -61,7 +60,7 @@ return {
 				severity_sort = true,
 				float = { border = "rounded" },
 			},
-			manual_register = { "rust_analyzer" },
+			manual_register = {},
 		},
 		config = function(_, opts)
 			register_lsp_attach(function(client, buffer)
@@ -72,6 +71,7 @@ return {
 
 			local capabilities =
 				require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 			local function setup_lsp_server(server)
 				local server_options = require("plugins.lsp.server_options")[server] or {}
 				local options = vim.tbl_deep_extend("force", {
@@ -91,6 +91,39 @@ return {
 		end,
 	},
 	{
+		"mrcjkb/rustaceanvim",
+		version = "^4",
+		lazy = false,
+		config = function()
+			vim.g.rustaceanvim = {
+				tools = {
+					float_win_config = { border = "rounded" },
+					-- hover_actions = {
+					-- 	replace_builtin_hover = false,
+					-- },
+				},
+				server = {
+					cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+					default_settings = {
+						["rust-analyzer"] = {
+							-- cargo = {
+							-- 	features = "all",
+							-- },
+							-- imports = {
+							-- 	granularity = {
+							-- 		enforce = true,
+							-- 	},
+							-- },
+							-- check = {
+							-- 	command = "clippy",
+							-- },
+						},
+					},
+				},
+			}
+		end,
+	},
+	{
 		"j-hui/fidget.nvim",
 		lazy = true,
 		opts = {},
@@ -105,7 +138,6 @@ return {
 			name = { "venv", ".venv" },
 		},
 	},
-
 	{
 		"linux-cultist/venv-selector.nvim",
 		branch = "regexp",

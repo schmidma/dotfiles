@@ -1,29 +1,4 @@
 local options = {
-	["rust_analyzer"] = {
-		tools = {
-			inlay_hints = {
-				auto = true,
-			},
-		},
-		server = {
-			cmd = { "rustup", "run", "stable", "rust-analyzer" },
-			settings = {
-				["rust-analyzer"] = {
-					cargo = {
-						features = "all",
-					},
-					imports = {
-						granularity = {
-							enforce = true,
-						},
-					},
-					check = {
-						command = "clippy",
-					},
-				},
-			},
-		},
-	},
 	["lua_ls"] = {
 		settings = {
 			Lua = {
