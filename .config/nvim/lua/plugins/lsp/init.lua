@@ -149,4 +149,10 @@ return {
 			{ keys.select_venv, vim.cmd.VenvSelect },
 		},
 	},
+	{
+		"barreiroleo/ltex_extra.nvim",
+		branch = "dev",
+		ft = { "markdown", "tex" },
+		opts = {},
+	},
 }
