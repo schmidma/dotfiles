@@ -10,11 +10,7 @@ local function register_lsp_attach(on_attach)
 	})
 end
 
-local custom_server_setup = {
-	["rust_analyzer"] = function(opts)
-		-- 	require("rust-tools").setup(opts)
-	end,
-}
+local custom_server_setup = {}
 
 local function setup_borders(opts)
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = opts.float.border })
@@ -92,31 +88,25 @@ return {
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^4",
+		version = "^5",
 		lazy = false,
 		config = function()
 			vim.g.rustaceanvim = {
 				tools = {
 					float_win_config = { border = "rounded" },
-					-- hover_actions = {
-					-- 	replace_builtin_hover = false,
-					-- },
 				},
 				server = {
-					cmd = { "rustup", "run", "nightly", "rust-analyzer" },
+					cmd = { "rustup", "run", "stable", "rust-analyzer" },
 					default_settings = {
 						["rust-analyzer"] = {
-							-- cargo = {
-							-- 	features = "all",
-							-- },
-							-- imports = {
-							-- 	granularity = {
-							-- 		enforce = true,
-							-- 	},
-							-- },
-							-- check = {
-							-- 	command = "clippy",
-							-- },
+							checkOnSave = {
+								overrideCommand = {
+									"cargo",
+									"+nightly",
+									"clippy",
+									"--message-format=json",
+								},
+							},
 						},
 					},
 				},
