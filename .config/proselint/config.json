@@ -1,0 +1,7 @@
+{
+  "checks": {
+    "hyperbole.misc": false,
+    "typography.symbols.ellipsis": false,
+    "annotations.misc": false
+  }
+}
