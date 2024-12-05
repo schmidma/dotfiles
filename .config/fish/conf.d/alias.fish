@@ -6,6 +6,8 @@ alias pass gopass
 alias gpc "gopass -c"
 alias exa eza
 alias evince "flatpak run org.gnome.Evince"
-alias tree "exa --tree --level=2"
+alias tree "exa --tree --level=3"
 alias o "xdg-open"
 alias logs_download "wget -m -np -nH -c -R \"index.html\""
+alias mpv "flatpak run io.mpv.Mpv"
+alias firefox "flatpak run org.mozilla.firefox"
