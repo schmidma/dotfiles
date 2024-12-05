@@ -32,7 +32,8 @@ return {
 			lua = { "stylua" },
 			javascript = { "prettierd" },
 			json = { "prettierd" },
-			typst = { "typst-fmt" },
+			markdown = { "prettierd" },
+			typst = { "typstyle" },
 		},
 		format_on_save = function(bufnr)
 			if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
