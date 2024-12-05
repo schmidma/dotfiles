@@ -1,54 +1,38 @@
 [colors.primary]
-background = "0x181818"
-foreground = "0xd8d8d8"
+background = "0x1f1f28"
+foreground = "0xdcd7ba"
 
 [colors.normal]
-black = "0x181818"
-blue = "0x7cafc2"
-cyan = "0x86c1b9"
-green = "0xa1b56c"
-magenta = "0xba8baf"
-red = "0xab4642"
-white = "0xd8d8d8"
-yellow = "0xf7ca88"
+black = "0x090618"
+red = "0xc34043"
+green = "0x76946a"
+yellow = "0xc0a36e"
+blue = "0x7e9cd8"
+magenta = "0x957fb8"
+cyan = "0x6a9589"
+white = "0xc8c093"
 
 [colors.bright]
-black = "0x585858"
-blue = "0x7cafc2"
-cyan = "0x86c1b9"
-green = "0xa1b56c"
-magenta = "0xba8baf"
-red = "0xab4642"
-white = "0xf8f8f8"
-yellow = "0xf7ca88"
+black = "0x727169"
+red = "0xe82424"
+green = "0x98bb6c"
+yellow = "0xe6c384"
+blue = "0x7fb4ca"
+magenta = "0x938aa9"
+cyan = "0x7aa89f"
+white = "0xdcd7ba"
 
-[colors.cursor]
-cursor = "0xd8d8d8"
-text = "0x181818"
+[colors.selection]
+background = "0x2d4f67"
+foreground = "0xc8c093"
 
 [[colors.indexed_colors]]
-color = "0xdc9656"
 index = 16
+color = "0xffa066"
 
 [[colors.indexed_colors]]
-color = "0xa16946"
 index = 17
-
-[[colors.indexed_colors]]
-color = "0x282828"
-index = 18
-
-[[colors.indexed_colors]]
-color = "0x383838"
-index = 19
-
-[[colors.indexed_colors]]
-color = "0xb8b8b8"
-index = 20
-
-[[colors.indexed_colors]]
-color = "0xe8e8e8"
-index = 21
+color = "0xff5d62"
 
 [font]
 size = 14.0
