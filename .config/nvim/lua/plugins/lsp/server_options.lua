@@ -34,14 +34,11 @@ local options = {
 		end,
 	},
 	["pyright"] = {
-		capabilities = (function()
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
-			return capabilities
-		end)(),
 		settings = {
 			python = {
-				analysis = {},
+				analysis = {
+					stubPath = "~/typings",
+				},
 			},
 		},
 	},
@@ -58,11 +55,6 @@ local options = {
 		settings = {
 			exportPdf = "never",
 		},
-	},
-	["ltex"] = {
-		on_attach = function(client, bufnr)
-			require("ltex-utils").on_attach(bufnr)
-		end,
 	},
 }
 
