@@ -17,6 +17,13 @@ local options = {
 			},
 		},
 	},
+	["ltex"] = {
+		settings = {
+			ltex = {
+				checkFrequency = "save",
+			},
+		},
+	},
 	["texlab"] = {
 		settings = {
 			texlab = {
