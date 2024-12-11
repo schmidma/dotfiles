@@ -39,6 +39,7 @@ local keys = {
 		open = "<leader>t",
 		open_cwd = "<leader>.",
 	},
+	open_url = "<leader>o",
 	split_navigation = {
 		left = "<C-h>",
 		down = "<C-j>",
@@ -71,6 +72,13 @@ local keys = {
 		find_left = "mF",
 		highlight = "mh",
 		replace = "mr",
+	},
+	operators = {
+		evaluate = "g=",
+		exchange = "gx",
+		multiply = "gm",
+		replace = "gp",
+		sort = "gs",
 	},
 	git = {
 		next_hunk = "]h",

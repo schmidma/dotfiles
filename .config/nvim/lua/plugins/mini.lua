@@ -46,6 +46,29 @@ return {
 			require("mini.surround").setup(opts)
 		end,
 	},
+	{
+		"echasnovski/mini.operators",
+		opts = {
+			evaluate = {
+				prefix = keys.operators.evaluate,
+			},
+			exchange = {
+				prefix = keys.operators.exchange,
+			},
+			multiply = {
+				prefix = keys.operators.multiply,
+			},
+			replace = {
+				prefix = keys.operators.replace,
+			},
+			sort = {
+				prefix = keys.operators.sort,
+			},
+		},
+		config = function(_, opts)
+			require("mini.operators").setup(opts)
+		end,
+	},
 	{ "JoosepAlviste/nvim-ts-context-commentstring", lazy = true },
 	{
 		"echasnovski/mini.indentscope",
