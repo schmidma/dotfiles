@@ -12,6 +12,9 @@ local keys = {
 	paste_from_clipboard = "<leader>p",
 	hide_search_highlight = ";",
 	redo = "U",
+	quickfix = {
+		open = "<leader>z",
+	},
 	buffer = {
 		prev = "gj",
 		next = "gk",
