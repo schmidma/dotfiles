@@ -29,7 +29,7 @@ return {
 				map("n", keys.git.reset_buffer, gs.reset_buffer, "Reset Buffer")
 				map("n", keys.git.preview_hunk, gs.preview_hunk, "Preview Hunk")
 				map("n", keys.git.blame_line, function()
-					gs.blame_line()
+					gs.blame_line({ full = true })
 				end, "Blame Line")
 				map("n", keys.git.diff, gs.diffthis, "Diff This")
 			end,
