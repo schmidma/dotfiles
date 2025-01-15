@@ -34,6 +34,7 @@ return {
 			json = { "prettierd" },
 			markdown = { "prettierd" },
 			typst = { "typstyle" },
+			toml = { "taplo" },
 		},
 		format_on_save = function(bufnr)
 			if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
