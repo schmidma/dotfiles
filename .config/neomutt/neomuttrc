@@ -82,9 +82,9 @@ set editor = "nvim -c 'set spell spelllang=de,en_us'"
 source /home/maximilian/.config/neomutt/accounts/schmidma@mailbox.org
 
 # Sidebar navigation
-bind index,pager <down>   sidebar-next
-bind index,pager <up>     sidebar-prev
-bind index,pager <right>  sidebar-open
+bind index,pager <C-Down>   sidebar-next
+bind index,pager <C-Up>     sidebar-prev
+bind index,pager <C-Right>  sidebar-open
 
 # notmuch query
 macro index \\\\ "<vfolder-from-query>" "Search mailbox"
