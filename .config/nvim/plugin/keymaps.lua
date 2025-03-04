@@ -41,6 +41,12 @@ vim.keymap.set({ "n", "x" }, keys.paste_from_clipboard, [["+p]], { desc = "Paste
 
 -- movement
 vim.keymap.set({ "n", "x" }, keys.movement.start_of_line, "g0", { desc = "Move to start of line" })
+vim.keymap.set(
+	{ "n", "x" },
+	keys.movement.start_non_whitespace_of_line,
+	"g^",
+	{ desc = "Move to first non whitespace character of line" }
+)
 vim.keymap.set({ "n", "x" }, keys.movement.end_of_line, "g$", { desc = "Move to end of line" })
 
 -- redo to 'U'

@@ -2,7 +2,8 @@ local keys = {
 	leader = " ",
 	write = "<leader>w",
 	movement = {
-		start_of_line = "gh",
+		start_of_line = "g0",
+		start_non_whitespace_of_line = "gh",
 		end_of_line = "gl",
 		matching_item = "mm",
 	},
