@@ -1,8 +1,8 @@
 local keys = require("keys")
 
 local function toggle_autoformat()
-	vim.g.disable_autoformat = not vim.g.disable_autoformat
-	if vim.g.disable_autoformat then
+	vim.b.disable_autoformat = not vim.b.disable_autoformat
+	if vim.b.disable_autoformat then
 		vim.notify("Disabled format on save", vim.log.levels.INFO, { title = "Format" })
 	else
 		vim.notify("Enabled format on save", vim.log.levels.INFO, { title = "Format" })
@@ -37,7 +37,7 @@ return {
 			toml = { "taplo" },
 		},
 		format_on_save = function(bufnr)
-			if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+			if vim.b[bufnr].disable_autoformat then
 				return
 			end
 			return { timeout_ms = 500, lsp_fallback = true }
