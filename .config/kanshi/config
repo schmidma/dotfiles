@@ -11,8 +11,8 @@ profile ITL {
 }
 
 profile HULKs-1 {
-  output eDP-1 enable position 1920,0
-  output "Dell Inc. DELL U2720Q 8YV09H3" enable position 0,0 mode 3840x2160@60Hz scale 2
+  output eDP-1 enable position 2560,240
+  output "Dell Inc. DELL U2720Q 8YV09H3" enable position 0,0 mode 3840x2160@60Hz scale 1.5
 }
 
 profile HULKs-2 {
