@@ -3,6 +3,8 @@ local keys = require("keys")
 -- navigate properly when lines are wrapped
 vim.keymap.set({ "n", "v" }, "j", "gj")
 vim.keymap.set({ "n", "v" }, "k", "gk")
+vim.keymap.set({ "n", "v" }, "<Down>", "gj")
+vim.keymap.set({ "n", "v" }, "<Up>", "gk")
 
 -- matching items
 vim.keymap.set({ "n", "v" }, keys.movement.matching_item, "%", { silent = true, desc = "Jump to matching item" })
