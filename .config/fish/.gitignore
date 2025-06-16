@@ -1,0 +1,10 @@
+/completions/
+/conf.d/fish-exa.fish
+/conf.d/fzf.fish
+/conf.d/git.fish
+/conf.d/luarocks.fish
+/conf.d/puffer_fish_key_bindings.fish
+/conf.d/rustup.fish
+/conf.d/uv.env.fish
+/fish_variables
+/functions/
