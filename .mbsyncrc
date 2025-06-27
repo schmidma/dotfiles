@@ -3,9 +3,9 @@ IMAPStore schmidma@mailbox.org-remote
 Host imap.mailbox.org
 Port 993
 User schmidma@mailbox.org
-PassCmd "gopass --password E-Mail/mailbox.org"
+PassCmd "gopass --password schmidma@mailbox.org"
 AuthMechs LOGIN
-SSLType IMAPS
+TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore schmidma@mailbox.org-local
@@ -28,7 +28,7 @@ Port 993
 User cms8231
 PassCmd "gopass --password maximilian.schmidt@tuhh.de"
 AuthMechs LOGIN
-SSLType IMAPS
+TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore maximilian.schmidt@tuhh.de-local
@@ -49,9 +49,9 @@ IMAPStore maximilian@hulks.de-remote
 Host mail.webspace.bz
 Port 993
 User maximilian@hulks.de
-PassCmd "gopass --password HULKs/maximilian@hulks.de"
+PassCmd "gopass --password maximilian@hulks.de"
 AuthMechs LOGIN
-SSLType IMAPS
+TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore maximilian@hulks.de-local

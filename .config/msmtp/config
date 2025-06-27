@@ -9,7 +9,7 @@ host smtp.mailbox.org
 port 587
 from schmidma@mailbox.org
 user schmidma@mailbox.org
-passwordeval "gopass --password E-Mail/mailbox.org"
+passwordeval "gopass --password schmidma@mailbox.org"
 
 account maximilian.schmidt@tuhh.de
 host mail.tu-harburg.de
@@ -23,4 +23,4 @@ host smtp.webspace.bz
 port 587
 from maximilian@hulks.de
 user maximilian@hulks.de
-passwordeval "gopass --password HULKs/maximilian@hulks.de"
+passwordeval "gopass --password maximilian@hulks.de"
