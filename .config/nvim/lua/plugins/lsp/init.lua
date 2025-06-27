@@ -79,7 +79,7 @@ return {
 					require("lspconfig")[server].setup(options)
 				end
 			end
-			require("mason-lspconfig").setup_handlers({ setup_lsp_server })
+			require("mason-lspconfig").setup()
 
 			for _, server in ipairs(opts.manual_register) do
 				setup_lsp_server(server)
@@ -88,7 +88,7 @@ return {
 	},
 	{
 		"mrcjkb/rustaceanvim",
-		version = "^5",
+		version = "^6",
 		lazy = false,
 		config = function()
 			vim.g.rustaceanvim = {
@@ -99,7 +99,7 @@ return {
 					cmd = { "rustup", "run", "stable", "rust-analyzer" },
 					default_settings = {
 						["rust-analyzer"] = {
-							checkOnSave = {
+							check = {
 								overrideCommand = {
 									"cargo",
 									"+nightly",
