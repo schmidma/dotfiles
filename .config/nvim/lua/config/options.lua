@@ -1,3 +1,9 @@
+local keys = require("config.keys")
+
+-- set leader key
+vim.g.mapleader = keys.leader
+vim.g.maplocalleader = keys.leader
+
 -- appropriate number of spaces to insert a <Tab>
 vim.opt.expandtab = true
 -- Number of spaces that a <Tab> counts for
@@ -59,3 +65,6 @@ if vim.g.neovide then
 end
 
 vim.g.python3_host_prog = vim.fn.expand("~/.venvs/neovim/bin/python3")
+
+--- set the border style for floating windows
+vim.opt.winborder = "rounded"

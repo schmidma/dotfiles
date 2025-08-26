@@ -116,6 +116,22 @@ local keys = {
 			previous = "<C-k>",
 		},
 	},
+	molten = {
+		init = "<leader>mi",
+		evaluate = "<leader>me",
+		evaluate_line = "<leader>mrl",
+		reevaluate_cell = "<leader>mrr",
+		evaluate_visual = "<leader>mr",
+		delete_cell = "<leader>md",
+		hide_output = "<leader>m;",
+		show_output = "<leader>ms",
+		open_in_browser = "<leader>mx",
+	},
+	quarto = {
+		run_cell = "<leader>mrc",
+		run_above = "<leader>mra",
+		run_all = "<leader>mrA",
+	},
 }
 
 return keys

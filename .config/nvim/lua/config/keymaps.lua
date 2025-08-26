@@ -1,4 +1,4 @@
-local keys = require("keys")
+local keys = require("config.keys")
 
 local function set_keymaps(mode, lhs_list, rhs, opts)
 	if type(lhs_list) == "string" then

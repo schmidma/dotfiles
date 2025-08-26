@@ -79,6 +79,23 @@ return {
 					require("lspconfig")[server].setup(options)
 				end
 			end
+
+			-- vim.lsp.config("lua_ls", {
+			-- 	settings = {
+			-- 		Lua = {
+			-- 			runtime = {
+			-- 				version = "LuaJIT",
+			-- 			},
+			-- 			diagnostics = {
+			-- 				globals = { "vim", "require" },
+			-- 			},
+			-- 			workspace = {
+			-- 				library = vim.api.nvim_get_runtime_file("", true),
+			-- 			},
+			-- 		},
+			-- 	},
+			-- })
+
 			require("mason-lspconfig").setup()
 
 			for _, server in ipairs(opts.manual_register) do
@@ -99,18 +116,27 @@ return {
 					cmd = { "rustup", "run", "stable", "rust-analyzer" },
 					default_settings = {
 						["rust-analyzer"] = {
+							cargo = { features = "all" },
 							check = {
-								overrideCommand = {
-									"cargo",
-									"+nightly",
-									"clippy",
-									"--message-format=json",
-								},
+								command = "clippy",
+								-- overrideCommand = {
+								-- 	"cargo",
+								-- 	"+nightly",
+								-- 	"clippy",
+								-- 	"--message-format=json",
+								-- },
 							},
 						},
 					},
 				},
 			}
+		end,
+	},
+	{
+		"saecki/crates.nvim",
+		tag = "stable",
+		config = function()
+			require("crates").setup()
 		end,
 	},
 	{
