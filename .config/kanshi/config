@@ -5,9 +5,9 @@ profile IES {
 }
 
 profile ITL {
+  output "Fujitsu Siemens Computers GmbH P24W-7 LED YV8S004359" enable position 0,0 mode 1920x1200@60Hz transform normal
+  output "Fujitsu Siemens Computers GmbH P24W-7 LED YV8S009109" enable position 1920,0 mode 1920x1200@60Hz transform normal
   output eDP-1 enable position 3840,0
-  output "Dell Inc. DELL U2417H 5K9YD8AABRVL" enable position 1920,0 mode 1920x1080@60Hz transform normal
-  output "Dell Inc. DELL SE2416H P7HT86AT0RLL" enable position 0,0 mode 1920x1080@60Hz transform normal
 }
 
 profile HULKs-1 {
@@ -57,6 +57,12 @@ profile HULKs-vornelinks {
   output eDP-1 enable position 3640,869
   output "Dell Inc. DELL P2723DE HYKFLW3" enable position 1080,393 scale 1 transform normal
   output "Ancor Communications Inc ASUS PB238 F2LMTF013039" enable position 0,0 scale 1 transform 90
+}
+
+profile Home-21-9-plus-dell {
+  output eDP-1 enable position 4640,720
+  output "Dell Inc. DELL S3422DWG 74T0T63" enable position 1200,0 mode 3440x1440@60Hz
+  output "Dell Inc. DELL U2415 08DXD48U1JRL" enable position 0,0 transform 270
 }
 
 profile Home-21-9 {
