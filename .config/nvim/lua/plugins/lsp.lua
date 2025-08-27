@@ -66,11 +66,42 @@ return {
 					end, { buffer = args.buf, desc = "Go to type definition" })
 				end,
 			})
+			vim.lsp.config.ltex = {
+				filetypes = {
+					"bib",
+					"gitcommit",
+					"markdown",
+					"org",
+					"plaintex",
+					"rst",
+					"rnoweb",
+					"tex",
+					"pandoc",
+					"quarto",
+					"rmd",
+					"context",
+					"html",
+					"xhtml",
+					"mail",
+					"text",
+					"typst",
+				},
+			}
+			vim.diagnostic.config({
+				float = {
+					source = true,
+				},
+			})
 
 			vim.lsp.enable({
 				"lua_ls",
 				"basedpyright",
 				"ruff",
+				"tinymist",
+				"ltex",
+				"texlab",
+				"typos_lsp",
+				"harper_ls",
 			})
 		end,
 	},
