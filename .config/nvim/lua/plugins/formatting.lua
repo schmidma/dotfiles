@@ -30,9 +30,11 @@ return {
 		notify_on_error = false,
 		formatters_by_ft = {
 			lua = { "stylua" },
+			html = { "prettierd" },
 			javascript = { "prettierd" },
 			json = { "prettierd" },
 			markdown = { "prettierd" },
+			yaml = { "prettierd" },
 			typst = { "typstyle" },
 			toml = { "taplo" },
 		},

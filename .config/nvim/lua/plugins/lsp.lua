@@ -66,6 +66,13 @@ return {
 					end, { buffer = args.buf, desc = "Go to type definition" })
 				end,
 			})
+
+			vim.diagnostic.config({
+				float = {
+					source = true,
+				},
+			})
+
 			vim.lsp.config.ltex = {
 				filetypes = {
 					"bib",
@@ -80,18 +87,37 @@ return {
 					"quarto",
 					"rmd",
 					"context",
-					"html",
-					"xhtml",
-					"mail",
 					"text",
-					"typst",
 				},
 			}
-			vim.diagnostic.config({
-				float = {
-					source = true,
+			vim.lsp.config.texlab = {
+				settings = {
+					texlab = {
+						build = {
+							onSave = true,
+							forwardSearchAfter = true,
+							args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+						},
+						forwardSearch = {
+							executable = "zathura",
+							args = { "--synctex-forward", "%l:1:%f", "%p" },
+						},
+						chktex = {
+							onEdit = true,
+							onOpenAndSave = true,
+						},
+					},
 				},
-			})
+			}
+			vim.lsp.config.harper_ls = {
+				filetypes = {
+					"gitcommit",
+					"html",
+					"markdown",
+					"typst",
+					"tex",
+				},
+			}
 
 			vim.lsp.enable({
 				"lua_ls",
@@ -102,7 +128,14 @@ return {
 				"texlab",
 				"typos_lsp",
 				"harper_ls",
+				"ts_ls",
 			})
 		end,
+	},
+	{
+		"barreiroleo/ltex_extra.nvim",
+		branch = "dev",
+		ft = { "markdown", "tex" },
+		opts = {},
 	},
 }

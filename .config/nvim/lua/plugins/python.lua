@@ -3,6 +3,7 @@ local keys = require("config.keys")
 return {
 	{
 		"linux-cultist/venv-selector.nvim",
+		lazy = false,
 		dependencies = {
 			"neovim/nvim-lspconfig",
 			"nvim-telescope/telescope.nvim",
@@ -10,11 +11,6 @@ return {
 		opts = {
 			name = { "venv", ".venv" },
 		},
-	},
-	{
-		"linux-cultist/venv-selector.nvim",
-		branch = "regexp",
-		lazy = false,
 		config = true,
 		keys = {
 			{ keys.select_venv, vim.cmd.VenvSelect },
