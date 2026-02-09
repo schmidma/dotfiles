@@ -1,13 +1,14 @@
 profile IES {
-  output "Dell Inc. DELL U2422H 75BNF83" enable position 0,0 mode 1920x1080@60Hz transform 90 scale 1
-  output "Dell Inc. DELL U2422H BB9NF83" enable position 1080,420 mode 1920x1080@60Hz transform normal scale 1
-  output eDP-1 enable position 3000,420
+  output eDP-1 disable
+  output "Dell Inc. DELL U2422H 75BNF83" mode 1920x1080@60.00Hz position 0,0 scale 1.00
+  output "Dell Inc. DELL P2723D 2ZZ6714" mode 2560x1440@59.95Hz position 1080,300 scale 1.00
+  output "Dell Inc. DELL P2723D 2T78714" mode 2560x1440@59.95Hz position 3640,300 scale 1.00
 }
 
 profile ITL {
-  output "Fujitsu Siemens Computers GmbH P24W-7 LED YV8S004359" enable position 0,0 mode 1920x1200@60Hz transform normal
-  output "Fujitsu Siemens Computers GmbH P24W-7 LED YV8S009109" enable position 1920,0 mode 1920x1200@60Hz transform normal
-  output eDP-1 enable position 3840,0
+  output "Fujitsu Siemens Computers GmbH P24W-7 LED YV8S004359" enable mode 1920x1200@59.95Hz position 0,0 scale 1.00
+  output "Fujitsu Siemens Computers GmbH P24W-7 LED YV8S009109" enable mode 1920x1200@59.95Hz position 1920,0 scale 1.00
+  output "AU Optronics 0xD291 Unknown" enable mode 1920x1200@60.03Hz position 3840,0 scale 1.00
 }
 
 profile HULKs-1 {
@@ -61,8 +62,8 @@ profile HULKs-vornelinks {
 
 profile Home-21-9-plus-dell {
   output eDP-1 enable position 4640,720
-  output "Dell Inc. DELL S3422DWG 74T0T63" enable position 1200,0 mode 3440x1440@60Hz
-  output "Dell Inc. DELL U2415 08DXD48U1JRL" enable position 0,0 transform 270
+  output "Dell Inc. DELL S3422DWG 74T0T63" enable position 1200,0 mode 3440x1440@60Hz transform normal
+  output "Dell Inc. DELL U2415 08DXD48U1JRL" enable position 0,0 transform 90
 }
 
 profile Home-21-9 {
@@ -77,4 +78,10 @@ profile one_unknown {
 
 profile internal_only {
   output eDP-1 enable position 0,0
+}
+
+profile HULKs-2-large {
+  output "Dell Inc. DELL S2722DC HZ8TGD3" mode 2560x1440@59.95Hz position 0,0 scale 1.00
+  output "Dell Inc. DELL P3222QE 915S6H3" mode 3840x2160@60.00Hz position 1440,744 scale 1.50
+  output "AU Optronics 0xD291 Unknown" mode 1920x1200@60.03Hz position 4000,1131 scale 1.00
 }
