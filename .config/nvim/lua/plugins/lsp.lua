@@ -35,7 +35,9 @@ return {
     config = function()
       setup_diagnostic_signs()
 
+      local lsp_attach_group = vim.api.nvim_create_augroup("lsp-attach-keymaps", { clear = true })
       vim.api.nvim_create_autocmd("LspAttach", {
+        group = lsp_attach_group,
         callback = function(args)
           vim.keymap.set(
             { "n", "v" },
