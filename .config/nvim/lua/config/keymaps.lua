@@ -1,12 +1,12 @@
 local keys = require("config.keys")
 
 local function set_keymaps(mode, lhs_list, rhs, opts)
-	if type(lhs_list) == "string" then
-		lhs_list = { lhs_list }
-	end
-	for _, lhs in ipairs(lhs_list) do
-		vim.keymap.set(mode, lhs, rhs, opts)
-	end
+  if type(lhs_list) == "string" then
+    lhs_list = { lhs_list }
+  end
+  for _, lhs in ipairs(lhs_list) do
+    vim.keymap.set(mode, lhs, rhs, opts)
+  end
 end
 
 -- navigate properly when lines are wrapped
@@ -53,10 +53,10 @@ set_keymaps({ "n", "x" }, keys.paste_from_clipboard, [["+p]], { desc = "Paste fr
 -- movement
 set_keymaps({ "n", "x" }, keys.movement.start_of_line, "g0", { desc = "Move to start of line" })
 set_keymaps(
-	{ "n", "x" },
-	keys.movement.start_non_whitespace_of_line,
-	"g^",
-	{ desc = "Move to first non whitespace character of line" }
+  { "n", "x" },
+  keys.movement.start_non_whitespace_of_line,
+  "g^",
+  { desc = "Move to first non whitespace character of line" }
 )
 set_keymaps({ "n", "x" }, keys.movement.end_of_line, "g$", { desc = "Move to end of line" })
 

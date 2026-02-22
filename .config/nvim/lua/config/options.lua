@@ -61,7 +61,7 @@ vim.opt.shortmess:append("I")
 
 -- font for neovide
 if vim.g.neovide then
-	vim.o.guifont = "FiraMono Nerd Font:h14"
+  vim.o.guifont = "FiraMono Nerd Font:h14"
 end
 
 vim.g.python3_host_prog = vim.fn.expand("~/.venvs/neovim/bin/python3")

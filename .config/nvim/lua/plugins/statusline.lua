@@ -1,56 +1,56 @@
 local icons = require("config.icons")
 
 return {
-	{
-		"nvim-lualine/lualine.nvim",
-		opts = {
-			options = {
-				component_separators = { left = "", right = "" },
-				section_separators = { left = "", right = "" },
-			},
-			sections = {
-				lualine_a = { "mode" },
-				lualine_b = {
-					"branch",
-					{
-						"diff",
-						symbols = {
-							added = icons.git.added,
-							modified = icons.git.modified,
-							removed = icons.git.removed,
-						},
-					},
-					"diagnostics",
-				},
-				lualine_c = {
-					{
-						"filename",
-						path = 1,
-						symbols = { modified = " ", readonly = " " },
-					},
-				},
-				lualine_x = {},
-				lualine_y = {
-					"filetype",
-					{ "progress", separator = "|" },
-					{ "location", padding = { left = 0, right = 1 } },
-				},
-				lualine_z = {},
-			},
-			inactive_sections = {
-				lualine_a = {},
-				lualine_b = {},
-				lualine_c = {
-					{
-						"filename",
-						path = 1,
-						symbols = { modified = " ", readonly = " " },
-					},
-				},
-				lualine_x = {},
-				lualine_y = {},
-				lualine_z = {},
-			},
-		},
-	},
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      options = {
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
+      },
+      sections = {
+        lualine_a = { "mode" },
+        lualine_b = {
+          "branch",
+          {
+            "diff",
+            symbols = {
+              added = icons.git.added,
+              modified = icons.git.modified,
+              removed = icons.git.removed,
+            },
+          },
+          "diagnostics",
+        },
+        lualine_c = {
+          {
+            "filename",
+            path = 1,
+            symbols = { modified = " ", readonly = " " },
+          },
+        },
+        lualine_x = {},
+        lualine_y = {
+          "filetype",
+          { "progress", separator = "|" },
+          { "location", padding = { left = 0, right = 1 } },
+        },
+        lualine_z = {},
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {
+          {
+            "filename",
+            path = 1,
+            symbols = { modified = " ", readonly = " " },
+          },
+        },
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {},
+      },
+    },
+  },
 }
