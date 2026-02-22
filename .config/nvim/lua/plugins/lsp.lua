@@ -11,6 +11,9 @@ local function setup_diagnostic_signs()
       prefix = "●",
     },
     severity_sort = true,
+    float = {
+      source = true,
+    },
     signs = {
       text = {
         [vim.diagnostic.severity.ERROR] = icons.diagnostics.Error,
@@ -65,12 +68,6 @@ return {
             vim.cmd.Telescope("lsp_type_definitions")
           end, { buffer = args.buf, desc = "Go to type definition" })
         end,
-      })
-
-      vim.diagnostic.config({
-        float = {
-          source = true,
-        },
       })
 
       vim.lsp.config.ltex = {
