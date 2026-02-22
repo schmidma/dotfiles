@@ -85,6 +85,7 @@ source /home/maximilian/.config/neomutt/accounts/schmidma@mailbox.org
 bind index,pager <S-Down>   sidebar-next
 bind index,pager <S-Up>     sidebar-prev
 bind index,pager <S-Right>  sidebar-open
+bind index,pager B sidebar-toggle-visible
 
 # notmuch query
 macro index \\\\ "<vfolder-from-query>" "Search mailbox"
