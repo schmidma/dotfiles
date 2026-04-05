@@ -92,6 +92,7 @@ return {
       vim.lsp.config.texlab = {
         settings = {
           texlab = {
+            latexFormatter = "latexindent",
             build = {
               onSave = true,
               forwardSearchAfter = true,
