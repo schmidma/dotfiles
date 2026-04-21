@@ -39,7 +39,7 @@ vim.opt.smartcase = true
 vim.opt.spelllang = "en,de"
 
 -- decrease update time for CursorHold
-vim.opt.updatetime = 250
+vim.opt.updatetime = 200
 
 -- do not show commands in the last line
 vim.opt.showcmd = false
@@ -57,14 +57,17 @@ vim.opt.undofile = true
 vim.opt.inccommand = "split"
 
 -- don't give the intro message
-vim.opt.shortmess:append("I")
+vim.opt.shortmess:append({ C = true, I = true })
 
--- font for neovide
-if vim.g.neovide then
-  vim.o.guifont = "FiraMono Nerd Font:h14"
-end
-
-vim.g.python3_host_prog = vim.fn.expand("~/.venvs/neovim/bin/python3")
-
---- set the border style for floating windows
+-- set the border style for floating windows
 vim.opt.winborder = "rounded"
+-- vim.opt.winborder = "🭽,▔,🭾,▕,🭿,▁,🭼,▏"
+
+-- show whitespace characters
+vim.opt.listchars = {
+	tab = "» ",
+	trail = "·",
+	nbsp = "␣",
+	extends = "…",
+	precedes = "…",
+}
