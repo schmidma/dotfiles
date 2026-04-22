@@ -18,5 +18,5 @@ fileext = ".vcf"
 [storage MailboxRemote]
 type = "carddav"
 url = "https://dav.mailbox.org/carddav/32"
-username = "schmidma@mailbox.org"
-password.fetch = ["command", "gopass", "--password", "E-Mail/mailbox.org"]
+username = "8768771@8768771"
+password.fetch = ["command", "gopass", "--password", "mailbox-app-password"]
