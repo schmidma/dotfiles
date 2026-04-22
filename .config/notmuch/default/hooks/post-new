@@ -1,8 +1,19 @@
 #!/bin/bash
+
+notmuch tag -mailbox -- 'tag:mailbox and not folder:/schmidma@mailbox.org/.*/'
 notmuch tag +mailbox -- 'folder:/schmidma@mailbox.org/.*/'
+
+notmuch tag -tuhh -- 'tag:tuhh and not folder:/maximilian.schmidt@tuhh.de/.*/'
 notmuch tag +tuhh -- 'folder:/maximilian.schmidt@tuhh.de/.*/'
+
+notmuch tag -hulks -- 'tag:hulks and not folder:/maximilian@hulks.de/.*/'
 notmuch tag +hulks -- 'folder:/maximilian@hulks.de/.*/'
 
+notmuch tag -deleted -- 'tag:deleted and not folder:"/.*/Trash/"'
 notmuch tag +deleted -- 'folder:"/.*/Trash/"'
+
+notmuch tag -junk -- 'tag:junk and not folder:"/.*/(Junk|Spam|Spam4|Spam5)/"'
 notmuch tag +junk -- 'folder:"/.*/(Junk|Spam|Spam4|Spam5)/"'
+
+notmuch tag -sent -- 'tag:sent and not folder:"/.*/Sent/"'
 notmuch tag +sent -- 'folder:"/.*/Sent/"'
