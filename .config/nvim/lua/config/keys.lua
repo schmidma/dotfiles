@@ -88,6 +88,9 @@ local M = {
 		next_reference = "]r",
 		prev_reference = "[r",
 	},
+	flash = {
+		jump = "s",
+	},
 	-- quickfix = {
 	-- 	toggle = "<leader>xx",
 	-- 	loclist = "<leader>xl",

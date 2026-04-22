@@ -9,6 +9,22 @@ snacks.setup({
 
 	picker = {
 		enabled = true,
+		sources = {
+			select = {
+				kinds = {
+					codeaction = {
+						layout = {
+							preset = "select",
+							layout = {
+								relative = "cursor",
+								row = 1,
+								col = 0,
+							},
+						},
+					},
+				},
+			},
+		},
 	},
 
 	toggle = {

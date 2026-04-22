@@ -17,6 +17,7 @@ vim.pack.add({
 	{ src = gh("nvim-mini/mini.surround") },
 	{ src = gh("nvim-mini/mini.indentscope") },
 	{ src = gh("nvim-mini/mini.files") },
+	{ src = gh("folke/flash.nvim") },
 	{ src = gh("saghen/blink.cmp"), version = "v1" },
 	{ src = gh("zbirenbaum/copilot.lua") },
 	{ src = gh("stevearc/conform.nvim") },
@@ -51,6 +52,7 @@ require("config.mini-ai")
 require("config.mini-surround")
 require("config.mini-indentscope")
 require("config.mini-files")
+require("config.flash")
 require("config.blink-cmp")
 require("config.copilot")
 require("config.conform")
