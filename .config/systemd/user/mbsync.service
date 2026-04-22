@@ -4,7 +4,7 @@ ConditionPathExists=/dev/yubikey
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/mbsync -Va
+ExecStart=/usr/bin/mbsync -a
 ExecStartPost=/usr/bin/notmuch new
 
 [Install]
