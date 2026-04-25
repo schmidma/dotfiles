@@ -31,19 +31,19 @@ set nm_exclude_tags = "deleted junk"
 set nm_record = yes
 set nm_record_tags = "sent"
 
-named-mailboxes "mailbox/Conversations" "notmuch://?type=threads&query=folder:schmidma@mailbox.org/INBOX or folder:schmidma@mailbox.org/Sent"
+named-mailboxes "mailbox/Conversations-1m" "notmuch://?type=threads&query=((folder:schmidma@mailbox.org/INBOX or folder:schmidma@mailbox.org/Sent) and date:1M..) and not tag:junk and not tag:deleted"
 named-mailboxes "mailbox/INBOX" "+schmidma@mailbox.org/INBOX"
 named-mailboxes "mailbox/Sent" "+schmidma@mailbox.org/Sent"
 named-mailboxes "mailbox/Junk" "+schmidma@mailbox.org/Junk"
 named-mailboxes "mailbox/Trash" "+schmidma@mailbox.org/Trash"
 
-named-mailboxes "TUHH/Conversations" "notmuch://?type=threads&query=folder:maximilian.schmidt@tuhh.de/INBOX or folder:maximilian.schmidt@tuhh.de/Sent"
+named-mailboxes "TUHH/Conversations-1m" "notmuch://?type=threads&query=((folder:maximilian.schmidt@tuhh.de/INBOX or folder:maximilian.schmidt@tuhh.de/Sent) and date:1M..) and not tag:junk and not tag:deleted"
 named-mailboxes "TUHH/INBOX" "+maximilian.schmidt@tuhh.de/INBOX"
 named-mailboxes "TUHH/Sent" "+maximilian.schmidt@tuhh.de/Sent"
 named-mailboxes "TUHH/Junk" "+maximilian.schmidt@tuhh.de/Spam5"
 named-mailboxes "TUHH/Trash" "+maximilian.schmidt@tuhh.de/Trash"
 
-named-mailboxes "HULKs/Conversations" "notmuch://?type=threads&query=folder:maximilian@hulks.de/INBOX or folder:maximilian@hulks.de/Sent"
+named-mailboxes "HULKs/Conversations-1m" "notmuch://?type=threads&query=((folder:maximilian@hulks.de/INBOX or folder:maximilian@hulks.de/Sent) and date:1M..) and not tag:junk and not tag:deleted"
 named-mailboxes "HULKs/INBOX" "+maximilian@hulks.de/INBOX"
 named-mailboxes "HULKs/Sent" "+maximilian@hulks.de/Sent"
 named-mailboxes "HULKs/Junk" "+maximilian@hulks.de/Junk"
@@ -95,7 +95,8 @@ macro index \\\\ "<vfolder-from-query>" "Search mailbox"
 bind editor <tab> complete-query
 
 bind index,pager @ compose-to-sender
-bind index <esc>L limit-current-thread
+bind index,pager <esc>L entire-thread
+macro index,pager <esc>S "<sync-mailbox><shell-escape>/home/maximilian/.config/mail/mail-sync all<enter>" "sync mail now"
 
 bind index,pager i noop
 macro index ii "<limit>(~N|~F)<Enter>" "view new/flag"
@@ -104,9 +105,9 @@ macro index,pager i2 "<change-folder>TUHH/INBOX<enter>"
 macro index,pager i3 "<change-folder>HULKs/INBOX<enter>"
 
 bind index,pager c noop
-macro index,pager c1 "<change-folder>mailbox/Conversations<enter>"
-macro index,pager c2 "<change-folder>TUHH/Conversations<enter>"
-macro index,pager c3 "<change-folder>HULKs/Conversations<enter>"
+macro index,pager c1 "<change-folder>mailbox/Conversations-1m<enter>"
+macro index,pager c2 "<change-folder>TUHH/Conversations-1m<enter>"
+macro index,pager c3 "<change-folder>HULKs/Conversations-1m<enter>"
 
 macro attach A "<pipe-message>vcalendar-filter | mutt2khal<enter>"
 macro index,pager A "<pipe-message>khard add-email<enter>"
