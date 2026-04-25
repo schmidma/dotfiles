@@ -319,6 +319,7 @@ binds {
 
     // XF86AudioPlay allow-when-locked=true { spawn "playerctl" "-p" "spotify" "play-pause"; }
     XF86AudioPlay allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
+    Ctrl+Alt+Down allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
     XF86AudioNext allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "next"; }
     XF86AudioPrev allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
 
