@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [[ "$(dms ipc call lock isLocked)" == "true" ]]; then
+    niri msg action power-off-monitors
+fi

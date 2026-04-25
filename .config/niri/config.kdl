@@ -405,6 +405,8 @@ binds {
     Mod+Ctrl+U         { move-workspace-down; }
     Mod+Ctrl+I         { move-workspace-up; }
 
+    Mod+Ctrl+Shift+Page_Down { spawn "~/.config/niri/scripts/move-column-to-new-workspace-down"; }
+
     // Direct workspace access.
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }

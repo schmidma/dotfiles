@@ -1,0 +1,15 @@
+#!/bin/env bash
+
+# Fetch the workspaces JSON once to prevent race conditions
+WS_JSON=$(niri msg -j workspaces)
+
+CURR_IDX=$(echo "$WS_JSON" | jq -r '.[] | select(.is_focused == true) | .idx')
+CURR_OUT=$(echo "$WS_JSON" | jq -r '.[] | select(.is_focused == true) | .output')
+
+LAST_WS=$(echo "$WS_JSON" | jq -r "[.[] | select(.output == \"$CURR_OUT\")] | length")
+DOWN_WSPACE=$((CURR_IDX + 1))
+
+niri msg action set-workspace-name _tempws --workspace "$LAST_WS"
+niri msg action move-workspace-to-index "$DOWN_WSPACE" --reference _tempws 
+niri msg action move-column-to-workspace _tempws
+niri msg action unset-workspace-name _tempws
