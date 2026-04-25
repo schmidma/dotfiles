@@ -39,4 +39,4 @@ keys.map("n", keys.diagnostics.line, function()
 	})
 end, { desc = "Line diagnostics" })
 
-vim.lsp.enable({ "lua_ls", "rust_analyzer", "ty", "ruff", "texlab", "ltex_plus", "harper_ls" })
+vim.lsp.enable({ "lua_ls", "rust_analyzer", "ty", "ruff", "texlab", "harper_ls" })
