@@ -1,0 +1,13 @@
+host: mail.tu-harburg.de
+port: 993
+tls: true
+username: cms8231
+passwordCmd: gopass --password maximilian.schmidt@tuhh.de
+onNewMail: /home/maximilian/.config/mail/mail-sync tuhh
+onNewMailPost: ""
+onChangedMail: /home/maximilian/.config/mail/mail-sync tuhh
+onChangedMailPost: ""
+onDeletedMail: /home/maximilian/.config/mail/mail-sync tuhh
+onDeletedMailPost: ""
+boxes:
+  - INBOX

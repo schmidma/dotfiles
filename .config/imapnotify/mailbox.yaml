@@ -1,0 +1,13 @@
+host: imap.mailbox.org
+port: 993
+tls: true
+username: schmidma@mailbox.org
+passwordCmd: gopass --password schmidma@mailbox.org
+onNewMail: /home/maximilian/.config/mail/mail-sync mailbox
+onNewMailPost: ""
+onChangedMail: /home/maximilian/.config/mail/mail-sync mailbox
+onChangedMailPost: ""
+onDeletedMail: /home/maximilian/.config/mail/mail-sync mailbox
+onDeletedMailPost: ""
+boxes:
+  - INBOX

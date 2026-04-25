@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/mail-notify"
+state_file="$cache_dir/counts"
+tmp_file="$state_file.tmp.$$"
+
+mkdir -p "$cache_dir"
+
+count_mailbox=$(notmuch count 'tag:mailbox and tag:unread and not tag:junk and not tag:deleted')
+count_tuhh=$(notmuch count 'tag:tuhh and tag:unread and not tag:junk and not tag:deleted')
+count_hulks=$(notmuch count 'tag:hulks and tag:unread and not tag:junk and not tag:deleted')
+
+previous_count() {
+  local key="$1"
+
+  if [[ ! -f "$state_file" ]]; then
+    printf '0\n'
+    return
+  fi
+
+  local value
+  value=$(grep -E "^${key}=" "$state_file" | tail -n 1 | cut -d= -f2- || true)
+  if [[ -z "$value" ]]; then
+    printf '0\n'
+  else
+    printf '%s\n' "$value"
+  fi
+}
+
+latest_sender() {
+  local tag="$1"
+  local sender=""
+
+  while IFS= read -r sender; do
+    printf '%s\n' "$sender"
+    return 0
+  done < <(notmuch address --sort=newest-first --deduplicate=no --output=sender "tag:$tag and tag:unread and not tag:junk and not tag:deleted")
+}
+
+notify_increase() {
+  local label="$1"
+  local tag="$2"
+  local current="$3"
+  local previous="$4"
+  local delta=$((current - previous))
+
+  if (( delta <= 0 )); then
+    return
+  fi
+
+  local noun="messages"
+  if (( delta == 1 )); then
+    noun="message"
+  fi
+
+  local sender
+  sender=$(latest_sender "$tag")
+
+  local body="$delta unread $noun arrived"
+  if [[ -n "$sender" ]]; then
+    if (( delta == 1 )); then
+      body="From: $sender"
+    else
+      body+=$'\n'"Latest: $sender"
+    fi
+  fi
+
+  notify-send \
+    --app-name="Mail" \
+    --icon="mail-unread-symbolic" \
+    --urgency=normal \
+    --expire-time=8000 \
+    "New mail in $label" \
+    "$body" || true
+}
+
+if [[ -f "$state_file" ]]; then
+  previous_mailbox=$(previous_count mailbox)
+  previous_tuhh=$(previous_count tuhh)
+  previous_hulks=$(previous_count hulks)
+
+  notify_increase "Mailbox" "mailbox" "$count_mailbox" "$previous_mailbox"
+  notify_increase "TUHH" "tuhh" "$count_tuhh" "$previous_tuhh"
+  notify_increase "HULKs" "hulks" "$count_hulks" "$previous_hulks"
+fi
+
+cat > "$tmp_file" <<EOF
+mailbox=$count_mailbox
+tuhh=$count_tuhh
+hulks=$count_hulks
+EOF
+mv "$tmp_file" "$state_file"

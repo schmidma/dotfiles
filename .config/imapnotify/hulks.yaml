@@ -1,0 +1,13 @@
+host: mail.webspace.bz
+port: 993
+tls: true
+username: maximilian@hulks.de
+passwordCmd: gopass --password maximilian@hulks.de
+onNewMail: /home/maximilian/.config/mail/mail-sync hulks
+onNewMailPost: ""
+onChangedMail: /home/maximilian/.config/mail/mail-sync hulks
+onChangedMailPost: ""
+onDeletedMail: /home/maximilian/.config/mail/mail-sync hulks
+onDeletedMailPost: ""
+boxes:
+  - INBOX

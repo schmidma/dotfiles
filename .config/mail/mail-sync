@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  printf 'usage: %s {mailbox|tuhh|hulks|all}\n' "${0##*/}" >&2
+}
+
+if [[ $# -ne 1 ]]; then
+  usage
+  exit 2
+fi
+
+target="$1"
+case "$target" in
+  mailbox)
+    mbsync_args=(mailbox.org)
+    ;;
+  tuhh)
+    mbsync_args=(maximilian.schmidt@tuhh.de)
+    ;;
+  hulks)
+    mbsync_args=(hulks.de)
+    ;;
+  all)
+    mbsync_args=(-a)
+    ;;
+  *)
+    usage
+    exit 2
+    ;;
+esac
+
+runtime_dir="${XDG_RUNTIME_DIR:-/tmp}"
+lock_file="$runtime_dir/mail-sync.lock"
+
+exec 9>"$lock_file"
+if ! flock -w 300 9; then
+  exit 0
+fi
+
+mbsync "${mbsync_args[@]}"
+notmuch new
+/home/maximilian/.config/mail/mail-notify-new
