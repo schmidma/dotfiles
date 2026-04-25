@@ -309,6 +309,8 @@ binds {
     Mod+Space hotkey-overlay-title="Vicinae" { spawn "vicinae" "toggle"; }
     Mod+Escape hotkey-overlay-title="Lock the Session" { spawn "loginctl" "lock-session"; }
 
+    Mod+e { spawn "nautilus" "--new-window"; }
+
     // Example volume keys mappings for PipeWire & WirePlumber.
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"; }
