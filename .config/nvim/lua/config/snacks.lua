@@ -10,6 +10,9 @@ snacks.setup({
 	picker = {
 		enabled = true,
 		sources = {
+			files = {
+				hidden = true,
+			},
 			select = {
 				kinds = {
 					codeaction = {
