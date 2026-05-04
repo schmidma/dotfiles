@@ -39,3 +39,7 @@ size = 14.0
 
 [font.normal]
 family = "FiraMono Nerd Font"
+
+[window]
+opacity = 0.93
+blur = true

@@ -238,6 +238,30 @@ layer-rule {
     place-within-backdrop true
 }
 
+window-rule {
+  match app-id="vicinae"
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
+layer-rule {
+  match namespace="vicinae"
+  background-effect {
+    blur true
+    xray false
+  }
+}
+
+window-rule {
+    match app-id="^Alacritty$"
+
+    background-effect {
+        blur true
+    }
+}
+
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
